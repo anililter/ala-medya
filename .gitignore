@@ -33,9 +33,20 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Cursor / IDE
+.agents/
+skills-lock.json
+alamedya/
+
+# sqlite database (local dev)
+/dev.db
+/prisma/dev.db
+
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/src/generated/prisma

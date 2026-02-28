@@ -1,5 +1,21 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Sunucuyu çalıştırma
+
+Proje PostgreSQL kullanır. Yerel geliştirme için `.env` dosyasında `DATABASE_URL` tanımlayın (ücretsiz [Neon](https://neon.tech) kullanabilirsiniz). Detay için [DEPLOY.md](./DEPLOY.md).
+
+1. **Terminal açın**, proje klasörüne gidin: `cd /Users/anililter/Desktop/alamedya`
+2. `.env` oluşturun: `DATABASE_URL="postgresql://..."` (Neon’dan connection string)
+3. `npx prisma db push` ve `npm run db:seed` ve `npx tsx scripts/create-admin.ts` (ilk seferde)
+4. Sunucuyu başlatın: `npm run dev`
+5. Tarayıcıda **http://127.0.0.1:3000** (giriş: admin / admin123)
+
+"Too many open files" uyarısı alırsanız: `npm run dev:webpack`
+
+**Canlıya alma (GitHub + Vercel):** Adım adım anlatım için [DEPLOY.md](./DEPLOY.md) dosyasına bakın.
+
+---
+
 ## Getting Started
 
 First, run the development server:

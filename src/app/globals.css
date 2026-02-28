@@ -1,26 +1,213 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafafa;
+  --foreground: #18181b;
+  --muted: #71717a;
+  --muted-foreground: #a1a1aa;
+  --card: #ffffff;
+  --card-foreground: #18181b;
+  --border: #e4e4e7;
+  --ring: #3b82f6;
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  --radius: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+
+  --night: #0a1628;
+  --night-light: #0f1f3d;
+  --night-border: rgba(255 255 255 / 0.08);
+  --gold: #c9a84c;
+  --gold-light: #e2c76e;
+  --gold-muted: rgba(201 168 76 / 0.15);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-night: var(--night);
+  --color-night-light: var(--night-light);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #09090b;
+    --foreground: #fafafa;
+    --muted: #52525b;
+    --muted-foreground: #a1a1aa;
+    --card: #18181b;
+    --card-foreground: #fafafa;
+    --border: #27272a;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.2);
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.15);
+    --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.2), 0 4px 6px -4px rgb(0 0 0 / 0.15);
+    --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.15);
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* ─── Hero ─── */
+.hero-bg {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse 100% 60% at 70% 20%, rgb(147 197 253 / 0.35), transparent 50%),
+    radial-gradient(ellipse 80% 50% at 30% 80%, rgb(103 232 249 / 0.25), transparent 45%),
+    radial-gradient(ellipse 60% 40% at 90% 60%, rgb(196 181 253 / 0.15), transparent 40%),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgb(59 130 246 / 0.2), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 0% 50%, rgb(59 130 246 / 0.1), transparent 40%);
+  background-size: 100% 100%;
+  animation: hero-bg-shift 18s ease-in-out infinite alternate;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, rgb(147 197 253 / 0.2), transparent 50%);
+  animation: hero-glow 14s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes hero-bg-shift {
+  0%   { background-position: 0% 0%, 10% 20%, 90% 80%, 50% 0%, 0% 50%; }
+  100% { background-position: 5% 10%, 20% 10%, 85% 70%, 55% 5%, 5% 45%; }
+}
+
+@keyframes hero-glow {
+  0%   { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-anim-1 { animation: fade-in-up 0.7s ease-out forwards; opacity: 0; }
+.hero-anim-2 { animation: fade-in-up 0.7s ease-out 0.12s forwards; opacity: 0; }
+.hero-anim-3 { animation: fade-in-up 0.8s ease-out 0.24s forwards; opacity: 0; }
+.hero-anim-4 { animation: fade-in-up 0.6s ease-out 0.36s forwards; opacity: 0; }
+
+/* ─── Shimmer button ─── */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255 255 255 / 0.18) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ─── Gold shimmer for CTA ─── */
+.btn-gold-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-gold-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255 255 255 / 0.12) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ─── Night section gradient mesh ─── */
+.night-mesh {
+  background-color: var(--night);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(201 168 76 / 0.06), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(59 130 246 / 0.06), transparent 40%);
+}
+
+/* ─── Glassmorphism card on night bg ─── */
+.glass-card {
+  background: rgba(255 255 255 / 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255 255 255 / 0.08);
+  border-radius: 1.25rem;
+}
+
+/* ─── Grayscale → color hover for partner logos ─── */
+.logo-grayscale {
+  filter: grayscale(100%) brightness(1.5);
+  opacity: 0.5;
+  transition: all 0.4s ease;
+}
+.logo-grayscale:hover {
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero-bg {
+    background-image:
+      radial-gradient(ellipse 100% 60% at 70% 20%, rgb(59 130 246 / 0.2), transparent 50%),
+      radial-gradient(ellipse 80% 50% at 30% 80%, rgb(34 211 238 / 0.15), transparent 45%),
+      radial-gradient(ellipse 60% 40% at 90% 60%, rgb(129 140 248 / 0.12), transparent 40%),
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgb(59 130 246 / 0.18), transparent 50%),
+      radial-gradient(ellipse 60% 40% at 0% 50%, rgb(59 130 246 / 0.1), transparent 40%);
+  }
+}
+
+/* ─── Marquee / infinite scroll ─── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg, .hero-bg::before,
+  .hero-anim-1, .hero-anim-2, .hero-anim-3, .hero-anim-4,
+  .btn-shimmer::after, .btn-gold-shimmer::after,
+  .marquee-track {
+    animation: none;
+  }
+  .hero-anim-1, .hero-anim-2, .hero-anim-3, .hero-anim-4 {
+    opacity: 1;
+  }
 }
