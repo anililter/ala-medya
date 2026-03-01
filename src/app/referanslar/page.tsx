@@ -1,8 +1,4 @@
-import Link from "next/link";
-import Image from "next/image";
 import { prisma } from "@/lib/db";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { ReferanslarClient } from "./ReferanslarClient";
 
 export const dynamic = "force-dynamic";
@@ -23,9 +19,7 @@ export default async function ReferanslarPage() {
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      <Header active="referanslar" />
-
-      <main className="mx-auto w-[90%] max-w-[1600px] px-4 py-16 sm:py-20 lg:px-0">
+      <main className="w-full px-6 py-16 sm:py-20 lg:px-12">
         <section className="mb-14 text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
             Referanslar
@@ -40,8 +34,6 @@ export default async function ReferanslarPage() {
           categories={["Tümünü Gör", ...categories.sort()]}
         />
       </main>
-
-      <Footer />
     </div>
   );
 }

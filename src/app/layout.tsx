@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { FloatingActions } from "@/components/FloatingActions";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,6 +20,10 @@ export const metadata: Metadata = {
   title: "Ala Medya — Yapay Zeka Destekli 360 Dijital Pazarlama Ajansı",
   description:
     "Yeni nesil yapay zeka destekli dijital reklam, SEO, sosyal medya ve kreatif çözümler. Sertifikalı uzmanlık, birebir iletişim.",
+  icons: {
+    icon: "/ala-medya-logo.png",
+    apple: "/ala-medya-logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -26,9 +34,15 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
-        {children}
+        <SEO />
+        <Navbar />
+        <div className="w-full">
+          {children}
+        </div>
+        <Footer />
+        <FloatingActions />
       </body>
     </html>
   );

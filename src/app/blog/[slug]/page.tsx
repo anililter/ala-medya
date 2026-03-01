@@ -2,8 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { prisma } from "@/lib/db";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 
 export const dynamic = "force-dynamic";
 
@@ -28,8 +26,6 @@ export default async function BlogSlugPage({
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      <Header active="blog" />
-
       <article className="mx-auto w-[90%] max-w-[860px] px-4 pb-24 pt-12 sm:pt-16 lg:px-0">
         <Link
           href="/blog"
@@ -78,8 +74,6 @@ export default async function BlogSlugPage({
           </Link>
         </div>
       </article>
-
-      <Footer />
     </div>
   );
 }

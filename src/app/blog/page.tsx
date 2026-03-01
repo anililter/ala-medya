@@ -1,6 +1,4 @@
 import { prisma } from "@/lib/db";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { BlogContent } from "@/components/BlogContent";
 
 export const dynamic = "force-dynamic";
@@ -13,9 +11,7 @@ export default async function BlogPage() {
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      <Header active="blog" />
-
-      <main className="mx-auto w-[90%] max-w-[1400px] px-4 pb-24 pt-16 sm:pt-24 lg:px-0">
+      <main className="w-full px-6 pb-24 pt-16 sm:pt-24 lg:px-12">
         {/* Hero */}
         <div className="relative">
           <p className="text-xs font-medium uppercase tracking-[0.25em] text-[var(--gold)]">
@@ -36,8 +32,6 @@ export default async function BlogPage() {
 
         <BlogContent posts={posts} />
       </main>
-
-      <Footer />
     </div>
   );
 }

@@ -13,6 +13,8 @@ const SERVICES_MENU = [
       { label: "TikTok & LinkedIn Ads", href: "/hizmetler/dijital-reklam/tiktok-linkedin-ads" },
     ],
   },
+  { label: "Kreatif Psikolojisi", href: "/hizmetler/kreatif-psikolojisi" },
+  { label: "Raporlama ve Analiz", href: "/hizmetler/raporlama-ve-analiz" },
   { label: "SEO", href: "/hizmetler/seo" },
   { label: "Sosyal Medya Yönetimi", href: "/hizmetler/sosyal-medya" },
   { label: "İçerik Pazarlama", href: "/hizmetler/icerik-pazarlama" },

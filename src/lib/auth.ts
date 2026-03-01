@@ -29,17 +29,21 @@ export async function getSession() {
   const token = cookieStore.get(SESSION_COOKIE)?.value;
   if (!token) return null;
 
-  const session = await prisma.session.findUnique({
-    where: { token },
-    include: { user: true },
-  });
+  try {
+    const session = await prisma.session.findUnique({
+      where: { token },
+      include: { user: true },
+    });
 
-  if (!session || session.expiresAt < new Date() || !session.user.active) {
-    if (session) await prisma.session.delete({ where: { id: session.id } }).catch(() => {});
+    if (!session || session.expiresAt < new Date() || !session.user.active) {
+      if (session) await prisma.session.delete({ where: { id: session.id } }).catch(() => {});
+      return null;
+    }
+
+    return session;
+  } catch {
     return null;
   }
-
-  return session;
 }
 
 export async function destroySession() {

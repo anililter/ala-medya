@@ -2,11 +2,11 @@
 
 :root {
   --background: #fafafa;
-  --foreground: #18181b;
-  --muted: #71717a;
-  --muted-foreground: #a1a1aa;
+  --foreground: #1d1d1f;
+  --muted: #6e6e73;
+  --muted-foreground: #86868b;
   --card: #ffffff;
-  --card-foreground: #18181b;
+  --card-foreground: #1d1d1f;
   --border: #e4e4e7;
   --ring: #3b82f6;
   --accent: #3b82f6;
@@ -62,8 +62,73 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.625;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Edge-to-edge konteyner: tam genişlik, yatay padding (okunabilirlik için) */
+.site-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media (min-width: 1024px) {
+  .site-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* Gövde metinleri: okunabilirlik için maksimum satır genişliği, ortalanmış */
+main p,
+.content-prose p {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.125rem;
+}
+
+/* Başlık hiyerarşisi – büyük ve iddialı (hero h1 hariç, o kendi boyutunu kullanır) */
+main h1:not(.hero-title),
+.content-prose h1 {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+@media (min-width: 1024px) {
+  main h1:not(.hero-title),
+  .content-prose h1 {
+    font-size: clamp(3.75rem, 5vw, 4.5rem);
+  }
+}
+main h2,
+.content-prose h2 {
+  font-size: clamp(1.875rem, 3vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+@media (min-width: 768px) {
+  main h2,
+  .content-prose h2 {
+    font-size: clamp(2rem, 3vw, 2.25rem);
+  }
+}
+main h3,
+.content-prose h3 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  main h3,
+  .content-prose h3 {
+    font-size: 1.875rem;
+  }
 }
 
 *:focus-visible {
@@ -75,11 +140,11 @@ body {
 .hero-bg {
   background-color: var(--background);
   background-image:
-    radial-gradient(ellipse 100% 60% at 70% 20%, rgb(147 197 253 / 0.35), transparent 50%),
-    radial-gradient(ellipse 80% 50% at 30% 80%, rgb(103 232 249 / 0.25), transparent 45%),
-    radial-gradient(ellipse 60% 40% at 90% 60%, rgb(196 181 253 / 0.15), transparent 40%),
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgb(59 130 246 / 0.2), transparent 50%),
-    radial-gradient(ellipse 60% 40% at 0% 50%, rgb(59 130 246 / 0.1), transparent 40%);
+    radial-gradient(ellipse 120% 70% at 50% 40%, rgb(147 197 253 / 0.35), transparent 55%),
+    radial-gradient(ellipse 90% 60% at 50% 60%, rgb(103 232 249 / 0.25), transparent 50%),
+    radial-gradient(ellipse 70% 50% at 50% 30%, rgb(196 181 253 / 0.15), transparent 45%),
+    radial-gradient(ellipse 100% 60% at 50% -10%, rgb(59 130 246 / 0.2), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 50% 50%, rgb(59 130 246 / 0.08), transparent 45%);
   background-size: 100% 100%;
   animation: hero-bg-shift 18s ease-in-out infinite alternate;
 }
@@ -88,7 +153,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 50% 50% at 50% 50%, rgb(147 197 253 / 0.2), transparent 50%);
+  background: radial-gradient(ellipse 60% 50% at 50% 45%, rgb(147 197 253 / 0.25), transparent 55%);
   animation: hero-glow 14s ease-in-out infinite alternate;
   pointer-events: none;
 }
@@ -130,6 +195,32 @@ body {
   background-size: 200% 100%;
   animation: shimmer 2.5s ease-in-out infinite;
   pointer-events: none;
+}
+
+/* ─── Apple-style form input (alt çizgi / hafif gölge, dev font) ─── */
+.input-apple {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid var(--border);
+  border-radius: 0;
+  color: var(--foreground);
+  padding: 0.5rem 0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.input-apple::placeholder {
+  color: var(--muted);
+}
+.input-apple:hover {
+  border-bottom-color: var(--muted);
+}
+.input-apple:focus {
+  border-bottom-color: #3b82f6;
+  box-shadow: 0 2px 0 0 #3b82f6;
+  outline: none;
+}
+.input-apple:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 /* ─── Gold shimmer for CTA ─── */
@@ -178,15 +269,44 @@ body {
 @media (prefers-color-scheme: dark) {
   .hero-bg {
     background-image:
-      radial-gradient(ellipse 100% 60% at 70% 20%, rgb(59 130 246 / 0.2), transparent 50%),
-      radial-gradient(ellipse 80% 50% at 30% 80%, rgb(34 211 238 / 0.15), transparent 45%),
-      radial-gradient(ellipse 60% 40% at 90% 60%, rgb(129 140 248 / 0.12), transparent 40%),
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgb(59 130 246 / 0.18), transparent 50%),
-      radial-gradient(ellipse 60% 40% at 0% 50%, rgb(59 130 246 / 0.1), transparent 40%);
+      radial-gradient(ellipse 120% 70% at 50% 40%, rgb(59 130 246 / 0.2), transparent 55%),
+      radial-gradient(ellipse 90% 60% at 50% 60%, rgb(34 211 238 / 0.15), transparent 50%),
+      radial-gradient(ellipse 70% 50% at 50% 30%, rgb(129 140 248 / 0.12), transparent 45%),
+      radial-gradient(ellipse 100% 60% at 50% -10%, rgb(59 130 246 / 0.18), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 50% 50%, rgb(59 130 246 / 0.08), transparent 45%);
   }
 }
 
-/* ─── Marquee / infinite scroll ─── */
+/* ─── Strategy form gradient (gold / night blue) ─── */
+@keyframes strategy-gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+.animate-strategy-gradient {
+  animation: strategy-gradient 12s ease-in-out infinite;
+}
+
+@keyframes aurora-shift {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  100% { transform: translate(5%, -3%) scale(1.05); opacity: 1; }
+}
+.cta-pulse {
+  position: relative;
+}
+.cta-pulse::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: rgba(255 255 255 / 0.3);
+  animation: cta-pulse-ring 2s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes cta-pulse-ring {
+  0%   { transform: scale(0.95); opacity: 0.6; }
+  100% { transform: scale(1.15); opacity: 0; }
+}
+
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -200,11 +320,31 @@ body {
   animation-play-state: paused;
 }
 
+/* Trust section infinite marquee (yavaş döngü) */
+.animate-trust-marquee {
+  animation: marquee 45s linear infinite;
+}
+.animate-trust-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar but keep scroll (carousel) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-bg, .hero-bg::before,
   .hero-anim-1, .hero-anim-2, .hero-anim-3, .hero-anim-4,
   .btn-shimmer::after, .btn-gold-shimmer::after,
-  .marquee-track {
+  .marquee-track,
+  .animate-trust-marquee,
+  .animate-strategy-gradient,
+  .cta-pulse::before {
     animation: none;
   }
   .hero-anim-1, .hero-anim-2, .hero-anim-3, .hero-anim-4 {
