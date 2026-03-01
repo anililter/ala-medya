@@ -37,7 +37,7 @@ yarn-error.log*
 # Cursor / IDE
 .agents/
 skills-lock.json
-alamedya/
+
 
 # vercel
 .vercel
