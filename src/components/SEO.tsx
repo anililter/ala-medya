@@ -37,13 +37,13 @@ const DEFAULT_ORGANIZATION: OrganizationSchema = {
   name: "Ala Medya",
   url: SITE_URL,
   logo: `${SITE_URL}/ala-medya-logo.png`,
-  telephone: "+90-333-573-55-68",
+  telephone: "+90 531 944 38 85",
   email: "info@alamedya.com",
   description:
     "Yapay zeka destekli 360° dijital pazarlama ajansı. Google Premier Partner vizyonu, 8 yıllık sektörel tecrübe. Dijital reklam, SEO, sosyal medya, web tasarım ve dönüşüm optimizasyonu (CRO) alanlarında veri odaklı strateji ve uygulama.",
   sameAs: [
     "https://www.instagram.com/alamedya/",
-    "https://wa.me/903335735568",
+    "https://wa.me/905319443885",
   ],
 };
 

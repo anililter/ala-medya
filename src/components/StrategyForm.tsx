@@ -1,23 +1,17 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const STEP_SECTOR = 1;
-const STEP_GOAL = 2;
-const STEP_CONTACT = 3;
-
-const SECTORS = [
-  { id: "saglik-turizmi", label: "Sağlık", icon: "saglik" as const },
-  { id: "psikoloji", label: "Psikoloji", icon: "psikoloji" as const },
-  { id: "gayrimenkul", label: "Gayrimenkul", icon: "gayrimenkul" as const },
-  { id: "diger", label: "Diğer", icon: "diger" as const },
-];
-
-const GOALS = [
-  { id: "satis", label: "Satış Artışı" },
-  { id: "marka", label: "Marka Bilinirliği" },
-  { id: "randevu", label: "Randevu Sayısı" },
+const MAIN_SERVICES = [
+  { id: "dijital-reklam", label: "Dijital Reklam Yönetimi", href: "/hizmetler/dijital-reklam" },
+  { id: "kreatif-psikolojisi", label: "Kreatif Psikolojisi", href: "/hizmetler/kreatif-psikolojisi" },
+  { id: "raporlama-ve-analiz", label: "Raporlama ve Analiz", href: "/hizmetler/raporlama-ve-analiz" },
+  { id: "seo", label: "SEO", href: "/hizmetler/seo" },
+  { id: "sosyal-medya", label: "Sosyal Medya Yönetimi", href: "/hizmetler/sosyal-medya" },
+  { id: "icerik-pazarlama", label: "İçerik Pazarlama", href: "/hizmetler/icerik-pazarlama" },
+  { id: "web-tasarim", label: "Web Tasarım & Yazılım", href: "/hizmetler/web-tasarim" },
+  { id: "donusum-optimizasyonu", label: "Dönüşüm Optimizasyonu (CRO)", href: "/hizmetler/donusum-optimizasyonu" },
 ];
 
 function validateWebsite(url: string): boolean {
@@ -37,34 +31,16 @@ function validatePhone(phone: string): boolean {
 }
 
 export function StrategyForm() {
-  const [step, setStep] = useState(1);
-  const [direction, setDirection] = useState<"next" | "prev">("next");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const [sector, setSector] = useState<string | null>(null);
-  const [goal, setGoal] = useState<string | null>(null);
+  const [service, setService] = useState<string | null>(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
   const [phone, setPhone] = useState("");
+  const [note, setNote] = useState("");
 
   const [fieldError, setFieldError] = useState<string | null>(null);
-
-  const progressPercent = (step / 3) * 100;
-
-  const goNext = useCallback(() => {
-    setDirection("next");
-    setFieldError(null);
-    if (step === STEP_SECTOR && sector) setStep(STEP_GOAL);
-    else if (step === STEP_GOAL && goal) setStep(STEP_CONTACT);
-  }, [step, sector, goal]);
-
-  const goPrev = useCallback(() => {
-    setDirection("prev");
-    setFieldError(null);
-    if (step === STEP_CONTACT) setStep(STEP_GOAL);
-    else if (step === STEP_GOAL) setStep(STEP_SECTOR);
-  }, [step]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -90,15 +66,14 @@ export function StrategyForm() {
       return;
     }
 
-    const sectorLabel = SECTORS.find((s) => s.id === sector)?.label ?? sector ?? "—";
-    const goalLabel = GOALS.find((g) => g.id === goal)?.label ?? goal ?? "—";
+    const serviceLabel = MAIN_SERVICES.find((s) => s.id === service)?.label ?? service ?? "—";
 
     const message = [
       "[Strateji Analizi]",
-      `Sektör: ${sectorLabel}`,
-      `Ana hedef: ${goalLabel}`,
+      `Hizmet: ${serviceLabel}`,
       `Web: ${website.trim() || "—"}`,
       `Telefon: ${phone.trim() || "—"}`,
+      `Not: ${note.trim() || "—"}`,
     ].join("\n");
 
     setStatus("loading");
@@ -116,13 +91,12 @@ export function StrategyForm() {
       });
       if (!res.ok) throw new Error();
       setStatus("success");
-      setSector(null);
-      setGoal(null);
+      setService(null);
       setName("");
       setEmail("");
       setWebsite("");
       setPhone("");
-      setStep(1);
+      setNote("");
     } catch {
       setStatus("error");
       setFieldError("Gönderim sırasında bir şey ters gitti. Lütfen tekrar deneyin veya WhatsApp üzerinden yazın.");
@@ -147,16 +121,6 @@ export function StrategyForm() {
           }}
           aria-hidden
         />
-
-        {/* Progress bar – en üstte ince Apple mavisi */}
-        <div className="relative h-1 w-full bg-[var(--border)]">
-          <motion.div
-            className="absolute left-0 top-0 h-full rounded-r-full bg-blue-500"
-            initial={false}
-            animate={{ width: `${progressPercent}%` }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          />
-        </div>
 
         <div className="relative px-6 py-12 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
           <AnimatePresence mode="wait">
@@ -197,206 +161,149 @@ export function StrategyForm() {
               </motion.div>
             ) : (
               <motion.div
-                key={`step-${step}`}
-                initial={{ opacity: 0, x: direction === "next" ? 80 : -80 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: direction === "next" ? -80 : 80 }}
-                transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
+                key="classic-form"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
                 className="mx-auto max-w-3xl"
               >
-                {/* Step 1 – Sektör */}
-                {step === STEP_SECTOR && (
-                  <>
-                    <h2 className="text-4xl font-bold tracking-tight text-[#1d1d1f] sm:text-5xl lg:text-6xl">
-                      Hangi sektörde devleşiyoruz?
-                    </h2>
-                    <p className="mt-4 text-xl leading-relaxed text-[var(--muted)]">
-                      Bir seçenek seçin; bir sonraki adımda hedefinizi belirleyeceğiz.
-                    </p>
-                    <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                      {SECTORS.map((s) => (
-                        <button
-                          key={s.id}
-                          type="button"
-                          onClick={() => setSector(sector === s.id ? null : s.id)}
-                          className={`flex flex-col items-center gap-4 rounded-2xl border-2 px-6 py-8 text-center transition duration-200 ${
-                            sector === s.id
-                              ? "border-blue-500 bg-blue-50/90 text-blue-700 shadow-lg shadow-blue-500/20"
-                              : "border-[var(--border)] bg-white/80 text-[var(--foreground)] hover:border-blue-300 hover:bg-blue-50/50 hover:shadow-md"
-                          }`}
-                        >
-                          <SectorIcon type={s.icon} />
-                          <span className="text-xl font-semibold">{s.label}</span>
-                        </button>
-                      ))}
-                    </div>
-                    <div className="mt-12 flex justify-end">
-                      <button
-                        type="button"
-                        onClick={goNext}
-                        disabled={!sector}
-                        className="rounded-full bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-blue-600/30 transition hover:bg-blue-700 disabled:opacity-40 disabled:shadow-none"
+                <form onSubmit={handleSubmit}>
+                  <h2 className="text-4xl font-bold tracking-tight text-[#1d1d1f] sm:text-5xl lg:text-6xl">
+                    Ücretsiz Strateji Analizi
+                  </h2>
+                  <p className="mt-4 text-xl leading-relaxed text-[var(--muted)]">
+                    Kısa bir form doldurun, ekibimiz size özel yol haritasını paylaşsın.
+                  </p>
+
+                  <div className="mt-12 grid gap-6 md:grid-cols-2">
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-[var(--foreground)]">
+                        Hizmet seçimi
+                      </label>
+                      <select
+                        value={service ?? ""}
+                        onChange={(e) => setService(e.target.value || null)}
+                        disabled={status === "loading"}
+                        className="input-apple w-full text-lg sm:text-xl"
                       >
-                        Devam
-                      </button>
-                    </div>
-                  </>
-                )}
-
-                {/* Step 2 – Hedef */}
-                {step === STEP_GOAL && (
-                  <>
-                    <h2 className="text-4xl font-bold tracking-tight text-[#1d1d1f] sm:text-5xl lg:text-6xl">
-                      Ana hedefiniz nedir?
-                    </h2>
-                    <p className="mt-4 text-xl leading-relaxed text-[var(--muted)]">
-                      Strateji önerimizi buna göre şekillendireceğiz.
-                    </p>
-                    <div className="mt-12 grid gap-4 sm:grid-cols-3">
-                      {GOALS.map((g) => (
-                        <button
-                          key={g.id}
-                          type="button"
-                          onClick={() => setGoal(goal === g.id ? null : g.id)}
-                          className={`rounded-2xl border-2 px-6 py-8 text-center text-xl font-semibold transition duration-200 ${
-                            goal === g.id
-                              ? "border-blue-500 bg-blue-50/90 text-blue-700 shadow-lg shadow-blue-500/20"
-                              : "border-[var(--border)] bg-white/80 text-[var(--foreground)] hover:border-blue-300 hover:bg-blue-50/50 hover:shadow-md"
-                          }`}
-                        >
-                          {g.label}
-                        </button>
-                      ))}
-                    </div>
-                    <div className="mt-12 flex justify-between">
-                      <button
-                        type="button"
-                        onClick={goPrev}
-                        className="rounded-full border-2 border-[var(--border)] bg-white/80 px-8 py-4 text-lg font-semibold text-[var(--foreground)] transition hover:border-blue-300 hover:bg-blue-50/50"
-                      >
-                        Geri
-                      </button>
-                      <button
-                        type="button"
-                        onClick={goNext}
-                        disabled={!goal}
-                        className="rounded-full bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-blue-600/30 transition hover:bg-blue-700 disabled:opacity-40 disabled:shadow-none"
-                      >
-                        Devam
-                      </button>
-                    </div>
-                  </>
-                )}
-
-                {/* Step 3 – İletişim */}
-                {step === STEP_CONTACT && (
-                  <form onSubmit={handleSubmit}>
-                    <h2 className="text-4xl font-bold tracking-tight text-[#1d1d1f] sm:text-5xl lg:text-6xl">
-                      Sizinle nasıl iletişime geçelim?
-                    </h2>
-                    <p className="mt-4 text-xl leading-relaxed text-[var(--muted)]">
-                      Adınız, e-posta ve isteğe bağlı web/telefon yeterli.
-                    </p>
-
-                    <div className="mt-12 space-y-8">
-                      <div>
-                        <label htmlFor="strategy-name" className="sr-only">
-                          Ad Soyad
-                        </label>
-                        <input
-                          id="strategy-name"
-                          type="text"
-                          value={name}
-                          onChange={(e) => setName(e.target.value)}
-                          disabled={status === "loading"}
-                          placeholder="Ad Soyad"
-                          className="input-apple w-full text-2xl sm:text-3xl"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="strategy-email" className="sr-only">
-                          E-posta
-                        </label>
-                        <input
-                          id="strategy-email"
-                          type="email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          disabled={status === "loading"}
-                          placeholder="E-posta"
-                          className="input-apple w-full text-2xl sm:text-3xl"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="strategy-website" className="sr-only">
-                          Web sitesi
-                        </label>
-                        <input
-                          id="strategy-website"
-                          type="text"
-                          inputMode="url"
-                          value={website}
-                          onChange={(e) => setWebsite(e.target.value)}
-                          disabled={status === "loading"}
-                          placeholder="Web sitesi (isteğe bağlı)"
-                          className="input-apple w-full text-2xl sm:text-3xl"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="strategy-phone" className="sr-only">
-                          Telefon
-                        </label>
-                        <input
-                          id="strategy-phone"
-                          type="tel"
-                          value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
-                          disabled={status === "loading"}
-                          placeholder="Telefon (isteğe bağlı)"
-                          className="input-apple w-full text-2xl sm:text-3xl"
-                        />
-                      </div>
+                        <option value="" disabled>
+                          Seçiniz…
+                        </option>
+                        {MAIN_SERVICES.map((s) => (
+                          <option key={s.id} value={s.id}>
+                            {s.label}
+                          </option>
+                        ))}
+                      </select>
                     </div>
 
-                    <div className="mt-8 flex flex-wrap items-center gap-4 rounded-2xl border border-blue-200/60 bg-blue-50/50 px-5 py-4">
-                      <span className="inline-flex items-center gap-2 text-sm text-blue-800">
-                        <span className="relative flex h-2 w-2">
-                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-500 opacity-75" />
-                          <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-600" />
-                        </span>
-                        Stratejiniz Gemini & Claude AI modellerimizle analiz edilecektir.
+                    <div>
+                      <label htmlFor="strategy-name" className="mb-2 block text-sm font-medium text-[var(--foreground)]">
+                        Ad Soyad
+                      </label>
+                      <input
+                        id="strategy-name"
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        disabled={status === "loading"}
+                        placeholder="Ad Soyad"
+                        className="input-apple w-full text-lg sm:text-xl"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="strategy-email" className="mb-2 block text-sm font-medium text-[var(--foreground)]">
+                        E-posta
+                      </label>
+                      <input
+                        id="strategy-email"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        disabled={status === "loading"}
+                        placeholder="ornek@eposta.com"
+                        className="input-apple w-full text-lg sm:text-xl"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="strategy-phone" className="mb-2 block text-sm font-medium text-[var(--foreground)]">
+                        Telefon (isteğe bağlı)
+                      </label>
+                      <input
+                        id="strategy-phone"
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        disabled={status === "loading"}
+                        placeholder="5xx xxx xx xx"
+                        className="input-apple w-full text-lg sm:text-xl"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="strategy-website" className="mb-2 block text-sm font-medium text-[var(--foreground)]">
+                        Web sitesi (isteğe bağlı)
+                      </label>
+                      <input
+                        id="strategy-website"
+                        type="text"
+                        inputMode="url"
+                        value={website}
+                        onChange={(e) => setWebsite(e.target.value)}
+                        disabled={status === "loading"}
+                        placeholder="alamedya.com"
+                        className="input-apple w-full text-lg sm:text-xl"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="mt-6">
+                    <label htmlFor="strategy-note" className="mb-2 block text-sm font-medium text-[var(--foreground)]">
+                      Not (isteğe bağlı)
+                    </label>
+                    <textarea
+                      id="strategy-note"
+                      value={note}
+                      onChange={(e) => setNote(e.target.value)}
+                      disabled={status === "loading"}
+                      placeholder="Kısaca hedefiniz, bütçe aralığı, mevcut kanallar vb."
+                      className="input-apple w-full resize-y text-lg leading-relaxed sm:text-xl"
+                      rows={5}
+                    />
+                  </div>
+
+                  <div className="mt-8 flex flex-wrap items-center gap-4 rounded-2xl border border-blue-200/60 bg-blue-50/50 px-5 py-4">
+                    <span className="inline-flex items-center gap-2 text-sm text-blue-800">
+                      <span className="relative flex h-2 w-2">
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-500 opacity-75" />
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-600" />
                       </span>
-                    </div>
+                      Stratejiniz AI destekli analizle değerlendirilir.
+                    </span>
+                  </div>
 
-                    <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-                      <button
-                        type="button"
-                        onClick={goPrev}
-                        disabled={status === "loading"}
-                        className="order-2 rounded-full border-2 border-[var(--border)] bg-white/80 px-8 py-4 text-lg font-semibold text-[var(--foreground)] transition hover:border-blue-300 hover:bg-blue-50/50 sm:order-1"
-                      >
-                        Geri
-                      </button>
-                      <button
-                        type="submit"
-                        disabled={status === "loading"}
-                        className="btn-shimmer order-1 w-full shrink-0 rounded-full bg-gradient-to-r from-blue-600 to-indigo-700 px-10 py-5 text-xl font-semibold text-white shadow-lg shadow-blue-600/30 transition hover:scale-[1.02] hover:shadow-blue-600/40 disabled:scale-100 disabled:opacity-70 sm:order-2"
-                      >
-                        {status === "loading" ? "Gönderiliyor…" : "Ücretsiz Analizimi Başlat"}
-                      </button>
-                    </div>
-
-                    <p className="mt-6 text-sm text-[var(--muted)]">
+                  <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+                    <p className="text-sm text-[var(--muted)]">
                       Verileriniz KVKK uyumluluğuyla korunur. Spam yok, sadece strateji.
                     </p>
+                    <button
+                      type="submit"
+                      disabled={status === "loading" || !service}
+                      className="btn-shimmer w-full shrink-0 rounded-full bg-gradient-to-r from-blue-600 to-indigo-700 px-10 py-5 text-xl font-semibold text-white shadow-lg shadow-blue-600/30 transition hover:scale-[1.02] hover:shadow-blue-600/40 disabled:scale-100 disabled:opacity-70 sm:w-auto"
+                    >
+                      {status === "loading" ? "Gönderiliyor…" : "Gönder"}
+                    </button>
+                  </div>
 
-                    {(fieldError || status === "error") && (
-                      <p className="mt-4 text-base text-red-600">
-                        {fieldError || "Gönderim sırasında bir hata oluştu. Lütfen tekrar deneyin."}
-                      </p>
-                    )}
-                  </form>
-                )}
+                  {(fieldError || status === "error") && (
+                    <p className="mt-4 text-base text-red-600">
+                      {fieldError || "Gönderim sırasında bir hata oluştu. Lütfen tekrar deneyin."}
+                    </p>
+                  )}
+                </form>
               </motion.div>
             )}
           </AnimatePresence>

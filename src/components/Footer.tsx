@@ -9,8 +9,6 @@ const FOOTER_COLUMNS = [
     title: "Hizmetler",
     links: [
       { label: "Google Ads (Premier Partner Gücü)", href: "/hizmetler/dijital-reklam/google-ads" },
-      { label: "Meta Ads (Facebook & Instagram)", href: "/hizmetler/dijital-reklam/meta-ads" },
-      { label: "TikTok & LinkedIn Reklamları", href: "/hizmetler/dijital-reklam/tiktok-linkedin-ads" },
       { label: "SEO & İçerik Pazarlaması", href: "/hizmetler/seo" },
       { label: "Kreatif Psikolojisi & Tasarım", href: "/hizmetler/kreatif-psikolojisi" },
     ],
@@ -28,8 +26,8 @@ const FOOTER_COLUMNS = [
     title: "Teknoloji & Veri",
     links: [
       { label: "AI Entegrasyon (Gemini & Claude)", href: "/hizmetler/kreatif-psikolojisi" },
-      { label: "Raporlama & Analiz Paneli", href: "/hizmetler/raporlama-ve-analiz" },
-      { label: "Sunucu Taraflı İzleme (CAPI)", href: "/hizmetler/dijital-reklam/meta-ads" },
+      { label: "Raporlama & Analiz", href: "/hizmetler/raporlama-ve-analiz" },
+      { label: "Sunucu Taraflı İzleme (CAPI)", href: "/hizmetler/dijital-reklam/facebook-reklamlari" },
       { label: "Google Premier Partnerlik", href: "/hizmetler/dijital-reklam/google-ads" },
     ],
   },
@@ -46,7 +44,8 @@ const FOOTER_COLUMNS = [
     title: "İletişim & Destek",
     links: [
       { label: "WhatsApp Hattı", href: "https://wa.me/905319443885" },
-      { label: "+90 531 944 3885", href: "tel:+905319443885" },
+      { label: "+90 531 944 38 85", href: "tel:+905319443885" },
+      { label: "info@alamedya.com", href: "mailto:info@alamedya.com" },
       { label: "Strateji Analiz Formu", href: "/#iletisim" },
       { label: "Teknik Destek", href: "/#iletisim" },
     ],

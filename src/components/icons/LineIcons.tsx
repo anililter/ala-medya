@@ -1,6 +1,6 @@
 "use client";
 
-import { useId } from "react";
+import { useId, type ReactElement } from "react";
 
 const gradientDef = (id: string) => (
   <defs>
@@ -25,7 +25,7 @@ export function ServiceLineIcon({
   const stroke = `url(#${gradientId})`;
   const vb = "0 0 64 64";
 
-  const icons: Record<typeof type, JSX.Element> = {
+  const icons: Record<typeof type, ReactElement> = {
     ads: (
       <svg viewBox={vb} className={className} aria-hidden>
         {gradientDef(gradientId)}
@@ -135,7 +135,7 @@ export function MethodologyStepIcon({
   const stroke = `url(#${gradientId})`;
   const vb = "0 0 64 64";
 
-  const icons: [JSX.Element, JSX.Element, JSX.Element, JSX.Element] = [
+  const icons: [ReactElement, ReactElement, ReactElement, ReactElement] = [
     (
       <svg key="0" viewBox={vb} className={className} aria-hidden>
         {gradientDef(gradientId)}
@@ -210,7 +210,7 @@ export function FaqCategoryIcon({
   const stroke = `url(#${gradientId})`;
   const vb = "0 0 32 32";
 
-  const icons: Record<typeof category, JSX.Element> = {
+  const icons: Record<typeof category, ReactElement> = {
     time: (
       <svg viewBox={vb} className={className} aria-hidden>
         {gradientDef(gradientId)}

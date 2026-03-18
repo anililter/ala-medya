@@ -26,10 +26,10 @@ export function KreatifPsikolojisiContent() {
             <span className="relative z-10">Kreatif Stratejinizi Konuşalım</span>
           </Link>
           <Link
-            href="/hizmetler/dijital-reklam/meta-ads"
+            href="/hizmetler/dijital-reklam"
             className="inline-flex rounded-full border border-[var(--border)] bg-transparent px-6 py-3.5 text-sm font-medium text-[var(--foreground)] transition hover:bg-[var(--muted)]/10"
           >
-            Meta & TikTok & LinkedIn Reklamları
+            Dijital Reklam Hizmetleri
           </Link>
         </div>
       </section>
@@ -176,16 +176,16 @@ export function KreatifPsikolojisiContent() {
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link
-                  href="/hizmetler/dijital-reklam/meta-ads"
+                  href="/hizmetler/dijital-reklam/instagram-reklamlari"
                   className="btn-shimmer relative inline-flex rounded-full bg-[var(--foreground)] px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-95"
                 >
-                  <span className="relative z-10">Meta Kreatifleri</span>
+                  <span className="relative z-10">Instagram Reklamları</span>
                 </Link>
                 <Link
-                  href="/hizmetler/dijital-reklam/tiktok-linkedin-ads"
+                  href="/hizmetler/dijital-reklam/tiktok-reklamlari"
                   className="inline-flex rounded-full border border-[var(--border)] bg-white px-5 py-2.5 text-sm font-medium text-[var(--foreground)] transition hover:bg-[var(--muted)]/10"
                 >
-                  TikTok & LinkedIn
+                  TikTok Reklamları
                 </Link>
               </div>
             </div>

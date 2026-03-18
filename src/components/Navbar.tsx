@@ -68,8 +68,17 @@ const SERVICES_MENU: Array<{
     href: "/hizmetler/dijital-reklam",
     children: [
       { label: "Google Ads Yönetimi", href: "/hizmetler/dijital-reklam/google-ads" },
-      { label: "Meta Ads (Facebook & Instagram)", href: "/hizmetler/dijital-reklam/meta-ads" },
-      { label: "TikTok & LinkedIn Ads", href: "/hizmetler/dijital-reklam/tiktok-linkedin-ads" },
+      { label: "Instagram Reklamları", href: "/hizmetler/dijital-reklam/instagram-reklamlari" },
+      { label: "Facebook Reklamları", href: "/hizmetler/dijital-reklam/facebook-reklamlari" },
+      { label: "YouTube Reklamları", href: "/hizmetler/dijital-reklam/youtube-reklamlari" },
+      { label: "LinkedIn Reklamları", href: "/hizmetler/dijital-reklam/linkedin-reklamlari" },
+      { label: "TikTok Reklamları", href: "/hizmetler/dijital-reklam/tiktok-reklamlari" },
+      { label: "Twitter (X) Reklamları", href: "/hizmetler/dijital-reklam/twitter-reklamlari" },
+      { label: "Snapchat Reklamları", href: "/hizmetler/dijital-reklam/snapchat-reklamlari" },
+      { label: "Gmail Reklamları", href: "/hizmetler/dijital-reklam/gmail-reklamlari" },
+      { label: "Mobil Uygulama Reklamları", href: "/hizmetler/dijital-reklam/mobil-uygulama-reklamlari" },
+      { label: "Radyo Reklamları", href: "/hizmetler/dijital-reklam/radyo-reklamlari" },
+      { label: "Google Haritalara Kayıt", href: "/hizmetler/dijital-reklam/google-haritalara-kayit" },
     ],
   },
   { label: "Kreatif Psikolojisi", href: "/hizmetler/kreatif-psikolojisi" },
@@ -95,13 +104,16 @@ const SEKTORLER_MENU = [
 ];
 
 const navLinkClass =
-  "text-base tracking-tight text-[#86868b] transition-all duration-200 hover:text-[var(--foreground)]";
+  "flex h-16 items-center text-base leading-none tracking-tight text-[#86868b] transition-all duration-200 hover:text-[var(--foreground)]";
 
 export function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [dijitalSubOpen, setDijitalSubOpen] = useState(false);
   const [sektorlerOpen, setSektorlerOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileDijitalOpen, setMobileDijitalOpen] = useState(false);
   const servicesTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const dijitalSubTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const sektorlerTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   return (
@@ -121,7 +133,7 @@ export function Navbar() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden h-16 items-center gap-8 md:flex">
           <Link href="/" className={navLinkClass}>
             Anasayfa
           </Link>
@@ -135,7 +147,10 @@ export function Navbar() {
               setServicesOpen(true);
             }}
             onMouseLeave={() => {
-              servicesTimeout.current = setTimeout(() => setServicesOpen(false), 150);
+              servicesTimeout.current = setTimeout(() => {
+                setServicesOpen(false);
+                setDijitalSubOpen(false);
+              }, 150);
             }}
           >
             <span className={`cursor-pointer ${navLinkClass}`}>Hizmetler</span>
@@ -144,26 +159,44 @@ export function Navbar() {
                 <div className="min-w-[280px] rounded-xl border border-[var(--border)] bg-white/95 py-2 shadow-lg backdrop-blur-xl">
                   {SERVICES_MENU.map((item) =>
                     item.children ? (
-                      <div key={item.label} className="relative">
+                      <div
+                        key={item.label}
+                        className="relative"
+                        onMouseEnter={() => {
+                          clearTimeout(dijitalSubTimeout.current);
+                          setDijitalSubOpen(true);
+                        }}
+                        onMouseLeave={() => {
+                          dijitalSubTimeout.current = setTimeout(() => setDijitalSubOpen(false), 120);
+                        }}
+                      >
                         <Link
                           href={item.href}
-                          className="block px-4 py-2.5 text-base tracking-tight text-[var(--foreground)] transition hover:bg-[var(--border)]/40"
+                          className="flex items-center justify-between px-4 py-2.5 text-base tracking-tight text-[var(--foreground)] transition hover:bg-[var(--border)]/40"
                           onClick={() => setServicesOpen(false)}
                         >
                           {item.label}
+                          <svg className="h-4 w-4 shrink-0 text-[#86868b]" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                            <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.06l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
+                          </svg>
                         </Link>
-                        <div className="ml-2 border-l border-[var(--border)] pl-2">
-                          {item.children.map((c) => (
-                            <Link
-                              key={c.href}
-                              href={c.href}
-                              className="block px-3 py-2 text-base tracking-tight text-[#86868b] transition hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]"
-                              onClick={() => setServicesOpen(false)}
-                            >
-                              {c.label}
-                            </Link>
-                          ))}
-                        </div>
+                        {dijitalSubOpen && (
+                          <div className="absolute left-full top-0 z-50 ml-1 min-w-[240px] rounded-xl border border-[var(--border)] bg-white/98 py-2 shadow-lg backdrop-blur-xl">
+                            {item.children.map((c) => (
+                              <Link
+                                key={c.href}
+                                href={c.href}
+                                className="block px-4 py-2.5 text-base tracking-tight text-[#86868b] transition hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]"
+                                onClick={() => {
+                                  setServicesOpen(false);
+                                  setDijitalSubOpen(false);
+                                }}
+                              >
+                                {c.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     ) : (item.icon || item.description) ? (
                       <Link
@@ -255,7 +288,7 @@ export function Navbar() {
           </div>
 
           <Link href="/hizmetler/raporlama-ve-analiz" className={navLinkClass}>
-            Veri Paneli
+            Raporlama
           </Link>
           <Link href="/vaka-analizleri" className={navLinkClass}>
             Vaka Analizleri
@@ -303,10 +336,29 @@ export function Navbar() {
             {SERVICES_MENU.map((item) =>
               item.children ? (
                 <div key={item.label}>
-                  <Link href={item.href} className="block rounded px-3 py-2.5 text-base font-medium tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40" onClick={() => setMobileOpen(false)}>{item.label}</Link>
-                  {item.children.map((c) => (
-                    <Link key={c.href} href={c.href} className="block rounded px-5 py-2 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>{c.label}</Link>
-                  ))}
+                  <button
+                    type="button"
+                    className="flex w-full items-center justify-between rounded px-3 py-2.5 text-left text-base font-medium tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40"
+                    onClick={() => setMobileDijitalOpen((prev) => !prev)}
+                    aria-expanded={mobileDijitalOpen}
+                    aria-controls="mobile-dijital-submenu"
+                  >
+                    {item.label}
+                    <svg
+                      className={`h-4 w-4 shrink-0 text-[#86868b] transition-transform ${mobileDijitalOpen ? "rotate-90" : ""}`}
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden
+                    >
+                      <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.06l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
+                    </svg>
+                  </button>
+                  <div id="mobile-dijital-submenu" className={mobileDijitalOpen ? "block" : "hidden"}>
+                    <Link href={item.href} className="block rounded px-5 py-2 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Genel</Link>
+                    {item.children.map((c) => (
+                      <Link key={c.href} href={c.href} className="block rounded px-5 py-2 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>{c.label}</Link>
+                    ))}
+                  </div>
                 </div>
               ) : (
                 <Link key={item.href} href={item.href} className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>{item.label}</Link>
@@ -318,7 +370,7 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <Link href="/hizmetler/raporlama-ve-analiz" className="mt-2 block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Veri Paneli</Link>
+            <Link href="/hizmetler/raporlama-ve-analiz" className="mt-2 block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Raporlama</Link>
             <Link href="/vaka-analizleri" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Vaka Analizleri</Link>
             <Link href="/blog" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Blog</Link>
             <Link href="/contact" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>İletişim</Link>

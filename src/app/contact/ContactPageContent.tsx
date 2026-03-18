@@ -162,7 +162,7 @@ export function ContactPageContent() {
             transition={{ duration: 0.5 }}
           >
             <a
-              href="https://wa.me/903335735568"
+              href="https://wa.me/905319443885"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 rounded-2xl border-2 border-green-500/40 bg-green-50 px-6 py-4 transition hover:bg-green-100 dark:border-green-500/50 dark:bg-green-950/30 dark:hover:bg-green-950/40"
@@ -173,17 +173,19 @@ export function ContactPageContent() {
               <span className="text-lg font-semibold text-green-700 dark:text-green-300">WhatsApp ile Yazın</span>
             </a>
             <a
-              href="tel:+903335735568"
+              href="tel:+905319443885"
               className="text-2xl font-semibold tracking-tight text-[var(--foreground)] hover:text-[var(--gold)]"
             >
-              0 333 573 55 68
+              +90 531 944 38 85
             </a>
             <div className="flex flex-col items-center gap-4 text-center">
               <svg className="h-12 w-12 text-[var(--gold)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              <p className="text-sm text-[var(--muted)]">İstanbul, Türkiye</p>
+              <p className="text-sm text-[var(--muted)]">
+                Cumhuriyet Mah. E-5 Karayolu Firuze Sokak İstanbul Outlet Park Outlet Park 2. Katında Merkez, K:2 D:64, 34500 Büyükçekmece/İstanbul
+              </p>
               <a href="mailto:info@alamedya.com" className="font-medium text-[var(--gold)] hover:underline">
                 info@alamedya.com
               </a>

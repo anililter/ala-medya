@@ -9,8 +9,9 @@ const SERVICES_MENU = [
     href: "/hizmetler/dijital-reklam",
     children: [
       { label: "Google Ads Yönetimi", href: "/hizmetler/dijital-reklam/google-ads" },
-      { label: "Meta Ads (Facebook & Instagram)", href: "/hizmetler/dijital-reklam/meta-ads" },
-      { label: "TikTok & LinkedIn Ads", href: "/hizmetler/dijital-reklam/tiktok-linkedin-ads" },
+      { label: "Instagram Reklamları", href: "/hizmetler/dijital-reklam/instagram-reklamlari" },
+      { label: "Facebook Reklamları", href: "/hizmetler/dijital-reklam/facebook-reklamlari" },
+      { label: "Dijital Reklam (Tümü)", href: "/hizmetler/dijital-reklam" },
     ],
   },
   { label: "Kreatif Psikolojisi", href: "/hizmetler/kreatif-psikolojisi" },

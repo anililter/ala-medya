@@ -1,9 +1,9 @@
 import { RaporlamaVeAnalizContent } from "./RaporlamaVeAnalizContent";
 
 export const metadata = {
-  title: "Raporlama ve Analiz | Ala Medya – Veri Görselleştirme ve Şeffaflık",
+  title: "Raporlama ve Analiz | Ala Medya – Detaylı Raporlama ve Şeffaf İletişim",
   description:
-    "Gerçek zamanlı dashboard, AI destekli içgörüler, sektörel KPI'lar. Meta, Google, LinkedIn, TikTok verileri tek merkezde. CAPI ve sunucu taraflı raporlama ile kayıpsız veri.",
+    "Haftalık ve aylık performans raporları, sektör bazlı KPI takibi ve net aksiyon planı. Meta, Google, LinkedIn ve TikTok için tek formatta, anlaşılır raporlama ve düzenli iletişim.",
 };
 
 export default function RaporlamaVeAnalizPage() {

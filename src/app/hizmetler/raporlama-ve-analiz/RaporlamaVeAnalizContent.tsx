@@ -2,31 +2,6 @@
 
 import Link from "next/link";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  ResponsiveContainer,
-  Tooltip,
-} from "recharts";
-
-/* ─── Apple-style minimalist palette ─── */
-const CHART_COLORS = {
-  primary: "#34C759",
-  secondary: "#007AFF",
-  tertiary: "#8E8E93",
-  fill: "rgba(52, 199, 89, 0.12)",
-};
-
-const MOCK_ROAS_DATA = [
-  { ay: "Oca", roas: 2.1 },
-  { ay: "Şub", roas: 2.4 },
-  { ay: "Mar", roas: 2.2 },
-  { ay: "Nis", roas: 2.8 },
-  { ay: "May", roas: 3.1 },
-  { ay: "Haz", roas: 2.9 },
-];
 
 const SECTOR_KPIS = [
   {
@@ -52,49 +27,65 @@ const SECTOR_KPIS = [
 export function RaporlamaVeAnalizContent() {
   return (
     <main className="bg-[#f5f5f7]">
-      {/* Hero + Bento: Gerçek Zamanlı Şeffaflık */}
+      {/* Hero: Detaylı raporlama + iletişim */}
       <section className="px-6 pt-28 pb-16 sm:pt-36 sm:pb-20">
         <div className="mx-auto w-[90%] max-w-[1200px]">
           <p className="text-sm font-medium uppercase tracking-widest text-[var(--muted)]">
-            Veri Görselleştirme ve Şeffaflık
+            Detaylı Raporlama ve Şeffaf İletişim
           </p>
           <h1 className="mt-6 font-semibold tracking-tight text-[var(--foreground)] text-4xl sm:text-5xl">
-            Karmaşıklığı Netliğe Dönüştüren Bir Dashboard
+            Rakamları Yalınlaştırır, Aksiyona Çeviririz
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[var(--muted)]">
-            Reklam bütçenizin her kuruşunu, Apple ekosistemi kadar akıcı bir panelde takip edin. Meta, Google, LinkedIn ve TikTok verilerini tek bir merkezde topluyor, manuel raporlama hatalarını ortadan kaldırıyoruz. <strong className="text-[var(--foreground)]">8 yıllık</strong> deneyimimizle, sadece rakamları değil, o rakamların arkasındaki ticari potansiyeli gösteriyoruz.
+            Meta, Google, LinkedIn ve TikTok çalışmalarınızı tek bir formatta raporlayıp size düzenli olarak iletiyoruz. <strong className="text-[var(--foreground)]">8 yıllık</strong> refleksimizle yalnızca “ne oldu?”yu değil, “neden oldu?”yu ve “şimdi ne yapıyoruz?”u netleştiriyoruz.
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {["Meta", "Google", "LinkedIn", "TikTok"].map((platform) => (
+            {[
+              { title: "Haftalık Rapor", desc: "Performans özeti + aksiyonlar" },
+              { title: "Aylık Toplantı", desc: "Strateji + hedef güncellemesi" },
+              { title: "KPI Takibi", desc: "Sektöre özel metrikler" },
+              { title: "Net İletişim", desc: "Tek kontaktan hızlı dönüş" },
+            ].map((item) => (
               <div
-                key={platform}
+                key={item.title}
                 className="rounded-2xl border border-[var(--border)] bg-white p-5 shadow-sm transition hover:shadow-md"
               >
-                <span className="text-sm font-medium text-[var(--muted)]">{platform}</span>
-                <p className="mt-1 font-semibold tabular-nums text-[var(--foreground)]">Tek panelde</p>
+                <p className="text-sm font-medium text-[var(--muted)]">{item.title}</p>
+                <p className="mt-1 font-semibold text-[var(--foreground)]">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Bento: AI-Powered Insights – gradyan kart */}
+      {/* Rapor formatı: Neleri iletiyoruz */}
       <AnimatedSection>
         <section className="px-6 py-16 sm:py-20">
           <div className="mx-auto w-[90%] max-w-[1200px]">
             <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-slate-50 via-blue-50/50 to-indigo-50/50 shadow-lg dark:from-slate-800/80 dark:via-blue-950/30 dark:to-indigo-950/30">
               <div className="p-8 sm:p-12">
                 <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-3xl">
-                  Rakamlar Konuşur, Yapay Zeka Anlatır
+                  Rapor İçeriği: Özet + İçgörü + Aksiyon
                 </h2>
                 <p className="mt-6 max-w-2xl leading-relaxed text-[var(--muted)]">
-                  <strong className="text-[var(--foreground)]">Gemini</strong> ve <strong className="text-[var(--foreground)]">Claude-3.5</strong> entegrasyonumuz sayesinde, tabloların arasında kaybolmanıza izin vermiyoruz. Panelimiz, reklam performansınızdaki dalgalanmaları otomatik olarak analiz eder ve size &quot;Neden?&quot; sorusunun cevabını insan dilinde verir: <em>&quot;Bu hafta ROAS artışının sebebi, 25-34 yaş aralığındaki etkileşim artışıdır.&quot;</em>
+                  Her rapor, anlaşılır bir özetle başlar; ardından veriyi yorumlar, son olarak da bir sonraki haftanın net aksiyon planını yazarız. Böylece “sadece rapor” değil, yönetilebilir bir süreç teslim ederiz.
                 </p>
-                <div className="mt-8 rounded-2xl border border-[var(--border)] bg-white/80 p-4 dark:bg-black/20">
-                  <p className="text-sm font-medium text-[var(--muted)]">Örnek AI yorumu</p>
-                  <p className="mt-2 font-medium tabular-nums text-[var(--foreground)]">
-                    25-34 yaş · Etkileşim +%18 · ROAS 3.2
-                  </p>
+                <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {[
+                    "Harcama, gösterim, tıklama, dönüşüm",
+                    "CPL / CPA / ROAS / LTV yorumları",
+                    "Hedef kitle & kreatif performansı",
+                    "Landing / CRO notları (varsa)",
+                    "Riskler ve fırsatlar (kısa liste)",
+                    "Gelecek hafta aksiyon planı",
+                  ].map((t) => (
+                    <div key={t} className="rounded-2xl border border-[var(--border)] bg-white/80 p-5 shadow-sm">
+                      <div className="flex items-center gap-3">
+                        <span className="h-2 w-2 rounded-full bg-blue-600" aria-hidden />
+                        <p className="font-medium text-[var(--foreground)]">{t}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -102,54 +93,49 @@ export function RaporlamaVeAnalizContent() {
         </section>
       </AnimatedSection>
 
-      {/* Bento: Mini grafik + Sektörel KPI pill kartları */}
+      {/* İletişim ritmi */}
       <AnimatedSection>
         <section className="px-6 py-16 sm:py-20">
           <div className="mx-auto w-[90%] max-w-[1200px]">
             <div className="grid gap-6 lg:grid-cols-2">
-              {/* Sol: ROAS trend grafiği (Recharts) */}
-              <div className="rounded-2xl border border-[var(--border)] bg-white p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-[var(--foreground)]">ROAS Trendi</h3>
-                <p className="mt-1 text-sm text-[var(--muted)]">Örnek veri · Minimalist palet</p>
-                <div className="mt-6 h-48">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <AreaChart data={MOCK_ROAS_DATA} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
-                      <defs>
-                        <linearGradient id="roasFill" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor={CHART_COLORS.primary} stopOpacity={0.2} />
-                          <stop offset="100%" stopColor={CHART_COLORS.primary} stopOpacity={0} />
-                        </linearGradient>
-                      </defs>
-                      <XAxis dataKey="ay" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: "var(--muted)" }} />
-                      <YAxis hide domain={["dataMin - 0.5", "dataMax + 0.5"]} />
-                      <Tooltip
-                        contentStyle={{ borderRadius: 12, border: "1px solid var(--border)" }}
-                        formatter={(value: number | undefined) => [value != null ? value.toFixed(1) : "", "ROAS"]}
-                        labelFormatter={(label) => `Ay: ${label}`}
-                      />
-                      <Area
-                        type="monotone"
-                        dataKey="roas"
-                        stroke={CHART_COLORS.primary}
-                        strokeWidth={2}
-                        fill="url(#roasFill)"
-                      />
-                    </AreaChart>
-                  </ResponsiveContainer>
-                </div>
+              <div className="rounded-2xl border border-[var(--border)] bg-white p-8 shadow-sm">
+                <h3 className="text-xl font-semibold tracking-tight text-[var(--foreground)]">
+                  Haftalık Rapor
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
+                  Kısa özet, metrikler, kreatif & hedef kitle performansı ve bir sonraki hafta aksiyonları.
+                </p>
+                <ul className="mt-6 space-y-2 text-sm text-[var(--muted)]">
+                  {[
+                    "Toplam harcama ve bütçe dağılımı",
+                    "Dönüşümler ve maliyetler (CPL/CPA)",
+                    "En iyi / en zayıf kampanyalar",
+                    "Deneme planı (A/B) ve optimizasyonlar",
+                  ].map((t) => (
+                    <li key={t} className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--foreground)]" aria-hidden />
+                      {t}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              {/* Sağ: Partner rozeti / güven kartı */}
-              <div className="rounded-2xl border border-[var(--border)] bg-white p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-[var(--foreground)]">Tek Merkez, Tek Gerçek</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">
-                  Tüm kanallarınızın verisi tek panelde. Manuel raporlama hatalarına son.
+
+              <div className="rounded-2xl border border-[var(--border)] bg-white p-8 shadow-sm">
+                <h3 className="text-xl font-semibold tracking-tight text-[var(--foreground)]">
+                  Aylık Strateji Toplantısı
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
+                  Hedef güncellemesi, kanal kırılımı, bütçe kararları ve büyüme planı.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">
-                    Google Premier Partner
+                    Net aksiyon planı
                   </span>
                   <span className="rounded-full bg-[var(--muted)]/15 px-4 py-2 text-sm font-medium text-[var(--foreground)]">
-                    CAPI & Server-Side
+                    KPI hedefleri
+                  </span>
+                  <span className="rounded-full bg-[var(--muted)]/15 px-4 py-2 text-sm font-medium text-[var(--foreground)]">
+                    Kreatif öncelikleri
                   </span>
                 </div>
               </div>
@@ -166,7 +152,7 @@ export function RaporlamaVeAnalizContent() {
               Sektörel Özel Metrikler
             </h2>
             <p className="mt-3 max-w-xl text-[var(--muted)]">
-              Her sektörün KPI&apos;sı farklı; paneliniz buna göre özelleştirilir.
+              Her sektörün KPI&apos;sı farklı; rapor formatı buna göre şekillenir.
             </p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {SECTOR_KPIS.map((item, i) => (
@@ -200,23 +186,23 @@ export function RaporlamaVeAnalizContent() {
           <div className="mx-auto w-[90%] max-w-[1200px]">
             <div className="rounded-2xl border border-[var(--border)] bg-white p-8 shadow-sm sm:p-10">
               <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-3xl">
-                %100 Doğruluk: Kayıpsız Veri Hattı
+                Doğru Ölçüm: Sağlam Veri Temeli
               </h2>
               <p className="mt-6 max-w-2xl leading-relaxed text-[var(--muted)]">
-                iOS 14+ sonrası yaşanan veri kayıplarını, <strong className="text-[var(--foreground)]">Google Ads Premier Partner</strong> yetkinliğimizle sunucu taraflı izleme (Server-Side Tracking) kullanarak aşıyoruz. Panelinizdeki her veri, tarayıcı kısıtlamalarına takılmadan doğrudan sunucudan beslenir. Yanıltıcı verilere değil, mutlak gerçeğe yatırım yapın.
+                iOS 14+ sonrası yaşanan veri kayıplarını, ölçüm altyapısını güçlendirerek azaltırız. Amacımız; raporlarda “yanlış iyimserlik” değil, karar aldıran netlik üretmek.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <div className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--muted)]/5 px-5 py-3">
-                  <span className="text-2xl font-bold tabular-nums text-[var(--foreground)]">%100</span>
-                  <span className="text-sm text-[var(--muted)]">Veri doğruluğu</span>
+                  <span className="text-sm font-semibold text-[var(--foreground)]">Ölçüm</span>
+                  <span className="text-sm text-[var(--muted)]">UTM & event standartları</span>
                 </div>
                 <div className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--muted)]/5 px-5 py-3">
-                  <span className="text-sm font-semibold text-[var(--foreground)]">CAPI</span>
-                  <span className="text-sm text-[var(--muted)]">Meta Conversions API</span>
+                  <span className="text-sm font-semibold text-[var(--foreground)]">Tutarlılık</span>
+                  <span className="text-sm text-[var(--muted)]">Kanal kırılımı aynı format</span>
                 </div>
                 <div className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--muted)]/5 px-5 py-3">
-                  <span className="text-sm font-semibold text-[var(--foreground)]">Server-Side</span>
-                  <span className="text-sm text-[var(--muted)]">Sunucu taraflı izleme</span>
+                  <span className="text-sm font-semibold text-[var(--foreground)]">Aksiyon</span>
+                  <span className="text-sm text-[var(--muted)]">Her raporda net next-step</span>
                 </div>
               </div>
             </div>
@@ -228,20 +214,20 @@ export function RaporlamaVeAnalizContent() {
       <section className="border-t border-[var(--border)] bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-[720px] px-6 text-center">
           <p className="text-2xl font-light leading-relaxed text-[var(--foreground)] sm:text-3xl">
-            Veriyi izlemekle kalmayın, onu yönetin. Ala Medya ile dijital büyümenizi şansa değil, matematiğe emanet edin.
+            Raporlarınız “dosya” değil, karar mekanizmanız olsun. Ala Medya ile büyümeyi şansa değil, net aksiyona bağlayın.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
               href="/#iletisim"
               className="btn-shimmer relative inline-flex rounded-full bg-[var(--foreground)] px-8 py-4 text-base font-medium text-white transition hover:opacity-95"
             >
-              <span className="relative z-10">Paneli Keşfedin</span>
+              <span className="relative z-10">Rapor Örneği İsteyin</span>
             </Link>
             <Link
               href="/hizmetler/dijital-reklam/google-ads"
               className="inline-flex rounded-full border border-[var(--border)] bg-transparent px-8 py-4 text-base font-medium text-[var(--foreground)] transition hover:bg-[var(--muted)]/10"
             >
-              Google Ads Raporlama
+              Google Ads Yönetimi
             </Link>
           </div>
         </div>

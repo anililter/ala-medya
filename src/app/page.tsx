@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { prisma } from "@/lib/db";
 import { StatsSection } from "@/components/StatsSection";
 import { BentoGrid } from "@/components/BentoGrid";
 import { AnimatedSection } from "@/components/AnimatedSection";
@@ -9,16 +8,18 @@ import { ProcessFlow } from "@/components/ProcessFlow";
 import { FaqSection } from "@/components/FaqSection";
 import { FinalCta } from "@/components/FinalCta";
 import { StrategyForm } from "@/components/StrategyForm";
+import type { Post, Partner, Project } from "@prisma/client";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  let recentPosts: Awaited<ReturnType<typeof prisma.post.findMany>> = [];
-  let partners: Awaited<ReturnType<typeof prisma.partner.findMany>> = [];
-  let allProjects: Awaited<ReturnType<typeof prisma.project.findMany>> = [];
+  let recentPosts: Post[] = [];
+  let partners: Partner[] = [];
+  let allProjects: Project[] = [];
 
   try {
-    [recentPosts, partners, allProjects] = await Promise.all([
+    const { prisma } = await import("@/lib/db");
+    const [posts, partnersData, projects] = await Promise.all([
       prisma.post.findMany({
         where: { published: true, publishedAt: { not: null } },
         orderBy: { publishedAt: "desc" },
@@ -33,6 +34,9 @@ export default async function Home() {
         orderBy: { order: "asc" },
       }),
     ]);
+    recentPosts = posts;
+    partners = partnersData;
+    allProjects = projects;
   } catch (e) {
     console.error("Home data fetch error:", e);
   }

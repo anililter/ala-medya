@@ -40,7 +40,7 @@ export function FaqSection() {
 
   return (
     <AnimatedSection>
-      <section className="w-full bg-[#f9f9f9] py-20 sm:py-28">
+      <section className="w-full bg-[#f9f9f9] py-16 sm:py-20 lg:py-24">
         <div className="w-full px-4">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tighter text-[var(--foreground)] sm:text-4xl lg:text-5xl">
@@ -51,7 +51,7 @@ export function FaqSection() {
             </p>
           </div>
 
-          <div className="mt-14 flex flex-col gap-2">
+          <div className="mx-auto mt-14 flex max-w-4xl flex-col gap-3">
             {FAQS.map((faq, i) => {
               const isOpen = openIndex === i;
               return (
@@ -62,18 +62,18 @@ export function FaqSection() {
                   <button
                     type="button"
                     onClick={() => setOpenIndex(isOpen ? null : i)}
-                    className="flex w-full items-center gap-4 px-6 py-5 text-left transition sm:px-8"
+                    className="flex w-full min-w-0 items-center gap-4 px-5 py-4 text-left transition sm:gap-5 sm:px-8 sm:py-5"
                   >
                     <span className="flex shrink-0 items-center justify-center rounded-xl border border-[var(--border)] bg-white/80 p-2">
                       <FaqCategoryIconWithId category={faq.category} className="h-5 w-5 sm:h-6 sm:w-6" />
                     </span>
-                    <span className="text-lg font-semibold tracking-tight text-[var(--foreground)] sm:text-xl">
+                    <span className="min-w-0 flex-1 text-left text-lg font-semibold tracking-tight text-[var(--foreground)] sm:text-xl">
                       {faq.q}
                     </span>
                     <motion.span
                       animate={{ rotate: isOpen ? 45 : 0 }}
                       transition={{ duration: 0.25 }}
-                      className="ml-auto shrink-0 text-2xl font-light text-blue-600"
+                      className="shrink-0 text-2xl font-light text-blue-600"
                     >
                       +
                     </motion.span>
@@ -87,15 +87,11 @@ export function FaqSection() {
                         transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
                         className="overflow-hidden"
                       >
-                        <motion.p
-                          initial={{ opacity: 0, y: -8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.25, delay: 0.05 }}
-                          className="border-t border-[var(--border)] px-6 pb-5 pt-2 text-xl leading-relaxed text-[var(--muted)] sm:px-8"
-                        >
-                          {faq.a}
-                        </motion.p>
+                        <div className="border-t border-[var(--border)] px-5 pb-5 pt-3 text-[var(--muted)] sm:px-8 sm:pt-4">
+                          <p className="max-w-none text-lg leading-relaxed sm:text-xl [margin-left:0] [margin-right:0]">
+                            {faq.a}
+                          </p>
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
