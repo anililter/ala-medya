@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 
-type Project = {
+export type ReferenceProject = {
   id: string;
   title: string;
   slug: string;
   description: string | null;
-  imageUrl: string | null;
+  imageUrl: string | StaticImageData | null;
   clientName: string | null;
   projectUrl: string | null;
   category: string | null;
@@ -18,7 +19,7 @@ export function ReferanslarClient({
   projects,
   categories,
 }: {
-  projects: Project[];
+  projects: ReferenceProject[];
   categories: string[];
 }) {
   const [filter, setFilter] = useState("Tümünü Gör");

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatedSection } from "./AnimatedSection";
+import { FOLDER_REFERENCES } from "@/data/folderReferences";
 
 type Project = { id: string; title: string; imageUrl: string | null };
 
@@ -10,11 +11,7 @@ export function TrustMarquee({ projects }: { projects: Project[] }) {
   const items =
     projects.length > 0
       ? projects
-      : [
-          { id: "1", title: "Lotus Diş", imageUrl: null },
-          { id: "2", title: "Sonax", imageUrl: null },
-          { id: "3", title: "Xoom", imageUrl: null },
-        ];
+      : FOLDER_REFERENCES.map((r) => ({ id: r.id, title: r.title, imageUrl: r.src }));
 
   return (
     <AnimatedSection>
