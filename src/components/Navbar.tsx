@@ -111,13 +111,19 @@ export function Navbar() {
   const [dijitalSubOpen, setDijitalSubOpen] = useState(false);
   const [sektorlerOpen, setSektorlerOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileSektorlerOpen, setMobileSektorlerOpen] = useState(false);
   const [mobileDijitalOpen, setMobileDijitalOpen] = useState(false);
   const servicesTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const dijitalSubTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const sektorlerTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
-    if (!mobileOpen) setMobileDijitalOpen(false);
+    if (!mobileOpen) {
+      setMobileServicesOpen(false);
+      setMobileSektorlerOpen(false);
+      setMobileDijitalOpen(false);
+    }
   }, [mobileOpen]);
 
   return (
@@ -358,62 +364,98 @@ export function Navbar() {
               >
                 Hakkımızda
               </Link>
-            <span className="mt-2 px-3 py-2 text-sm font-semibold text-[var(--foreground)]">Hizmetler</span>
-            {SERVICES_MENU.map((item) =>
-              item.children ? (
-                <div key={item.label}>
-                  <button
-                    type="button"
-                    className="flex w-full items-center justify-between rounded px-3 py-2.5 text-left text-base font-medium tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40"
-                    onClick={() => setMobileDijitalOpen((prev) => !prev)}
-                    aria-expanded={mobileDijitalOpen}
-                    aria-controls="mobile-dijital-submenu"
-                  >
-                    {item.label}
-                    <svg
-                      className={`h-4 w-4 shrink-0 text-[#86868b] transition-transform ${mobileDijitalOpen ? "rotate-90" : ""}`}
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden
-                    >
-                      <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.06l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
-                    </svg>
-                  </button>
-                  <div id="mobile-dijital-submenu" className={mobileDijitalOpen ? "block" : "hidden"}>
-                    <Link
-                      href={item.href}
-                      className="block rounded px-5 py-2 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      Genel
-                    </Link>
-                    {item.children.map((c) => (
-                      <Link
-                        key={c.href}
-                        href={c.href}
-                        className="block rounded px-5 py-2 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]"
-                        onClick={() => setMobileOpen(false)}
+              {/* Hizmetler (accordion) */}
+              <button
+                type="button"
+                className="mt-2 flex w-full items-center justify-between rounded px-3 py-2.5 text-left text-base font-semibold tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40"
+                onClick={() => setMobileServicesOpen((v) => !v)}
+                aria-expanded={mobileServicesOpen}
+                aria-controls="mobile-services-accordion"
+              >
+                Hizmetler
+                <svg
+                  className={`h-4 w-4 shrink-0 text-[#86868b] transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden
+                >
+                  <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+                </svg>
+              </button>
+
+              <div id="mobile-services-accordion" className={mobileServicesOpen ? "block" : "hidden"}>
+                {SERVICES_MENU.map((item) =>
+                  item.children ? (
+                    <div key={item.label}>
+                      <button
+                        type="button"
+                        className="flex w-full items-center justify-between rounded px-3 py-2.5 text-left text-base font-medium tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40"
+                        onClick={() => setMobileDijitalOpen((prev) => !prev)}
+                        aria-expanded={mobileDijitalOpen}
+                        aria-controls="mobile-dijital-submenu"
                       >
-                        {c.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <Link key={item.href} href={item.href} className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>{item.label}</Link>
-              )
-            )}
-            <span className="mt-4 px-3 py-2 text-sm font-semibold text-[var(--foreground)]">Sektörler</span>
-            {SEKTORLER_MENU.map((item) => (
-              <Link key={item.slug} href={`/sektorler/${item.slug}`} className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>
-                {item.label}
-              </Link>
-            ))}
-            <Link href="/hizmetler/raporlama-ve-analiz" className="mt-2 block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Raporlama</Link>
-            <Link href="/vaka-analizleri" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Vaka Analizleri</Link>
-            <Link href="/referanslar" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Referanslar</Link>
-            <Link href="/blog" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Blog</Link>
-            <Link href="/contact" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>İletişim</Link>
+                        {item.label}
+                        <svg
+                          className={`h-4 w-4 shrink-0 text-[#86868b] transition-transform ${mobileDijitalOpen ? "rotate-90" : ""}`}
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          aria-hidden
+                        >
+                          <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.06l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
+                        </svg>
+                      </button>
+                      <div id="mobile-dijital-submenu" className={mobileDijitalOpen ? "block" : "hidden"}>
+                        <Link href={item.href} className="block rounded px-5 py-2 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>
+                          Genel
+                        </Link>
+                        {item.children.map((c) => (
+                          <Link key={c.href} href={c.href} className="block rounded px-5 py-2 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>
+                            {c.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <Link key={item.href} href={item.href} className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>
+                      {item.label}
+                    </Link>
+                  )
+                )}
+              </div>
+
+              {/* Sektörler (accordion) */}
+              <button
+                type="button"
+                className="mt-4 flex w-full items-center justify-between rounded px-3 py-2.5 text-left text-base font-semibold tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40"
+                onClick={() => setMobileSektorlerOpen((v) => !v)}
+                aria-expanded={mobileSektorlerOpen}
+                aria-controls="mobile-sektorler-accordion"
+              >
+                Sektörler
+                <svg
+                  className={`h-4 w-4 shrink-0 text-[#86868b] transition-transform ${mobileSektorlerOpen ? "rotate-180" : ""}`}
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden
+                >
+                  <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+                </svg>
+              </button>
+
+              <div id="mobile-sektorler-accordion" className={mobileSektorlerOpen ? "block" : "hidden"}>
+                {SEKTORLER_MENU.map((item) => (
+                  <Link key={item.slug} href={`/sektorler/${item.slug}`} className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Masaüstüyle aynı ana linkler */}
+              <Link href="/hizmetler/raporlama-ve-analiz" className="mt-3 block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Raporlama</Link>
+              <Link href="/vaka-analizleri" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Vaka Analizleri</Link>
+              <Link href="/referanslar" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Referanslar</Link>
+              <Link href="/blog" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Blog</Link>
+              <Link href="/contact" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>İletişim</Link>
             </nav>
           </div>
         </>

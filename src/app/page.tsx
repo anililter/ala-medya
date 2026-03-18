@@ -78,16 +78,16 @@ export default async function Home() {
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" aria-hidden />
                 <span className="text-[15px] font-semibold uppercase tracking-wide text-[var(--foreground)] sm:text-lg md:text-xl">Yazılım</span>
               </div>
-              <div className="hero-anim-4 mt-12 flex w-full flex-col gap-3 sm:mt-16 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-5 md:mt-20 md:gap-6">
+              <div className="hero-anim-4 mt-10 flex w-full flex-col items-center justify-center gap-3 sm:mt-16 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-5 md:mt-20 md:gap-6">
                 <Link
                   href="/referanslar"
-                  className="inline-flex w-full items-center justify-center rounded-full border-2 border-blue-400 bg-white px-8 py-4 text-base font-medium text-blue-600 transition hover:scale-[1.02] hover:bg-blue-50 dark:border-blue-400/80 dark:bg-[var(--card)] dark:text-blue-400 dark:hover:bg-blue-500/10 sm:w-auto sm:px-10 sm:py-4 sm:text-lg"
+                  className="inline-flex w-auto items-center justify-center rounded-full border-2 border-blue-400 bg-white px-6 py-3 text-sm font-semibold text-blue-600 transition hover:scale-[1.02] hover:bg-blue-50 sm:px-10 sm:py-4 sm:text-lg"
                 >
                   Referanslar
                 </Link>
                 <Link
                   href="#iletisim"
-                  className="btn-shimmer inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-8 py-4 text-base font-medium text-white shadow-lg shadow-blue-600/30 transition hover:scale-[1.03] hover:bg-blue-700 hover:shadow-blue-600/40 dark:bg-blue-500 dark:shadow-blue-500/25 dark:hover:bg-blue-600 dark:hover:shadow-blue-500/35 sm:w-auto sm:px-10 sm:py-4 sm:text-lg"
+                  className="btn-shimmer inline-flex w-auto items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 transition hover:scale-[1.03] hover:bg-blue-700 hover:shadow-blue-600/40 sm:px-10 sm:py-4 sm:text-lg"
                 >
                   Sizi Arayalım
                 </Link>
