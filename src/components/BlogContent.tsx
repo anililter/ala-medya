@@ -14,6 +14,8 @@ type Post = {
   publishedAt: Date | null;
 };
 
+export type BlogPostPreview = Post;
+
 const CATEGORIES = [
   "Tümü",
   "Strateji",
@@ -104,7 +106,7 @@ function BlogCard({ post, index, featured = false }: { post: Post; index: number
   );
 }
 
-export function BlogContent({ posts }: { posts: Post[] }) {
+export function BlogContent({ posts }: { posts: BlogPostPreview[] }) {
   const [active, setActive] = useState<string>("Tümü");
 
   const filtered = active === "Tümü" ? posts : posts;

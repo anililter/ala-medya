@@ -9,6 +9,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { FinalCta } from "@/components/FinalCta";
 import { StrategyForm } from "@/components/StrategyForm";
 import type { Post, Partner, Project } from "@prisma/client";
+import { SAMPLE_BLOGS } from "@/data/sampleBlogs";
 
 export const dynamic = "force-dynamic";
 
@@ -45,7 +46,7 @@ export default async function Home() {
     <div className="min-h-screen w-full bg-[var(--background)] text-[var(--foreground)]">
       <main className="flex w-full flex-col">
         {/* ─── Hero ─── */}
-        <section className="hero-bg relative flex min-h-[82vh] w-full flex-col overflow-x-hidden overflow-visible px-0 pt-10 pb-24 sm:min-h-[85vh] sm:pt-16 sm:pb-32 lg:pt-20 lg:pb-40">
+        <section className="hero-bg relative flex min-h-[82vh] w-full flex-col overflow-x-hidden overflow-y-visible px-0 pt-10 pb-24 sm:min-h-[85vh] sm:pt-16 sm:pb-32 lg:pt-20 lg:pb-40">
           <div className="relative z-10 flex flex-1 w-full flex-col items-center justify-center min-h-0">
             <div className="flex w-full flex-col items-center justify-center text-center overflow-visible">
               <p className="hero-anim-1 w-full text-xl font-medium tracking-wide text-slate-400 sm:mb-6 sm:text-xl md:text-2xl dark:text-slate-500">
@@ -203,7 +204,34 @@ export default async function Home() {
                   ))}
                 </div>
               ) : (
-                <p className="mt-14 text-center text-xl text-[var(--muted)]">Henüz içerik yayınlanmadı.</p>
+                <div className="mt-12 grid grid-cols-2 gap-5 md:grid-cols-4">
+                  {SAMPLE_BLOGS.slice(0, 4).map((p) => (
+                    <Link key={p.id} href={`/blog/${p.slug}`} className="group block">
+                      <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-sm transition-shadow duration-300 hover:shadow-lg">
+                        <div className="relative aspect-[4/3] overflow-hidden">
+                          <Image
+                            src={p.imageUrl}
+                            alt={p.title}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            sizes="(max-width: 768px) 50vw, 25vw"
+                          />
+                        </div>
+                        <div className="p-4">
+                          <p className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--gold)]">
+                            Örnek Blog
+                          </p>
+                          <h3 className="mt-2 line-clamp-2 text-base font-semibold leading-snug tracking-tight text-[var(--foreground)]">
+                            {p.title}
+                          </h3>
+                          <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[var(--muted)]">
+                            {p.excerpt}
+                          </p>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               )}
 
               <div className="mt-12 text-center">

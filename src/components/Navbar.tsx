@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function SektorIcon({ type }: { type: string }) {
   const className = "h-5 w-5";
@@ -115,6 +115,10 @@ export function Navbar() {
   const servicesTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const dijitalSubTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const sektorlerTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  useEffect(() => {
+    if (!mobileOpen) setMobileDijitalOpen(false);
+  }, [mobileOpen]);
 
   return (
     <header
@@ -293,6 +297,9 @@ export function Navbar() {
           <Link href="/vaka-analizleri" className={navLinkClass}>
             Vaka Analizleri
           </Link>
+          <Link href="/referanslar" className={navLinkClass}>
+            Referanslar
+          </Link>
           <Link href="/blog" className={navLinkClass}>
             Blog
           </Link>
@@ -311,8 +318,8 @@ export function Navbar() {
           <button
             type="button"
             className="flex h-10 w-10 items-center justify-center rounded-md text-[#86868b] transition hover:bg-[var(--border)]/50 hover:text-[var(--foreground)] md:hidden"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Menüyü aç"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label={mobileOpen ? "Menüyü kapat" : "Menüyü aç"}
           >
             {mobileOpen ? (
               <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -328,10 +335,29 @@ export function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="absolute left-0 right-0 top-16 z-40 border-b border-[var(--border)] bg-white shadow-lg md:hidden">
-          <nav className="flex flex-col gap-0 px-4 py-4">
-            <Link href="/" className="block rounded px-3 py-2.5 text-base font-medium tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40" onClick={() => setMobileOpen(false)}>Anasayfa</Link>
-            <Link href="/hakkimizda" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Hakkımızda</Link>
+        <>
+          <button
+            type="button"
+            className="fixed inset-0 top-16 z-30 bg-black/10 md:hidden"
+            aria-label="Menüyü kapat"
+            onClick={() => setMobileOpen(false)}
+          />
+          <div className="fixed left-0 right-0 top-16 z-40 border-b border-[var(--border)] bg-white shadow-lg md:hidden">
+            <nav className="flex max-h-[calc(100vh-64px)] flex-col gap-0 overflow-y-auto px-4 py-4">
+              <Link
+                href="/"
+                className="block rounded px-3 py-2.5 text-base font-medium tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40"
+                onClick={() => setMobileOpen(false)}
+              >
+                Anasayfa
+              </Link>
+              <Link
+                href="/hakkimizda"
+                className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]"
+                onClick={() => setMobileOpen(false)}
+              >
+                Hakkımızda
+              </Link>
             <span className="mt-2 px-3 py-2 text-sm font-semibold text-[var(--foreground)]">Hizmetler</span>
             {SERVICES_MENU.map((item) =>
               item.children ? (
@@ -354,9 +380,22 @@ export function Navbar() {
                     </svg>
                   </button>
                   <div id="mobile-dijital-submenu" className={mobileDijitalOpen ? "block" : "hidden"}>
-                    <Link href={item.href} className="block rounded px-5 py-2 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Genel</Link>
+                    <Link
+                      href={item.href}
+                      className="block rounded px-5 py-2 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      Genel
+                    </Link>
                     {item.children.map((c) => (
-                      <Link key={c.href} href={c.href} className="block rounded px-5 py-2 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>{c.label}</Link>
+                      <Link
+                        key={c.href}
+                        href={c.href}
+                        className="block rounded px-5 py-2 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {c.label}
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -372,10 +411,12 @@ export function Navbar() {
             ))}
             <Link href="/hizmetler/raporlama-ve-analiz" className="mt-2 block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Raporlama</Link>
             <Link href="/vaka-analizleri" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Vaka Analizleri</Link>
+            <Link href="/referanslar" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Referanslar</Link>
             <Link href="/blog" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Blog</Link>
             <Link href="/contact" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>İletişim</Link>
-          </nav>
-        </div>
+            </nav>
+          </div>
+        </>
       )}
     </header>
   );

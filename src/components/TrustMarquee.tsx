@@ -40,13 +40,15 @@ export function TrustMarquee({ projects }: { projects: Project[] }) {
                       className="group relative flex h-16 w-28 shrink-0 items-center justify-center sm:h-20 sm:w-36"
                     >
                       {p.imageUrl ? (
-                        <Image
-                          src={p.imageUrl}
-                          alt={p.title}
-                          width={144}
-                          height={80}
-                          className="object-contain opacity-50 transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 grayscale"
-                        />
+                        <span className="relative h-full w-full px-2 py-1">
+                          <Image
+                            src={p.imageUrl}
+                            alt={p.title}
+                            fill
+                            className="object-contain opacity-50 transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 grayscale"
+                            sizes="(max-width: 640px) 112px, 144px"
+                          />
+                        </span>
                       ) : (
                         <span className="text-2xl font-bold text-[var(--muted)] transition-colors duration-300 group-hover:text-blue-600">
                           {p.title.slice(0, 2)}

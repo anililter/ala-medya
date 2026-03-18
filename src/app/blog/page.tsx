@@ -1,13 +1,31 @@
 import { prisma } from "@/lib/db";
-import { BlogContent } from "@/components/BlogContent";
+import { BlogContent, type BlogPostPreview } from "@/components/BlogContent";
+import { SAMPLE_BLOGS } from "@/data/sampleBlogs";
 
 export const dynamic = "force-dynamic";
 
 export default async function BlogPage() {
-  const posts = await prisma.post.findMany({
-    where: { published: true },
-    orderBy: { publishedAt: "desc" },
-  });
+  let posts: Awaited<ReturnType<typeof prisma.post.findMany>> = [];
+  try {
+    posts = await prisma.post.findMany({
+      where: { published: true },
+      orderBy: { publishedAt: "desc" },
+    });
+  } catch (e) {
+    console.error("BlogPage data fetch error:", e);
+  }
+
+  const items: BlogPostPreview[] =
+    posts.length > 0
+      ? (posts as unknown as BlogPostPreview[])
+      : SAMPLE_BLOGS.map((p) => ({
+          id: p.id,
+          title: p.title,
+          slug: p.slug,
+          excerpt: p.excerpt,
+          imageUrl: p.imageUrl,
+          publishedAt: p.publishedAt,
+        }));
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
@@ -30,7 +48,7 @@ export default async function BlogPage() {
           </p>
         </div>
 
-        <BlogContent posts={posts} />
+        <BlogContent posts={items} />
       </main>
     </div>
   );
