@@ -150,52 +150,6 @@ export function YapayZekaContent() {
           </section>
         </AnimatedSection>
 
-        {/* 5. FAQ Section */}
-        <AnimatedSection>
-          <section className="py-24 sm:py-32 bg-[#f1f5f9] rounded-[3rem] px-4 mb-24 overflow-hidden relative">
-             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[100px] pointer-events-none" />
-             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/5 blur-[100px] pointer-events-none" />
-
-            <div className="mx-auto max-w-[1000px]">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold tracking-tight text-[#1d1d1f] mb-4">Sıkça Sorulan Sorular</h2>
-                <p className="text-xl text-[var(--muted)]">Yapay zeka ve ajans işbirliği hakkında merak edilenler.</p>
-              </div>
-
-              <div className="grid gap-6">
-                {[
-                  {
-                    q: "Ben de panelden reklam açabiliyorum, Ala Medya'ya neden ihtiyacım var?",
-                    a: "Reklam açmak sadece bir başlangıçtır. Ala Medya'da biz veriyi ham haliyle bırakmıyoruz; Gemini 3.1 Pro ve GPT-5.4 Thinking ile 8 yıllık sektörel refleksimizi birleştiriyoruz. Sizin yapacağınız 1 reklam denemesine karşılık, biz yapay zeka ile binlerce varyasyonu milisaniyeler içinde simüle edip bütçenizi en karlı kanala yönlendiriyoruz. Bizimle çalışmak, bütçenizi 'deneme'ye değil, 'kanıtlanmış veri'ye yatırmaktır."
-                  },
-                  {
-                    q: "Bu araçları ben de kullanabilirim, neden size hizmet bedeli ödemeliyim?",
-                    a: "Enstrümana sahip olmak, virtüöz olmayı gerektirmez. Ala Medya'ya ödediğiniz bedel; doğru prompt mimarisi, araçlar arasındaki karmaşık entegrasyonlar ve markanıza özel kurguladığımız AI iş akışları içindir. Ayrıca, kullandığımız kurumsal seviye lisanslar (Enterprise AI) verilerinizin güvenliğini garanti ederken, sizin bireysel öğrenme sürecinde harcayacağınız zaman ve 'hatalı bütçe kullanımı' maliyetini ortadan kaldırır."
-                  },
-                  {
-                    q: "Yapay zeka reklamlarımın doğallığını ve marka kimliğimi bozar mı?",
-                    a: "Tam aksine! Claude 4.6 Sonnet modellerimizle markanızın ses tonunu hiç olmadığı kadar derin analiz ediyoruz. Hedef kitlenizin korkularını, arzularını ve dilini veriyle bildiğimiz için, 'reklam' kokmayan, tamamen çözüm odaklı ve samimi içerikler üretiyoruz. AI burada yaratıcılığı öldürmez; yaratıcılığın sınırlarını markanızın lehine genişletir."
-                  },
-                  {
-                    q: "Neden başkasıyla değil de sizin AI odaklı modelinizle çalışmalıyım?",
-                    a: "Çünkü biz yapay zekayı bir 'seçenek' değil, bir 'standart' haline getirdik. Diğer ajanslar hala manuel raporlama ve sınırlı kreatif denemeyle uğraşırken, biz Sora 2 ve Midjourney v8 Alpha ile rakipsiz bir üretim hızına ve Gemini 3.1 Pro ile insan gözünün göremeyeceği bir analiz derinliğine sahibiz. Ala Medya ile çalışmak, rakipleriniz henüz araçları keşfederken sizin sonucu almanız demektir."
-                  }
-                ].map((item, idx) => (
-                  <div key={idx} className="group rounded-3xl border border-white bg-white/60 p-8 transition-all hover:bg-white hover:shadow-xl hover:shadow-blue-900/5">
-                    <h3 className="text-xl font-bold text-[#1d1d1f] mb-4 flex items-center gap-4">
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-600">?</span>
-                      {item.q}
-                    </h3>
-                    <p className="text-lg text-[var(--muted)] leading-relaxed pl-12 border-l-2 border-blue-50 ml-4 group-hover:border-blue-400 transition-colors">
-                      {item.a}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        </AnimatedSection>
-
         {/* 5. İnteraktif Bölüm / Newsletter */}
         <AnimatedSection>
           <section className="py-24 sm:py-32 bg-white rounded-[3rem] shadow-xl border border-[var(--border)] px-4 mb-24">

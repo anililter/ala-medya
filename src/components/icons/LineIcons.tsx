@@ -203,7 +203,7 @@ export function FaqCategoryIcon({
   className = "h-6 w-6",
   gradientId,
 }: {
-  category: "time" | "sectors" | "tools" | "budget" | "reports";
+  category: "time" | "sectors" | "tools" | "budget" | "reports" | "ai";
   className?: string;
   gradientId: string;
 }) {
@@ -267,6 +267,17 @@ export function FaqCategoryIcon({
         </g>
       </svg>
     ),
+    ai: (
+      <svg viewBox={vb} className={className} aria-hidden>
+        {gradientDef(gradientId)}
+        <g stroke={stroke} {...strokeProps}>
+          <path d="M16 4v4M16 24v4M4 16h4M24 16h4" strokeWidth="1.2" />
+          <rect x="10" y="10" width="12" height="12" rx="2" strokeWidth="1.2" />
+          <circle cx="16" cy="16" r="3" strokeWidth="1" />
+          <path d="M13 13l-1.5-1.5M19 13l1.5-1.5M13 19l-1.5 1.5M19 19l1.5 1.5" strokeWidth="1" />
+        </g>
+      </svg>
+    ),
   };
 
   return icons[category];
@@ -292,7 +303,7 @@ export function FaqCategoryIconWithId({
   category,
   className,
 }: {
-  category: "time" | "sectors" | "tools" | "budget" | "reports";
+  category: "time" | "sectors" | "tools" | "budget" | "reports" | "ai";
   className?: string;
 }) {
   const id = useId().replace(/:/g, "");

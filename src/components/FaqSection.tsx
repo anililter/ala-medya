@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedSection } from "./AnimatedSection";
 import { FaqCategoryIconWithId } from "./icons/LineIcons";
 
-type FaqCategory = "time" | "sectors" | "tools" | "budget" | "reports";
+type FaqCategory = "time" | "sectors" | "tools" | "budget" | "reports" | "ai";
 
 const FAQS: Array<{ q: string; a: string; category: FaqCategory }> = [
   {
@@ -19,8 +19,28 @@ const FAQS: Array<{ q: string; a: string; category: FaqCategory }> = [
     category: "sectors",
   },
   {
+    q: "Ben de panelden reklam açabiliyorum, Ala Medya'ya neden ihtiyacım var?",
+    a: "Reklam açmak sadece bir başlangıçtır. Ala Medya'da biz veriyi ham haliyle bırakmıyoruz; Gemini 3.1 Pro ve GPT-5.4 Thinking ile 8 yıllık sektörel refleksimizi birleştiriyoruz. Sizin yapacağınız 1 reklam denemesine karşılık, biz yapay zeka ile binlerce varyasyonu milisaniyeler içinde simüle edip bütçenizi en karlı kanala yönlendiriyoruz.",
+    category: "ai",
+  },
+  {
+    q: "Bu araçları ben de kullanabilirim, neden size hizmet bedeli ödemeliyim?",
+    a: "Enstrümana sahip olmak, virtüöz olmayı gerektirmez. Ala Medya'ya ödediğiniz bedel; doğru prompt mimarisi, araçlar arasındaki karmaşık entegrasyonlar ve markanıza özel kurguladığımız AI iş akışları içindir. Bireysel öğrenme sürecinde harcayacağınız zaman ve 'hatalı bütçe kullanımı' maliyetini ortadan kaldırır.",
+    category: "ai",
+  },
+  {
+    q: "Yapay zeka reklamlarımın doğallığını ve marka kimliğimi bozar mı?",
+    a: "Tam aksine! Claude 4.6 Sonnet modellerimizle markanızın ses tonunu hiç olmadığı kadar derin analiz ediyoruz. Hedef kitlenizin korkularını, arzularını ve dilini veriyle bildiğimiz için, 'reklam' kokmayan, tamamen çözüm odaklı ve samimi içerikler üretiyoruz.",
+    category: "ai",
+  },
+  {
+    q: "Neden başkasıyla değil de sizin AI odaklı modelinizle çalışmalıyım?",
+    a: "Çünkü biz yapay zekayı bir 'seçenek' değil, bir 'standart' haline getirdik. Diğer ajanslar hala manuel raporlama ile uğraşırken, biz Sora 2 ve Midjourney v8 Alpha ile rakipsiz bir üretim hızına ve Gemini 3.1 Pro ile insan gözünün göremeyeceği bir analiz derinliğine sahibiz.",
+    category: "ai",
+  },
+  {
     q: "Yapay zeka araçlarını süreçlerinizde nasıl kullanıyorsunuz?",
-    a: "Gemini 1.5 Pro, GPT-4o ve Claude 3.5 gibi yapay zeka araçlarını reklam optimizasyonu, içerik üretimi, trend analizi ve kullanıcı deneyimi iyileştirme süreçlerinde aktif olarak kullanıyoruz. Bu sayede daha hızlı, veri odaklı ve etkili sonuçlar üretiyoruz.",
+    a: "Gemini 3.1 Pro, GPT-5.4 Thinking ve Claude 3.5 gibi güncel yapay zeka araçlarını reklam optimizasyonu, içerik üretimi, trend analizi ve kullanıcı deneyimi iyileştirme süreçlerinde aktif olarak kullanıyoruz. Bu sayede daha hızlı, veri odaklı ve etkili sonuçlar üretiyoruz.",
     category: "tools",
   },
   {
