@@ -23,7 +23,7 @@ export const SEKTORLER: SectorConfig[] = [
     navDescription: "Global Hasta Trafiği",
     heroTitle: "Sınırları Aşan Sağlık Stratejileri.",
     content:
-      "8 yıllık sağlık turizmi refleksimizle, Lotus Diş Kliniği ve BHT Clinic gibi markalarımızda global hasta yolculuğunu yönetiyoruz. Gemini destekli pazar analiziyle, hedef ülkedeki en doğru hastayı, en düşük maliyetle (CPL) buluyoruz.",
+      "8 yıllık sağlık turizmi refleksimizle, Lotus Diş Kliniği ve BHT Clinic gibi markalarımızda global hasta yolculuğunu yönetiyoruz. Gemini 3.1 Pro destekli pazar analiziyle, hedef ülkedeki en doğru hastayı, en düşük maliyetle (CPL) buluyoruz.",
     emphasis:
       "Google Premier Partner %3 ayrıcalığıyla, Healthcare politikalarına tam uyumlu, askıya alınmayan reklam hesapları.",
     stats: [
@@ -39,7 +39,7 @@ export const SEKTORLER: SectorConfig[] = [
     navDescription: "Etik ve Güven Odaklı",
     heroTitle: "Etik ve Güven Odaklı Dijital Büyüme.",
     content:
-      "Psikogenetik ve Longevity Merkezi gibi hassas alanlardaki tecrübemizle, psikologlar için danışan ve uzman arasındaki güven köprüsünü kuruyoruz. Claude-3.5 destekli içeriklerle, 'reklam' değil 'çözüm' sunan bir duruş sergiliyoruz.",
+      "Psikogenetik ve Longevity Merkezi gibi hassas alanlardaki tecrübemizle, psikologlar için danışan ve uzman arasındaki güven köprüsünü kuruyoruz. Claude 4.6 Sonnet destekli içeriklerle, 'reklam' değil 'çözüm' sunan bir duruş sergiliyoruz.",
     emphasis:
       "Danışan mahremiyeti ve veri güvenliği için Server-Side CAPI entegrasyonu.",
     stats: [

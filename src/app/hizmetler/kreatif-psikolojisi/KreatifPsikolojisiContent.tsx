@@ -43,7 +43,7 @@ export function KreatifPsikolojisiContent() {
                 Dikkat Ekonomisinde Nöro-Stratejik Yaklaşım
               </h2>
               <p className="mt-8 leading-relaxed text-[var(--muted)] sm:text-lg">
-                İnsan beyni, dijital bir akışta görseli sadece <strong className="text-[var(--foreground)]">13 milisaniyede</strong> işler. Biz, <strong className="text-[var(--foreground)]">Gemini</strong> ve <strong className="text-[var(--foreground)]">Claude</strong> destekli görsel analiz modelleriyle, renk paletinden tipografi ağırlığına kadar her öğeyi kullanıcının bilişsel yükünü (cognitive load) minimize edecek şekilde tasarlıyoruz. Apple tarzı &quot;Less is More&quot; felsefesini, reklamın her karesine uyguluyoruz.
+                İnsan beyni, dijital bir akışta görseli sadece <strong className="text-[var(--foreground)]">13 milisaniyede</strong> işler. Biz, <strong className="text-[var(--foreground)]">Gemini 3.1 Pro</strong> ve <strong className="text-[var(--foreground)]">Claude 4.6 Sonnet</strong> destekli görsel analiz modelleriyle, renk paletinden tipografi ağırlığına kadar her öğeyi kullanıcının bilişsel yükünü (cognitive load) minimize edecek şekilde tasarlıyoruz. Apple tarzı &quot;Less is More&quot; felsefesini, reklamın her karesine uyguluyoruz.
               </p>
             </div>
             <div className="relative aspect-[4/3] w-full max-w-lg overflow-hidden rounded-2xl bg-[var(--muted)]/10 lg:max-w-md">
@@ -84,7 +84,7 @@ export function KreatifPsikolojisiContent() {
                 <div className="p-8 sm:p-10">
                   <span className="text-sm font-medium uppercase tracking-widest text-[var(--muted)]">TikTok & Dopamin Döngüsü</span>
                   <p className="mt-6 leading-relaxed text-[var(--muted)]">
-                    Burada kural; &quot;Eğlendirirken Sat&quot;. İlk <strong className="text-[var(--foreground)]">3 saniyede</strong> &quot;Dopamin vuruşu&quot; yapacak kancalar (hooks) kurguluyoruz. <strong className="text-[var(--foreground)]">Claude-3.5</strong> ile optimize edilen senaryolarımızda, &quot;Problem-Çözüm&quot; dengesini viral trendlerin hızıyla birleştiriyoruz. Kullanıcı reklam izlediğini değil, bir topluluğun parçası olduğunu hissetmeli.
+                    Burada kural; &quot;Eğlendirirken Sat&quot;. İlk <strong className="text-[var(--foreground)]">3 saniyede</strong> &quot;Dopamin vuruşu&quot; yapacak kancalar (hooks) kurguluyoruz. <strong className="text-[var(--foreground)]">Claude 4.6 Sonnet</strong> ile optimize edilen senaryolarımızda, &quot;Problem-Çözüm&quot; dengesini viral trendlerin hızıyla birleştiriyoruz. Kullanıcı reklam izlediğini değil, bir topluluğun parçası olduğunu hissetmeli.
                   </p>
                 </div>
               </div>
@@ -172,7 +172,7 @@ export function KreatifPsikolojisiContent() {
                 Yapay Zeka ile Öngörülebilir Yaratıcılık
               </h2>
               <p className="mt-8 leading-relaxed text-[var(--muted)] sm:text-lg">
-                Reklam kreatiflerini yayına almadan önce AI destekli simülasyonlarla test ediyoruz. Hangi görselin hangi kitlede daha yüksek &quot;Stop-Rate&quot; (Durdurma Oranı) yakalayacağını veriyle öngörüyoruz. <strong className="text-[var(--foreground)]">ChatGPT-4</strong> ve özel algoritmalarımızla, binlerce varyasyon arasından &quot;Şampiyon Kreatif&quot;i bütçenizi harcamadan önce buluyoruz.
+                Reklam kreatiflerini yayına almadan önce AI destekli simülasyonlarla test ediyoruz. Hangi görselin hangi kitlede daha yüksek &quot;Stop-Rate&quot; (Durdurma Oranı) yakalayacağını veriyle öngörüyoruz. <strong className="text-[var(--foreground)]">GPT-5.4 Thinking</strong> ve özel algoritmalarımızla, binlerce varyasyon arasından &quot;Şampiyon Kreatif&quot;i bütçenizi harcamadan önce buluyoruz.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link

@@ -117,9 +117,9 @@ export function DonusumOptimizasyonuContent() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h7.5m-7.5 0l.5 1.5" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold tracking-tight text-[#1d1d1f]">Gemini & Claude Analitiği</h3>
+                  <h3 className="text-2xl font-bold tracking-tight text-[#1d1d1f]">Gemini 3.1 Pro & Claude 4.6 Sonnet Analitiği</h3>
                   <p className="mt-4 text-xl leading-relaxed text-[var(--muted)]">
-                    Gemini ve Claude modellerimizle ısı haritalarını ve tıklama verilerini işliyoruz. Kullanıcı niyetini (Search Intent) analiz ederek sürtünme noktalarını tespit ediyoruz.
+                    Gemini 3.1 Pro ve Claude 4.6 Sonnet modellerimizle ısı haritalarını ve tıklama verilerini işliyoruz. Kullanıcı niyetini (Search Intent) analiz ederek sürtünme noktalarını tespit ediyoruz.
                   </p>
                 </div>
                 <div className="overflow-hidden rounded-3xl border border-white/60 bg-white/70 p-8 shadow-xl backdrop-blur-xl">
@@ -130,7 +130,7 @@ export function DonusumOptimizasyonuContent() {
                   </div>
                   <h3 className="text-2xl font-bold tracking-tight text-[#1d1d1f]">Psikolojik Tetikleyiciler</h3>
                   <p className="mt-4 text-xl leading-relaxed text-[var(--muted)]">
-                    Claude-3.5 kullanarak, kullanıcıyı aksiyona geçirecek en güçlü metin ve buton kombinasyonlarını kurguluyoruz.
+                    Claude 4.6 Sonnet kullanarak, kullanıcıyı aksiyona geçirecek en güçlü metin ve buton kombinasyonlarını kurguluyoruz.
                   </p>
                 </div>
               </div>

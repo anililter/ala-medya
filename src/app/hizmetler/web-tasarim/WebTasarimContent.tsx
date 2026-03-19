@@ -95,7 +95,7 @@ export function WebTasarimContent() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25M8.25 9.75L10.5 12l-2.25 2.25M4.5 9.75L6.75 12 4.5 14.25" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold tracking-tight text-[#1d1d1f]">Cursor, Claude, ChatGPT-4</h3>
+                  <h3 className="text-xl font-bold tracking-tight text-[#1d1d1f]">Cursor, Claude 4.6 Sonnet, GPT-5.4 Thinking</h3>
                   <p className="mt-4 text-xl leading-relaxed text-[var(--muted)]">
                     Web sitelerimizi kodlarken hatasız ve optimize edilmiş yapılar kuruyoruz.
                   </p>

@@ -25,7 +25,7 @@ const FOOTER_COLUMNS = [
   {
     title: "Teknoloji & Veri",
     links: [
-      { label: "AI Entegrasyon (Gemini & Claude)", href: "/hizmetler/kreatif-psikolojisi" },
+      { label: "AI Entegrasyon (Gemini 1.5 & Claude 3.5)", href: "/hizmetler/kreatif-psikolojisi" },
       { label: "Raporlama & Analiz", href: "/hizmetler/raporlama-ve-analiz" },
       { label: "Sunucu Taraflı İzleme (CAPI)", href: "/hizmetler/dijital-reklam/facebook-reklamlari" },
       { label: "Google Premier Partnerlik", href: "/hizmetler/dijital-reklam/google-ads" },

@@ -295,6 +295,9 @@ export function Navbar() {
             )}
           </div>
 
+          <Link href="/yapay-zeka" className={navLinkClass}>
+            Yapay Zeka
+          </Link>
           <Link href="/hizmetler/raporlama-ve-analiz" className={navLinkClass}>
             Raporlama
           </Link>
@@ -446,7 +449,8 @@ export function Navbar() {
               </div>
 
               {/* Masaüstüyle aynı ana linkler */}
-              <Link href="/hizmetler/raporlama-ve-analiz" className="mt-3 block rounded px-3 py-2.5 text-base font-semibold tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40" onClick={() => setMobileOpen(false)}>Raporlama</Link>
+              <Link href="/yapay-zeka" className="mt-4 block rounded px-3 py-2.5 text-base font-semibold tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40" onClick={() => setMobileOpen(false)}>Yapay Zeka</Link>
+              <Link href="/hizmetler/raporlama-ve-analiz" className="block rounded px-3 py-2.5 text-base font-semibold tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40" onClick={() => setMobileOpen(false)}>Raporlama</Link>
               <Link href="/vaka-analizleri" className="block rounded px-3 py-2.5 text-base font-semibold tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40" onClick={() => setMobileOpen(false)}>Vaka Analizleri</Link>
               <Link href="/referanslar" className="block rounded px-3 py-2.5 text-base font-semibold tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40" onClick={() => setMobileOpen(false)}>Referanslar</Link>
               <Link href="/blog" className="block rounded px-3 py-2.5 text-base font-semibold tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40" onClick={() => setMobileOpen(false)}>Blog</Link>

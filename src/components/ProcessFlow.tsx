@@ -43,13 +43,13 @@ export function ProcessFlow() {
           <div className="mx-auto mt-10 flex max-w-4xl flex-wrap items-center justify-center gap-3 rounded-2xl border border-blue-100 bg-blue-50/70 px-4 py-4">
             <span className="text-sm font-medium text-[var(--muted)]">AI destek</span>
             <span className="rounded-full border border-white bg-white/90 px-3 py-1.5 text-xs font-semibold text-[var(--foreground)] shadow-sm">
-              Gemini
+              Gemini 1.5 Pro
             </span>
             <span className="rounded-full border border-white bg-white/90 px-3 py-1.5 text-xs font-semibold text-[var(--foreground)] shadow-sm">
-              Claude
+              Claude 3.5
             </span>
             <span className="rounded-full border border-white bg-white/90 px-3 py-1.5 text-xs font-semibold text-[var(--foreground)] shadow-sm">
-              GPT
+              GPT-4o
             </span>
           </div>
 

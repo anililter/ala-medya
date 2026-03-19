@@ -165,7 +165,7 @@ function AIEngineSection() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.08 }}
         >
-          Gemini, Claude ve ChatGPT-4 entegrasyonu ile reklam optimizasyonu.
+          Gemini 3.1 Pro, Claude 4.6 Sonnet ve GPT-5.4 Thinking entegrasyonu ile reklam optimizasyonu.
         </motion.p>
 
         <motion.div
@@ -452,7 +452,7 @@ export function GoogleAdsContent() {
         <section className="border-t border-[var(--border)] bg-[#f9fafb] py-24 sm:py-32">
           <div className="mx-auto w-[90%] max-w-[900px]">
             <h2 className="text-3xl font-light tracking-tight text-[var(--foreground)] sm:text-4xl">
-              <strong className="font-semibold">Gemini</strong> destekli reklam optimizasyonu
+              <strong className="font-semibold">Gemini 3.1 Pro</strong> destekli reklam optimizasyonu
             </h2>
             <p className="mt-8 text-base font-light leading-relaxed text-[var(--muted)] sm:text-lg">
               Smart Bidding (Akıllı Teklif) stratejilerini veri ve makine öğrenimi ile yönetiyoruz. Bütçenizi sadece harcamıyoruz; her kuruşun en yüksek dönüşümü getirmesi için makine öğrenimi modellerini (<strong className="text-[var(--foreground)]">PMax</strong>) eğitiyoruz.
@@ -468,7 +468,7 @@ export function GoogleAdsContent() {
               </li>
               <li className="flex gap-3">
                 <span className="text-[var(--foreground)]">·</span>
-                <strong className="text-[var(--foreground)]">Gemini</strong> ve <strong className="text-[var(--foreground)]">Claude</strong> entegrasyonu ile pazar ve anahtar kelime analizi
+                <strong className="text-[var(--foreground)]">Gemini 3.1 Pro</strong> ve <strong className="text-[var(--foreground)]">Claude 4.6 Sonnet</strong> entegrasyonu ile pazar ve anahtar kelime analizi
               </li>
             </ul>
           </div>
@@ -507,7 +507,7 @@ export function GoogleAdsContent() {
                   Dijitalde Güven İnşası: Ruh Sağlığı Uzmanlığı
                 </h3>
                 <p className="mx-auto mt-8 max-w-2xl text-center text-base font-light leading-relaxed text-[var(--muted)]">
-                  Psikoloji alanında reklam yönetimi, standart pazarlama kurallarının ötesindedir. Potansiyel danışanlarınızın en hassas anlarındaki arama niyetlerini analiz ediyoruz. <strong className="text-[var(--foreground)]">Claude-3.5</strong> ve <strong className="text-[var(--foreground)]">Gemini</strong> ile &quot;çözüm ve güven odaklı&quot; reklam metinleri kurguluyoruz. <strong className="text-[var(--foreground)]">8 yıllık</strong> tecrübemizle, etik sınırları koruyarak uzmanlığınızı doğru kitleyle buluşturuyoruz.
+                  Psikoloji alanında reklam yönetimi, standart pazarlama kurallarının ötesindedir. Potansiyel danışanlarınızın en hassas anlarındaki arama niyetlerini analiz ediyoruz. <strong className="text-[var(--foreground)]">Claude 4.6 Sonnet</strong> ve <strong className="text-[var(--foreground)]">Gemini 3.1 Pro</strong> ile &quot;çözüm ve güven odaklı&quot; reklam metinleri kurguluyoruz. <strong className="text-[var(--foreground)]">8 yıllık</strong> tecrübemizle, etik sınırları koruyarak uzmanlığınızı doğru kitleyle buluşturuyoruz.
                 </p>
                 <div className="mt-14 grid gap-6 sm:grid-cols-3">
                   {PSIKOLOJI_CARDS.map((card, i) => (

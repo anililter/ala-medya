@@ -146,6 +146,45 @@ export default async function Home() {
         {/* ─── 360° AI Uzmanlık (Bento Grid) ─── */}
         <BentoGrid />
 
+        {/* ─── Yapay Zeka Devrimi ─── */}
+        <AnimatedSection>
+          <section className="w-full bg-slate-900 py-24 sm:py-32 text-white px-4">
+            <div className="mx-auto max-w-[1200px] text-center">
+              <span className="inline-block rounded-full border border-blue-400/30 bg-blue-500/20 px-4 py-1.5 text-sm font-semibold tracking-wider text-blue-200 mb-6">
+                GELECEK BUGÜN BAŞLADI
+              </span>
+              <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-blue-300 via-purple-300 to-indigo-300 bg-clip-text text-transparent mb-6">
+                Yapay Zeka Devrimine Katılın
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-xl leading-relaxed text-slate-300">
+                Pazarlama kuralları baştan yazılıyor. ChatGPT-5.4 Thinking, Claude 4.6 Sonnet, Gemini 1.5, Midjourney ve Sora 2 gibi lider yapay zeka araçlarıyla markanızı nasıl geleceğe taşıdığımızı keşfedin.
+              </p>
+              <div className="mt-14 flex flex-wrap justify-center gap-6">
+                <div className="rounded-2xl border border-slate-700 bg-slate-800/50 p-8 backdrop-blur-sm sm:w-[320px] shadow-xl text-left hover:border-blue-500/50 transition">
+                  <div className="text-4xl mb-6">💬</div>
+                  <h3 className="text-xl font-bold mb-3">LLM Modelleri</h3>
+                  <p className="text-slate-400 leading-relaxed">GPT-5.4 Thinking, Claude 4.6 Sonnet ve Gemini 3.1 Pro ile insan seviyesinde stratejik metin ve analiz üretimi.</p>
+                </div>
+                <div className="rounded-2xl border border-slate-700 bg-slate-800/50 p-8 backdrop-blur-sm sm:w-[320px] shadow-xl text-left hover:border-purple-500/50 transition">
+                  <div className="text-4xl mb-6">🎨</div>
+                  <h3 className="text-xl font-bold mb-3">Görsel Üretimi</h3>
+                  <p className="text-slate-400 leading-relaxed">Midjourney v6 ve DALL-E 3 destekli, hayal gücünün sınırlarını zorlayan hiper-gerçekçi kampanya tasarımları.</p>
+                </div>
+                <div className="rounded-2xl border border-slate-700 bg-slate-800/50 p-8 backdrop-blur-sm sm:w-[320px] shadow-xl text-left hover:border-indigo-500/50 transition">
+                  <div className="text-4xl mb-6">🎬</div>
+                  <h3 className="text-xl font-bold mb-3">Video & Animasyon</h3>
+                  <p className="text-slate-400 leading-relaxed">Sora 2, Runway ve HeyGen algoritmaları ile dev bütçelere ihtiyaç duymadan stüdyo kalitesinde video reklamlar.</p>
+                </div>
+              </div>
+              <div className="mt-16">
+                <Link href="/yapay-zeka" className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-4 text-lg font-bold text-white transition hover:bg-blue-500 hover:scale-105 shadow-lg shadow-blue-500/30">
+                  Tüm Araçları İncele <span aria-hidden>→</span>
+                </Link>
+              </div>
+            </div>
+          </section>
+        </AnimatedSection>
+
         {/* ─── Markalar (Infinite Trust) ─── */}
         <TrustMarquee projects={allProjects} />
 

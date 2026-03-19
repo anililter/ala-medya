@@ -179,7 +179,7 @@ export function HakkimizdaContent() {
                 </div>
                 <h3 className="text-xl font-semibold text-[var(--foreground)]">AI</h3>
                 <p className="mt-4 text-lg leading-relaxed text-[var(--muted)]">
-                  Gemini, Claude ve ChatGPT-5 entegrasyonu. Stratejimizi veriden alıyor, hızımızı yapay zekadan kazanıyoruz. Reklam metinlerinden kitle analizine kadar her aşamada AI gücünü kullanıyoruz.
+                  Gemini 3.1 Pro, Claude 4.6 Sonnet ve GPT-5.4 Thinking entegrasyonu. Stratejimizi veriden alıyor, hızımızı yapay zekadan kazanıyoruz. Reklam metinlerinden kitle analizine kadar her aşamada AI gücünü kullanıyoruz.
                 </p>
               </div>
             </div>

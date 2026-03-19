@@ -24,7 +24,7 @@ const PAIN_POINTS = [
   {
     title: "Soğuk ve Mekanik Dil",
     content:
-      "Kriz anında çözüm arayan bir danışana 'satış' yapılmaz. Claude-3.5 ile kliniğinizin sesinden, güven ve otorite inşa eden metinler üretiyoruz.",
+      "Kriz anında çözüm arayan bir danışana 'satış' yapılmaz. Claude 4.6 Sonnet ile kliniğinizin sesinden, güven ve otorite inşa eden metinler üretiyoruz.",
     icon: "heart",
   },
   {
@@ -242,13 +242,6 @@ export function PsikolojiContent() {
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={DASHBOARD_DATA} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
                       <defs>
-                        <filter id="line-glow" x="-50%" y="-50%" width="200%" height="200%">
-                          <feGaussianBlur stdDeviation="2" result="blur" />
-                          <feMerge>
-                            <feMergeNode in="blur" />
-                            <feMergeNode in="SourceGraphic" />
-                          </feMerge>
-                        </filter>
                         <linearGradient id="line-danisan" x1="0" y1="0" x2="1" y2="0">
                           <stop offset="0%" stopColor="#059669" stopOpacity={0.4} />
                           <stop offset="100%" stopColor="#059669" stopOpacity={1} />
@@ -272,9 +265,9 @@ export function PsikolojiContent() {
                           name === "danisan" ? "Nitelikli Danışan" : name === "maliyet" ? "Maliyet Endeksi" : "Organik Erişim",
                         ]}
                       />
-                      <Line type="monotone" dataKey="danisan" stroke="url(#line-danisan)" strokeWidth={2} dot={{ r: 5, filter: "url(#line-glow)" }} name="danisan" />
-                      <Line type="monotone" dataKey="maliyet" stroke="url(#line-maliyet)" strokeWidth={2} dot={{ r: 5, filter: "url(#line-glow)" }} name="maliyet" />
-                      <Line type="monotone" dataKey="organik" stroke="url(#line-organik)" strokeWidth={2} dot={{ r: 5, filter: "url(#line-glow)" }} name="organik" />
+                      <Line type="monotone" dataKey="danisan" stroke="url(#line-danisan)" strokeWidth={2} dot={{ r: 5 }} name="danisan" />
+                      <Line type="monotone" dataKey="maliyet" stroke="url(#line-maliyet)" strokeWidth={2} dot={{ r: 5 }} name="maliyet" />
+                      <Line type="monotone" dataKey="organik" stroke="url(#line-organik)" strokeWidth={2} dot={{ r: 5 }} name="organik" />
                     </LineChart>
                   </ResponsiveContainer>
                 </div>
@@ -324,13 +317,13 @@ export function PsikolojiContent() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100">
                     <span className="text-lg font-bold text-blue-600">G</span>
                   </div>
-                  <span className="font-semibold text-[var(--foreground)]">Gemini</span>
+                  <span className="font-semibold text-[var(--foreground)]">Gemini 3.1 Pro</span>
                 </div>
                 <div className="flex items-center gap-3 rounded-2xl border border-[var(--border)] bg-white px-6 py-4 shadow-sm">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100">
                     <span className="text-lg font-bold text-amber-700">C</span>
                   </div>
-                  <span className="font-semibold text-[var(--foreground)]">Claude</span>
+                  <span className="font-semibold text-[var(--foreground)]">Claude 4.6 Sonnet</span>
                 </div>
                 <div className="flex items-center gap-3 rounded-2xl border border-[var(--border)] bg-white px-6 py-4 shadow-sm">
                   <svg className="h-12 w-12 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -346,9 +339,74 @@ export function PsikolojiContent() {
           </section>
         </AnimatedSection>
 
+        {/* 6.5 Veri Odaklı Büyüme */}
+        <AnimatedSection>
+          <section className="border-t border-[var(--border)] bg-[#f8fafc]/50 px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+            <div className="mx-auto max-w-[1100px]">
+              <h2 className="text-4xl font-bold tracking-tight text-[#1d1d1f] sm:text-5xl">
+                Psikoloji Sektöründe Veri Odaklı Büyüme
+              </h2>
+              <p className="mt-6 text-xl text-[var(--muted)]">
+                Kararlarımızı içgüdülerle değil, kanıtlanmış sektör verileriyle alıyoruz. İşte dijital varlığınızın neden kritik olduğuna dair rakamlar:
+              </p>
+              
+              <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <AnimatedSection delay={0.1}>
+                  <div className="flex h-full flex-col justify-between rounded-3xl border border-[var(--border)] bg-white p-8 shadow-sm">
+                    <div>
+                      <div className="text-6xl font-bold text-blue-600">%78</div>
+                      <h3 className="mt-6 text-xl font-bold text-[#1d1d1f]">Online Araştırma</h3>
+                    </div>
+                    <p className="mt-4 text-base leading-relaxed text-[var(--muted)]">
+                      Danışanların %78&apos;i terapi sürecine başlamadan önce uzmanları yalnızca online ortamda araştırıyor.
+                    </p>
+                  </div>
+                </AnimatedSection>
+
+                <AnimatedSection delay={0.2}>
+                  <div className="flex h-full flex-col justify-between rounded-3xl border border-[var(--border)] bg-white p-8 shadow-sm">
+                    <div>
+                      <div className="text-6xl font-bold text-emerald-600">%6,1</div>
+                      <h3 className="mt-6 text-xl font-bold text-[#1d1d1f]">Google Ads CTR</h3>
+                    </div>
+                    <p className="mt-4 text-base leading-relaxed text-[var(--muted)]">
+                      &quot;Çocuk Terapisti&quot; gibi spesifik aramalarda kampanyalarımız yüksek bir ortalama olan %6,1 tıklanma (CTR) başarısı yakalıyor.
+                    </p>
+                  </div>
+                </AnimatedSection>
+
+                <AnimatedSection delay={0.3}>
+                  <div className="flex h-full flex-col justify-between rounded-3xl border border-[var(--border)] bg-white p-8 shadow-sm">
+                    <div>
+                      <div className="text-6xl font-bold text-amber-500">%40</div>
+                      <h3 className="mt-6 text-xl font-bold text-[#1d1d1f]">WhatsApp Dönüşümü</h3>
+                    </div>
+                    <p className="mt-4 text-base leading-relaxed text-[var(--muted)]">
+                      Doğru kurgulanmış ve güven veren WhatsApp reklamları, ilgiyi anında seansa dönüştürmekte %40 başarı sağlıyor.
+                    </p>
+                  </div>
+                </AnimatedSection>
+
+                <AnimatedSection delay={0.4}>
+                  <div className="flex h-full flex-col justify-between rounded-3xl border border-[var(--border)] bg-white p-8 shadow-sm">
+                    <div>
+                      <div className="text-6xl font-bold text-[var(--gold)]">%52</div>
+                      <h3 className="mt-6 text-xl font-bold text-[#1d1d1f]">Yerel Aramalar</h3>
+                    </div>
+                    <p className="mt-4 text-base leading-relaxed text-[var(--muted)]">
+                      Yerel aramalarda (Google Maps vb.), kullanıcıların %52&apos;si danışmanlık hizmeti için randevu sürecine geçiyor.
+                    </p>
+                  </div>
+                </AnimatedSection>
+              </div>
+            </div>
+          </section>
+        </AnimatedSection>
+
         {/* 7. Final CTA */}
         <AnimatedSection>
           <section className="border-t border-[var(--border)] px-4 py-28 sm:py-36 lg:px-8">
+
             <div className="mx-auto max-w-[800px] text-center">
               <h2 className="text-4xl font-bold leading-tight tracking-tight text-[#1d1d1f] sm:text-5xl md:text-6xl">
                 Sadece 1 Ayda Takviminizi Doldurmaya Başlayın.

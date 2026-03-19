@@ -20,7 +20,7 @@ const FAQS: Array<{ q: string; a: string; category: FaqCategory }> = [
   },
   {
     q: "Yapay zeka araçlarını süreçlerinizde nasıl kullanıyorsunuz?",
-    a: "Gemini, ChatGPT ve Claude gibi yapay zeka araçlarını reklam optimizasyonu, içerik üretimi, trend analizi ve kullanıcı deneyimi iyileştirme süreçlerinde aktif olarak kullanıyoruz. Bu sayede daha hızlı, veri odaklı ve etkili sonuçlar üretiyoruz.",
+    a: "Gemini 1.5 Pro, GPT-4o ve Claude 3.5 gibi yapay zeka araçlarını reklam optimizasyonu, içerik üretimi, trend analizi ve kullanıcı deneyimi iyileştirme süreçlerinde aktif olarak kullanıyoruz. Bu sayede daha hızlı, veri odaklı ve etkili sonuçlar üretiyoruz.",
     category: "tools",
   },
   {

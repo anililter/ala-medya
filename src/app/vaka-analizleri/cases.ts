@@ -51,9 +51,9 @@ export const CASES_DETAIL: CaseDetail[] = [
     },
     solution: {
       fullFunnel:
-        "Farkındalıktan randevuya kadar her adımın yeniden kurgulanması. Hedef ülkelere özel landing sayfaları ve Gemini destekli pazar analizi ile doğru hasta profilinin tespiti.",
+        "Farkındalıktan randevuya kadar her adımın yeniden kurgulanması. Hedef ülkelere özel landing sayfaları ve Gemini 3.1 Pro destekli pazar analizi ile doğru hasta profilinin tespiti.",
       aiFirst:
-        "Gemini ve Claude modellerimizle, binlerce reklam varyasyonunun gerçek zamanlı analizi ve en karlı kitlenin tespiti. A/B testleri ile en yüksek dönüşüm veren kreatiflerin ölçeklendirilmesi.",
+        "Gemini 3.1 Pro ve Claude 4.6 Sonnet modellerimizle, binlerce reklam varyasyonunun gerçek zamanlı analizi ve en karlı kitlenin tespiti. A/B testleri ile en yüksek dönüşüm veren kreatiflerin ölçeklendirilmesi.",
       capi:
         "iOS 14+ sonrası veri kaybını engelleyen Sunucu Taraflı İzleme (Server-Side) entegrasyonu. Form ve randevu aksiyonları CAPI ile doğrudan ölçümleniyor.",
     },
@@ -91,7 +91,7 @@ export const CASES_DETAIL: CaseDetail[] = [
       fullFunnel:
         "Farkındalıktan randevuya kadar her adımın yeniden kurgulanması. Sosyal kanallardan web sitesine, oradan üyelik formuna kadar tüm huni optimize edildi.",
       aiFirst:
-        "Gemini ve Claude modellerimizle, binlerce reklam varyasyonunun gerçek zamanlı analizi ve en karlı kitlenin tespiti. Özel günlere özel mesaj ve görsel setleri ile dönüşüm artırıldı.",
+        "Gemini 3.1 Pro ve Claude 4.6 Sonnet modellerimizle, binlerce reklam varyasyonunun gerçek zamanlı analizi ve en karlı kitlenin tespiti. Özel günlere özel mesaj ve görsel setleri ile dönüşüm artırıldı.",
       capi:
         "iOS 14+ sonrası veri kaybını engelleyen Sunucu Taraflı İzleme (Server-Side) entegrasyonu. Üyelik ve form dönüşümleri CAPI ile tam görünürlük sağlanarak yönetildi.",
     },
@@ -129,7 +129,7 @@ export const CASES_DETAIL: CaseDetail[] = [
       fullFunnel:
         "Farkındalıktan randevuya kadar her adımın yeniden kurgulanması. Video reklamlarla üst funnel, Google Haritalar ve Lokal Ads ile randevu odaklı alt funnel.",
       aiFirst:
-        "Gemini ve Claude modellerimizle, binlerce reklam varyasyonunun gerçek zamanlı analizi ve en karlı kitlenin tespiti. Lokal niyet analizi ile doğru anahtar kelime ve konum hedeflemesi.",
+        "Gemini 3.1 Pro ve Claude 4.6 Sonnet modellerimizle, binlerce reklam varyasyonunun gerçek zamanlı analizi ve en karlı kitlenin tespiti. Lokal niyet analizi ile doğru anahtar kelime ve konum hedeflemesi.",
       capi:
         "iOS 14+ sonrası veri kaybını engelleyen Sunucu Taraflı İzleme (Server-Side) entegrasyonu. Arama ve harita tıklamalarından randevuya kadar tüm yolculuk ölçümleniyor.",
     },
@@ -151,7 +151,7 @@ export const CASES_DETAIL: CaseDetail[] = [
     image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80",
     metric: "Güven Odaklı Randevu Artışı | Etik Dijital Varlık",
     description:
-      "Hassas hedefleme ve Claude-3.5 destekli içerik pazarlamasıyla danışan güvenini kazanan dijital huni.",
+      "Hassas hedefleme ve Claude 4.6 Sonnet destekli içerik pazarlamasıyla danışan güvenini kazanan dijital huni.",
     heroTitle: "Psikogenetik Merkezi: Global Pazarda Algoritmik Hakimiyet.",
     metrics: {
       roas: "%190",
@@ -167,7 +167,7 @@ export const CASES_DETAIL: CaseDetail[] = [
       fullFunnel:
         "Farkındalıktan randevuya kadar her adımın yeniden kurgulanması. Etik ve huzur veren mesajlarla üst funnel, güven odaklı form ve içerikle dönüşüm.",
       aiFirst:
-        "Gemini ve Claude modellerimizle, binlerce reklam varyasyonunun gerçek zamanlı analizi ve en karlı kitlenin tespiti. Claude-3.5 destekli içeriklerle 'reklam' değil 'çözüm' sunan bir duruş.",
+        "Gemini 3.1 Pro ve Claude 4.6 Sonnet modellerimizle, binlerce reklam varyasyonunun gerçek zamanlı analizi ve en karlı kitlenin tespiti. Claude 4.6 Sonnet destekli içeriklerle 'reklam' değil 'çözüm' sunan bir duruş.",
       capi:
         "iOS 14+ sonrası veri kaybını engelleyen Sunucu Taraflı İzleme (Server-Side) entegrasyonu. Danışan mahremiyeti korunarak randevu ve form dönüşümleri ölçümleniyor.",
     },

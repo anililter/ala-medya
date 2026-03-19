@@ -52,7 +52,7 @@ export function SeoContent() {
               Semantik SEO ve AI-Native İçerik
             </h2>
             <p className="mt-8 text-base font-light leading-relaxed text-[var(--muted)] sm:text-lg">
-              <strong className="text-[var(--foreground)]">Claude</strong> ve <strong className="text-[var(--foreground)]">Gemini</strong> kullanarak, rakiplerinizin kapsamadığı içerik boşluklarını (Content Gaps) saniyeler içinde tespit ediyor ve kullanıcı niyetine (Search Intent) en uygun içerik kümelerini (Topic Clusters) oluşturuyoruz.
+              <strong className="text-[var(--foreground)]">Claude 4.6 Sonnet</strong> ve <strong className="text-[var(--foreground)]">Gemini 3.1 Pro</strong> kullanarak, rakiplerinizin kapsamadığı içerik boşluklarını (Content Gaps) saniyeler içinde tespit ediyor ve kullanıcı niyetine (Search Intent) en uygun içerik kümelerini (Topic Clusters) oluşturuyoruz.
             </p>
             <ul className="mt-10 space-y-4 font-light text-[var(--muted)]">
               <li className="flex gap-3">

@@ -4,6 +4,7 @@ import { FloatingActions } from "@/components/FloatingActions";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { ContactDrawer } from "@/components/ContactDrawer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -43,6 +44,7 @@ export default function RootLayout({
         </div>
         <Footer />
         <FloatingActions />
+        <ContactDrawer />
       </body>
     </html>
   );

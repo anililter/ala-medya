@@ -140,6 +140,9 @@ export function Header({ active }: { active?: "referanslar" | "blog" }) {
             )}
           </div>
 
+          <Link href="/yapay-zeka" className={navLinkClass}>
+            Yapay Zeka
+          </Link>
           <Link href="/hizmetler/raporlama-ve-analiz" className={navLinkClass}>
             Veri Paneli
           </Link>
@@ -203,7 +206,8 @@ export function Header({ active }: { active?: "referanslar" | "blog" }) {
             {SEKTORLER_MENU.map((item) => (
               <Link key={item.label} href={item.href} className="block rounded px-3 py-2.5 text-xs text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>{item.label}</Link>
             ))}
-            <Link href="/hizmetler/raporlama-ve-analiz" className="mt-2 block rounded px-3 py-2.5 text-xs text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Veri Paneli</Link>
+            <Link href="/yapay-zeka" className="mt-2 block rounded px-3 py-2.5 text-xs font-semibold text-[var(--foreground)] hover:bg-[var(--border)]/40" onClick={() => setMobileOpen(false)}>Yapay Zeka</Link>
+            <Link href="/hizmetler/raporlama-ve-analiz" className="block rounded px-3 py-2.5 text-xs text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Veri Paneli</Link>
             <Link href="/blog" className="block rounded px-3 py-2.5 text-xs text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Blog</Link>
           </nav>
         </div>

@@ -83,7 +83,7 @@ export function VakaDetayContent({ caseData }: { caseData: CaseDetail }) {
           </section>
         </AnimatedSection>
 
-        {/* Strateji Nasıl Kurgulandı? – AI paneli (Gemini & Claude mühür) */}
+        {/* Strateji Nasıl Kurgulandı? – AI paneli (Gemini 3.1 Pro & Claude 4.6 Sonnet mühür) */}
         <AnimatedSection>
           <section className="border-t border-[var(--border)] bg-[var(--background)] px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
             <div className="mx-auto max-w-[1000px]">
@@ -91,23 +91,27 @@ export function VakaDetayContent({ caseData }: { caseData: CaseDetail }) {
                 Strateji Nasıl Kurgulandı?
               </h2>
               <p className="mt-6 max-w-2xl text-xl leading-relaxed text-[var(--muted)]">
-                Pazar verileri Gemini ve Claude modellerimizle analiz edildi; insan zekası ile AI hızı birleştirildi.
+                Pazar verileri Gemini 3.1 Pro ve Claude 4.6 Sonnet modellerimizle analiz edildi; insan zekası ile AI hızı birleştirildi.
               </p>
               {/* Teknolojik mühür paneli */}
               <div className="mt-12 flex flex-wrap items-center gap-6 rounded-3xl border border-blue-100 bg-white p-6 shadow-sm sm:p-8">
                 <div className="flex items-center gap-4 rounded-2xl border border-[var(--border)] bg-blue-50/50 px-6 py-4">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-xl font-bold text-blue-600">G</span>
-                  <div>
-                    <span className="font-semibold text-[var(--foreground)]">Gemini</span>
-                    <p className="text-sm text-[var(--muted)]">Pazar ve niyet analizi</p>
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100/50">
+                      <span className="text-sm font-bold text-blue-600">G</span>
+                    </div>
+                    <span className="font-semibold text-[var(--foreground)]">Gemini 3.1 Pro</span>
                   </div>
+                  <p className="text-sm text-[var(--muted)]">Pazar ve niyet analizi</p>
                 </div>
                 <div className="flex items-center gap-4 rounded-2xl border border-[var(--border)] bg-amber-50/50 px-6 py-4">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-xl font-bold text-amber-700">C</span>
-                  <div>
-                    <span className="font-semibold text-[var(--foreground)]">Claude</span>
-                    <p className="text-sm text-[var(--muted)]">İçerik ve kreatif strateji</p>
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100/50">
+                      <span className="text-sm font-bold text-amber-700">C</span>
+                    </div>
+                    <span className="font-semibold text-[var(--foreground)]">Claude 4.6 Sonnet</span>
                   </div>
+                  <p className="text-sm text-[var(--muted)]">İçerik ve kreatif strateji</p>
                 </div>
               </div>
               <div className="mt-12 space-y-8">

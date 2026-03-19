@@ -40,7 +40,7 @@ function formatDate(date: Date | null): string {
   });
 }
 
-const AI_BADGES = ["AI Optimized", "Gemini Analysis", "Claude Insight", "GPT-4 Review"];
+const AI_BADGES = ["AI Optimized", "Gemini 1.5 Analysis", "Claude 3.5 Insight", "GPT-4o Review"];
 
 function aiBadge(index: number) {
   return AI_BADGES[index % AI_BADGES.length];

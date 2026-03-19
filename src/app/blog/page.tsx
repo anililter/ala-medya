@@ -43,7 +43,7 @@ export default async function BlogPage() {
             </span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-[var(--muted)] sm:text-lg">
-            Ala Medya ekibi ve yapay zeka araçlarımızın (Gemini, Claude, GPT-4)
+            Ala Medya ekibi ve yapay zeka araçlarımızın (Gemini 3.1 Pro, Claude 4.6 Sonnet, GPT-5.4 Thinking)
             senteziyle hazırlanan güncel pazarlama içgörüleri.
           </p>
         </div>
