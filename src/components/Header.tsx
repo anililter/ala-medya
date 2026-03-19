@@ -12,7 +12,6 @@ const SERVICES_MENU = [
       { label: "Google Ads Yönetimi", href: "/hizmetler/dijital-reklam/google-ads" },
       { label: "Instagram Reklamları", href: "/hizmetler/dijital-reklam/instagram-reklamlari" },
       { label: "Facebook Reklamları", href: "/hizmetler/dijital-reklam/facebook-reklamlari" },
-      { label: "Dijital Reklam (Tümü)", href: "/hizmetler/dijital-reklam" },
     ],
   },
   { label: "Kreatif Psikolojisi", href: "/hizmetler/kreatif-psikolojisi" },
@@ -79,13 +78,9 @@ export function Header({ active }: { active?: "referanslar" | "blog" }) {
                   {SERVICES_MENU.map((item) =>
                     item.children ? (
                       <div key={item.label} className="relative">
-                        <Link
-                          href={item.href}
-                          className="block px-4 py-2.5 text-xs text-[var(--foreground)] transition hover:bg-[var(--border)]/40"
-                          onClick={() => setServicesOpen(false)}
-                        >
+                        <span className="block px-4 py-2.5 text-xs font-semibold text-[var(--foreground)] bg-[var(--border)]/20 cursor-default">
                           {item.label}
-                        </Link>
+                        </span>
                         <div className="ml-2 border-l border-[var(--border)] pl-2">
                           {item.children.map((c) => (
                             <Link
@@ -164,7 +159,7 @@ export function Header({ active }: { active?: "referanslar" | "blog" }) {
         <div className="flex shrink-0 items-center gap-3">
           <Link
             href="/#iletisim"
-            className="rounded-full border border-[var(--foreground)]/30 bg-transparent px-4 py-2 text-xs font-medium text-[var(--foreground)] transition-all duration-200 hover:border-[var(--foreground)] hover:bg-[var(--foreground)]/5"
+            className="rounded-full bg-blue-600 px-4 py-2 text-xs font-medium text-white shadow-sm transition-all duration-200 hover:bg-blue-700 hover:shadow-md hover:-translate-y-0.5"
           >
             Ücretsiz Analiz
           </Link>

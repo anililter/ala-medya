@@ -180,16 +180,14 @@ export function Navbar() {
                           dijitalSubTimeout.current = setTimeout(() => setDijitalSubOpen(false), 120);
                         }}
                       >
-                        <Link
-                          href={item.href}
-                          className="flex items-center justify-between px-4 py-2.5 text-base tracking-tight text-[var(--foreground)] transition hover:bg-[var(--border)]/40"
-                          onClick={() => setServicesOpen(false)}
+                        <div
+                          className="flex items-center justify-between px-4 py-2.5 text-base font-medium tracking-tight text-[var(--foreground)] bg-[var(--border)]/10 cursor-default"
                         >
                           {item.label}
                           <svg className="h-4 w-4 shrink-0 text-[#86868b]" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
                             <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.06l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
                           </svg>
-                        </Link>
+                        </div>
                         {dijitalSubOpen && (
                           <div className="absolute left-full top-0 z-50 ml-1 min-w-[240px] rounded-xl border border-[var(--border)] bg-white/98 py-2 shadow-lg backdrop-blur-xl">
                             {item.children.map((c) => (
@@ -317,7 +315,7 @@ export function Navbar() {
         <div className="flex shrink-0 items-center gap-3">
           <Link
             href="/#iletisim"
-            className="rounded-full border border-[var(--foreground)]/30 bg-transparent px-5 py-2.5 text-base font-medium tracking-tight text-[var(--foreground)] transition-all duration-200 hover:border-[var(--foreground)] hover:bg-[var(--foreground)]/5"
+            className="rounded-full bg-blue-600 px-5 py-2.5 text-base font-medium tracking-tight text-white shadow-sm transition-all duration-200 hover:bg-blue-700 hover:shadow-md hover:-translate-y-0.5"
           >
             Ücretsiz Analiz
           </Link>
@@ -352,14 +350,14 @@ export function Navbar() {
             <nav className="flex max-h-[calc(100vh-64px)] flex-col gap-0 overflow-y-auto px-4 py-4">
               <Link
                 href="/"
-                className="block rounded px-3 py-2.5 text-base font-medium tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40"
+                className="block rounded px-3 py-2.5 text-base font-semibold tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40"
                 onClick={() => setMobileOpen(false)}
               >
                 Anasayfa
               </Link>
               <Link
                 href="/hakkimizda"
-                className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]"
+                className="block rounded px-3 py-2.5 text-base font-semibold tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40"
                 onClick={() => setMobileOpen(false)}
               >
                 Hakkımızda
@@ -405,9 +403,6 @@ export function Navbar() {
                         </svg>
                       </button>
                       <div id="mobile-dijital-submenu" className={mobileDijitalOpen ? "block" : "hidden"}>
-                        <Link href={item.href} className="block rounded px-5 py-2 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>
-                          Genel
-                        </Link>
                         {item.children.map((c) => (
                           <Link key={c.href} href={c.href} className="block rounded px-5 py-2 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>
                             {c.label}
@@ -451,11 +446,11 @@ export function Navbar() {
               </div>
 
               {/* Masaüstüyle aynı ana linkler */}
-              <Link href="/hizmetler/raporlama-ve-analiz" className="mt-3 block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Raporlama</Link>
-              <Link href="/vaka-analizleri" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Vaka Analizleri</Link>
-              <Link href="/referanslar" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Referanslar</Link>
-              <Link href="/blog" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>Blog</Link>
-              <Link href="/contact" className="block rounded px-3 py-2.5 text-base tracking-tight text-[#86868b] hover:bg-[var(--border)]/40 hover:text-[var(--foreground)]" onClick={() => setMobileOpen(false)}>İletişim</Link>
+              <Link href="/hizmetler/raporlama-ve-analiz" className="mt-3 block rounded px-3 py-2.5 text-base font-semibold tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40" onClick={() => setMobileOpen(false)}>Raporlama</Link>
+              <Link href="/vaka-analizleri" className="block rounded px-3 py-2.5 text-base font-semibold tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40" onClick={() => setMobileOpen(false)}>Vaka Analizleri</Link>
+              <Link href="/referanslar" className="block rounded px-3 py-2.5 text-base font-semibold tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40" onClick={() => setMobileOpen(false)}>Referanslar</Link>
+              <Link href="/blog" className="block rounded px-3 py-2.5 text-base font-semibold tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40" onClick={() => setMobileOpen(false)}>Blog</Link>
+              <Link href="/contact" className="block rounded px-3 py-2.5 text-base font-semibold tracking-tight text-[var(--foreground)] hover:bg-[var(--border)]/40" onClick={() => setMobileOpen(false)}>İletişim</Link>
             </nav>
           </div>
         </>

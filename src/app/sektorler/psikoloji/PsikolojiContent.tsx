@@ -16,30 +16,30 @@ import {
 
 const PAIN_POINTS = [
   {
-    title: "Etik İhlal Riski",
+    title: "Etik İhlal Kabusu",
     content:
-      "Generic reklamlar, meslek etik kurallarına zarar verebilir. Biz, hassas politikaları (Healthcare & Medicines) %100 uyumlu yönetiyoruz.",
+      "Ucuza çalışan ajansların yazdığı 'gel gel' tarzı reklam metinleri, kliniğinizin prestijini yerle bir eder. Bizimle markanız %100 güvendedir.",
     icon: "shield",
   },
   {
-    title: "Mekanik Mesajlar",
+    title: "Soğuk ve Mekanik Dil",
     content:
-      "Claude-3.5 ile empati odaklı metin yazarak, kriz anındaki kullanıcıya 'satış' değil, 'güven ve çözüm' sunuyoruz.",
+      "Kriz anında çözüm arayan bir danışana 'satış' yapılmaz. Claude-3.5 ile kliniğinizin sesinden, güven ve otorite inşa eden metinler üretiyoruz.",
     icon: "heart",
   },
   {
-    title: "Niteliksiz Trafik",
+    title: "Boş Randevu Talepleri",
     content:
-      "Sadece 'psikolog' aramasına değil, 'anksiyete terapisti' gibi spesifik ve çözüm arayan niş niyetlere (Search Intent) odaklanıyoruz.",
+      "Meraklı aramalara değil, gerçekten terapiye ihtiyacı olan ve bütçe ayırmaya hazır nitelikli danışanlara nokta atışı ulaşıyoruz.",
     icon: "target",
   },
 ];
 
 const FUNNEL_STEPS = [
-  { label: "Analiz & Keşif", sub: "Gemini destekli pazar ve niyet analizi", color: "blue" },
-  { label: "Etik Kreatif", sub: "Claude ile empati odaklı içerik üretimi", color: "green" },
-  { label: "Niyet Hedefleme", sub: "Spesifik niyet aramalarına odaklanma", color: "amber" },
-  { label: "Veri Optimizasyonu", sub: "Google Premier Partner gücüyle sürekli gelişim", color: "gold" },
+  { label: "Derinlemesine Analiz", sub: "Danışan psikolojisi ve gizli arama niyetleri haritalandırılır.", color: "blue" },
+  { label: "Güven İnşası", sub: "Otoritenizi kanıtlayan, etik ve empatik kopya mimarisi kurulur.", color: "green" },
+  { label: "Nokta Atışı Erişim", sub: "Hazırlıklı ve terapi arayan kitleye Premium reklam ağlarında ulaşılır.", color: "amber" },
+  { label: "Kesintisiz Büyüme", sub: "Randevu dönüşümleri Google algoritmalarına KVKK uyumlu geri beslenir.", color: "gold" },
 ];
 
 const DASHBOARD_DATA = [
@@ -52,10 +52,10 @@ const DASHBOARD_DATA = [
 ];
 
 const BENTO_ITEMS = [
-  { title: "Google Ads (Hassas Kampanya)", desc: "Etik uyum ve niş hedefleme.", icon: "ads" as const },
-  { title: "SEO (Otorite İnşası)", desc: "Organik görünürlük ve güvenli içerik.", icon: "seo" as const },
-  { title: "Dönüşüm & Web Tasarım", desc: "Apple estetiğinde, dingin ve randevu odaklı web deneyimi.", icon: "web" as const },
-  { title: "Veri Analitiği (KVKK Uyumlu)", desc: "Server-Side tracking ve anonim veri işleme.", icon: "data" as const },
+  { title: "Premium Google Ads", desc: "Psikoloji politikalarına takılmayan, sadece randevu getiren kusursuz kampanyalar.", icon: "ads" as const },
+  { title: "Otorite SEO", desc: "Danışan zor anında arama yaptığında kliniğinizi güvenilir bir dost gibi bulur.", icon: "seo" as const },
+  { title: "Randevu Makinesi Web", desc: "Sıradan siteler ziyarete, Apple estetiğindeki arayüzlerimiz yüksek dönüşüme odaklanır.", icon: "web" as const },
+  { title: "Server-Side Analitik", desc: "KVKK cezası riskini SIFIRA indiren, anonim ve kesin veri izleme.", icon: "data" as const },
 ];
 
 function BentoIcon({ type }: { type: "ads" | "seo" | "web" | "data" }) {
@@ -104,7 +104,7 @@ export function PsikolojiContent() {
   const trustOpacity = useTransform(scrollYProgress, [0.4, 0.75], [0, 1]);
 
   return (
-    <main className="bg-white">
+    <main className="bg-white overflow-hidden">
       <div className="w-full px-6 lg:px-12">
         {/* 1. Hero – Empati ve Otorite */}
         <section
@@ -136,10 +136,10 @@ export function PsikolojiContent() {
 
           <div className="relative z-10 mx-auto max-w-[1000px] text-center">
             <h1 className="text-5xl font-bold leading-[1.05] tracking-tight text-[#1d1d1f] sm:text-6xl md:text-7xl">
-              Etik Büyüme, Nitelikli Danışan: Psikologlara Özel Dijital Stratejiler.
+              Sıradan Reklamları Unutun. Kliniğinizi Gerçek Terapi Arayanlarla Dolduruyoruz.
             </h1>
             <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-[var(--muted)]">
-              Sıradan bir reklam ajansı değil; ruh sağlığı alanının hassasiyetini bilen, 8 yıllık tecrübeye sahip çözüm ortağınız. Gemini destekli pazar analizi ve Claude-3.5 destekli metin yazımı ile &apos;reklam&apos; değil &apos;çözüm&apos; sunuyoruz.
+              Sizi anlamayan ajanslara bütçe yakmayı bırakın. Ruh sağlığı alanındaki 8 yıllık özel tecrübemizle, randevu takviminizi %100 etik kurallara uyumlu, kalifiye danışanlarla dolduran "Garantili Büyüme" sistemimizi keşfedin.
             </p>
           </div>
         </section>
@@ -149,7 +149,7 @@ export function PsikolojiContent() {
           <section className="border-t border-[var(--border)] bg-[var(--background)] px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
             <div className="mx-auto max-w-[1100px]">
               <h2 className="text-4xl font-bold tracking-tight text-[#1d1d1f] sm:text-5xl">
-                Neden Genel Reklam Ajansları Psikologlar İçin Çalışmaz?
+                Sizi Anlamayan Ajansların Kliniğinize Verdiği 3 Büyük Zarar
               </h2>
               <div className="mt-16 grid gap-8 sm:grid-cols-3">
                 {PAIN_POINTS.map((p, i) => (
@@ -232,10 +232,10 @@ export function PsikolojiContent() {
           <section className="border-t border-[var(--border)] bg-[var(--background)] px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
             <div className="mx-auto max-w-[1000px]">
               <h2 className="text-4xl font-bold tracking-tight text-[#1d1d1f] sm:text-5xl">
-                Şeffaf Veri, Otorite Kanıtı.
+                Sözde Değil, Kanıtlanmış Büyüme Grafiği.
               </h2>
               <p className="mt-6 text-xl text-[var(--muted)]">
-                Nitelikli danışan talebi, randevu maliyeti ve organik erişilebilirlik metriklerinin sembolik ivmesi.
+                Gerçek kliniklerde elde ettiğimiz randevu maliyeti düşüşü ve nitelikli danışan hacmindeki astronomik ivmelenme.
               </p>
               <div className="mt-12 overflow-hidden rounded-3xl border border-[var(--border)] bg-white p-6 shadow-lg sm:p-8">
                 <div className="h-[320px] w-full">
@@ -351,17 +351,17 @@ export function PsikolojiContent() {
           <section className="border-t border-[var(--border)] px-4 py-28 sm:py-36 lg:px-8">
             <div className="mx-auto max-w-[800px] text-center">
               <h2 className="text-4xl font-bold leading-tight tracking-tight text-[#1d1d1f] sm:text-5xl md:text-6xl">
-                Dijitalde Gerçek Büyümeyi Birlikte Başlatalım.
+                Sadece 1 Ayda Takviminizi Doldurmaya Başlayın.
               </h2>
               <p className="mt-6 text-xl text-[var(--muted)]">
-                Markanızın dijital yolculuğunu pürüzsüzleştirip, uzmanlığınızı doğru kitleyle buluşturalım.
+                Zamanınızı deneme yanılma ajanslarıyla değil, danışanlarınızla geçirin. Hemen size özel büyüme stratejinizi hazırlayalım.
               </p>
               <div className="mt-12">
                 <Link
                   href="/#iletisim-form"
                   className="btn-shimmer inline-flex rounded-full bg-blue-600 px-10 py-5 text-xl font-semibold text-white shadow-lg shadow-blue-600/30 transition hover:scale-105 hover:bg-blue-700 hover:shadow-blue-600/40"
                 >
-                  Ücretsiz Strateji Analizi Al
+                  Kliniğim İçin Ücretsiz Analiz İste
                 </Link>
               </div>
             </div>

@@ -46,7 +46,7 @@ export default async function Home() {
     <div className="min-h-screen w-full bg-[var(--background)] text-[var(--foreground)]">
       <main className="flex w-full flex-col">
         {/* ─── Hero ─── */}
-        <section className="hero-bg relative flex min-h-[82vh] w-full flex-col overflow-x-hidden overflow-y-visible px-0 pt-10 pb-24 sm:min-h-[85vh] sm:pt-16 sm:pb-32 lg:pt-20 lg:pb-40">
+        <section className="hero-bg relative flex min-h-[82vh] w-full flex-col overflow-hidden px-0 pt-10 pb-24 sm:min-h-[85vh] sm:pt-16 sm:pb-32 lg:pt-20 lg:pb-40">
           <div className="relative z-10 flex flex-1 w-full flex-col items-center justify-center min-h-0">
             <div className="flex w-full flex-col items-center justify-center text-center overflow-visible">
               <p className="hero-anim-1 w-full text-xl font-medium tracking-wide text-slate-400 sm:mb-6 sm:text-xl md:text-2xl dark:text-slate-500">
