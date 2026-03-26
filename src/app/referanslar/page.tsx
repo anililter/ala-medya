@@ -18,7 +18,7 @@ export default async function ReferanslarPage() {
     new Set(projects.map((p) => p.category).filter(Boolean))
   ) as string[];
 
-  const fallback: ReferenceProject[] = FOLDER_REFERENCES.map((r, idx) => ({
+  const folderProjects: ReferenceProject[] = FOLDER_REFERENCES.map((r, idx) => ({
     id: `folder-${r.id}-${idx}`,
     title: r.title,
     slug: r.id,
@@ -29,8 +29,10 @@ export default async function ReferanslarPage() {
     category: r.category,
   }));
 
-  const items: ReferenceProject[] =
-    projects.length > 0 ? (projects as unknown as ReferenceProject[]) : fallback;
+  // Veritabanı projelerini de dahil et (varsa)
+  const dbProjects = (projects as unknown as ReferenceProject[]) || [];
+  
+  const items: ReferenceProject[] = [...folderProjects, ...dbProjects];
   
   const allCategories = Array.from(
     new Set(items.map((p) => p.category).filter(Boolean))
