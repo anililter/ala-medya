@@ -26,13 +26,17 @@ export default async function ReferanslarPage() {
     imageUrl: r.src,
     clientName: null,
     projectUrl: null,
-    category: null,
+    category: r.category,
   }));
 
   const items: ReferenceProject[] =
     projects.length > 0 ? (projects as unknown as ReferenceProject[]) : fallback;
-  const cats =
-    projects.length > 0 ? ["Tümünü Gör", ...categories.sort()] : ["Tümünü Gör"];
+  
+  const allCategories = Array.from(
+    new Set(items.map((p) => p.category).filter(Boolean))
+  ) as string[];
+
+  const cats = ["Tümünü Gör", ...allCategories.sort()];
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">

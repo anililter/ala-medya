@@ -38,7 +38,7 @@ export function YapayZekaContent() {
     selectedGoal === "Veri ve Rakip Analizi" ? "Gemini 3.1 Pro ile Sektör Taraması ve Büyüme Raporları" : "GPT-5.4 Thinking Stratejik Operasyon";
 
   return (
-    <main className="bg-[#f8fafc] overflow-hidden selection:bg-blue-200">
+    <main className="bg-[#f8fafc] selection:bg-blue-200">
       <div className="w-full px-6 lg:px-12">
         {/* 1. Hero Seçimi */}
         <section className="relative px-4 pt-32 pb-24 sm:px-6 sm:pt-40 sm:pb-32 lg:px-8 overflow-hidden rounded-b-[3rem] bg-gradient-to-br from-indigo-900 via-blue-900 to-slate-900 text-white shadow-2xl">

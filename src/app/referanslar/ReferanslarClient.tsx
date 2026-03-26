@@ -31,31 +31,40 @@ export function ReferanslarClient({
 
   return (
     <>
-      <div className="mb-10 flex flex-wrap justify-center gap-2">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            type="button"
-            onClick={() => setFilter(cat)}
-            className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-              filter === cat
-                ? "bg-[var(--foreground)] text-[var(--background)]"
-                : "border border-[var(--border)] bg-[var(--card)] text-[var(--muted)] hover:border-[var(--muted)] hover:text-[var(--foreground)]"
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
+      {/* Tabs Navigation */}
+      <div className="mb-12 flex justify-center">
+        <div className="inline-flex w-full flex-wrap justify-center gap-1 rounded-2xl bg-[var(--card)] p-1.5 shadow-sm border border-[var(--border)] sm:w-auto">
+          {categories.map((cat) => {
+            const isActive = filter === cat;
+            return (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setFilter(cat)}
+                className={`
+                  relative px-6 py-2.5 text-sm font-medium transition-all duration-300 rounded-xl
+                  ${isActive 
+                    ? "bg-[var(--foreground)] text-[var(--background)] shadow-md" 
+                    : "text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--muted)]/10"
+                  }
+                `}
+              >
+                {cat}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+      {/* Grid Layout */}
+      <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
         {filtered.map((p) => (
           <div
             key={p.id}
-            className="flex aspect-[3/2] items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6 transition hover:shadow-[var(--shadow)]"
+            className="group relative flex aspect-square flex-col items-center justify-center rounded-3xl border border-[var(--border)] bg-[var(--card)] p-8 transition-all duration-500 hover:border-[var(--foreground)]/20 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-1"
           >
             {p.imageUrl ? (
-              <div className="relative h-14 w-full">
+              <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-105">
                 <Image
                   src={p.imageUrl}
                   alt={p.title}
@@ -65,18 +74,27 @@ export function ReferanslarClient({
                 />
               </div>
             ) : (
-              <div className="flex h-14 items-center justify-center text-2xl font-bold text-[var(--muted)]">
+              <div className="flex h-full items-center justify-center text-3xl font-bold text-[var(--muted)]/40">
                 {p.title.slice(0, 2)}
               </div>
             )}
+            
+            {/* Hover Info */}
+            <div className="absolute inset-x-0 bottom-4 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <span className="text-[10px] font-semibold uppercase tracking-widest text-[var(--muted)]">
+                {p.title}
+              </span>
+            </div>
           </div>
         ))}
       </div>
 
       {filtered.length === 0 && (
-        <p className="py-12 text-center text-[var(--muted)]">
-          Bu kategoride referans bulunamadı.
-        </p>
+        <div className="py-20 text-center">
+          <p className="text-lg text-[var(--muted)]">
+            Bu kategoride henüz referans bulunmuyor.
+          </p>
+        </div>
       )}
     </>
   );

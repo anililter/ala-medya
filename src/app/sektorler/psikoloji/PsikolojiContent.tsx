@@ -104,7 +104,7 @@ export function PsikolojiContent() {
   const trustOpacity = useTransform(scrollYProgress, [0.4, 0.75], [0, 1]);
 
   return (
-    <main className="bg-white overflow-hidden">
+    <main className="bg-white">
       <div className="w-full px-6 lg:px-12">
         {/* 1. Hero – Empati ve Otorite */}
         <section

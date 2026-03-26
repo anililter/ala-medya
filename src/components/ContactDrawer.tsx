@@ -113,15 +113,6 @@ export function ContactDrawer() {
         )}
       </AnimatePresence>
 
-      {!isOpen && (
-        <button
-          onClick={() => setIsOpen(true)}
-          className="flex items-center justify-center bg-[#0d6efd] px-2 py-6 text-sm font-bold tracking-widest text-white shadow-[-10px_0_20px_rgba(0,0,0,0.15)] transition hover:bg-blue-700 pointer-events-auto rounded-l-2xl"
-          style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
-        >
-          SİZİ ARAYALIM
-        </button>
-      )}
     </div>
   );
 }

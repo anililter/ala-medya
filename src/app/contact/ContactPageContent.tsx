@@ -64,7 +64,7 @@ export function ContactPageContent() {
   const gradientOpacity = Math.min(0.12 + (scrollY / 2000) * 0.15, 0.28);
 
   return (
-    <main className="overflow-x-hidden bg-[var(--background)]">
+    <main className="bg-[var(--background)]">
       {/* ─── 1. Hero: Gece mavisi + mavi/altın vurgu (sitenin paleti) ─── */}
       <section
         className="relative flex min-h-[85vh] flex-col items-center justify-center px-6 pt-24 pb-20 sm:px-8 sm:pt-28"
