@@ -126,10 +126,10 @@ export const FOLDER_REFERENCES: FolderReference[] = [
   { id: "avcilar-hospital", title: "Avcılar Hospital", src: avcilarHospital, category: "Sağlık" },
 
   // Spor
-  { id: "spor-logo", title: "Spor", src: sporLogo, category: "Spor" },
-  { id: "spor-download", title: "Spor Kulübü", src: sporDownload, category: "Spor" },
+  { id: "academy", title: "Academy", src: sporLogo, category: "Spor" },
+  { id: "doris-yuzme", title: "Doris Yüzme", src: sporDownload, category: "Spor" },
   { id: "xoom", title: "Xoom Training Club", src: xoom, category: "Spor" },
-  { id: "spor-589", title: "Spor", src: spor589, category: "Spor" },
+  { id: "defense-athletics", title: "Defense & Athletics", src: spor589, category: "Spor" },
 
   // Turizm
   { id: "marca-logo", title: "Marca", src: marcaLogo, category: "Turizm" },

@@ -22,7 +22,7 @@ export function TrustMarquee({ projects }: { projects: Project[] }) {
               8 Yıldır Güvenle Büyüttüğümüz Markalar
             </h2>
             <p className="mt-4 w-full text-xl leading-relaxed text-[var(--muted)]">
-              Lotus Diş, Sonax, Xoom ve daha fazlası
+              Lotus Diş, Sonax, Xoom, BHT Clinic ve daha fazlası
             </p>
           </div>
 
