@@ -13,13 +13,19 @@ import mielo from "../../Referanslar/E-Ticaret/mielo.avif";
 import studio8 from "../../Referanslar/E-Ticaret/studio8.avif";
 
 // Eğitim
-import renkAkademi from "../../Referanslar/Eğitim/3renkakademi.avif";
-import bdtEgitim from "../../Referanslar/Eğitim/bdt egitim.avif";
-import bubala from "../../Referanslar/Eğitim/bubala.avif";
-import rehberimsensin from "../../Referanslar/Eğitim/rehberimsensin.avif";
+import renkAkademi from "../../Referanslar/Eğitim/3renkakademi.avif";
+import bdtEgitim from "../../Referanslar/Eğitim/bdt egitim.avif";
+import bubala from "../../Referanslar/Eğitim/bubala.avif";
+import rehberimsensin from "../../Referanslar/Eğitim/rehberimsensin.avif";
+import meltemAyhan from "../../Referanslar/Eğitim/meltem-ayhan.png";
 
 // Gayrimenkul
 import proper from "../../Referanslar/Gayrimenkul/proper.avif";
+
+// Güzellik
+import buseGenc from "../../Referanslar/Güzellik/buse-genc.jpg";
+import estetiwell from "../../Referanslar/Güzellik/estetiwell.jpg";
+import heda from "../../Referanslar/Güzellik/heda.jpg";
 
 // Hizmet
 import lextrumLogo from "../../Referanslar/Hizmet/lextrum_logo.avif";
@@ -30,28 +36,33 @@ import otomotivSonax from "../../Referanslar/Otomotiv/sonax.avif";
 
 // Psikoloji
 import alisafasayim from "../../Referanslar/Psikoloji/alisafasayim.avif";
+import ppe from "../../Referanslar/Psikoloji/ppe.png";
 import turna from "../../Referanslar/Psikoloji/turna.avif";
 import yugen from "../../Referanslar/Psikoloji/yugen.avif";
 
 // Sağlık
-import BHT from "../../Referanslar/Sağlık/BHT.avif";
-import cfh from "../../Referanslar/Sağlık/cfh.avif";
-import hec from "../../Referanslar/Sağlık/hec.avif";
-import lotusdis from "../../Referanslar/Sağlık/lotusdis.avif";
-import medicana from "../../Referanslar/Sağlık/medicana.avif";
-import GLOBAL from "../../Referanslar/Sağlık/GLOBAL.avif";
-import hairextrem from "../../Referanslar/Sağlık/hairextrem.avif";
-import koksalyuca from "../../Referanslar/Sağlık/koksalyuca.avif";
-import medicanaCopy from "../../Referanslar/Sağlık/medicana copy.avif";
-import vellorahair from "../../Referanslar/Sağlık/vellorahair.avif";
+import BHT from "../../Referanslar/Sağlık/BHT.avif";
+import cfh from "../../Referanslar/Sağlık/cfh.avif";
+import hec from "../../Referanslar/Sağlık/hec.avif";
+import lotusdis from "../../Referanslar/Sağlık/lotusdis.avif";
+import medicana from "../../Referanslar/Sağlık/medicana.avif";
+import GLOBAL from "../../Referanslar/Sağlık/GLOBAL.avif";
+import hairextrem from "../../Referanslar/Sağlık/hairextrem.avif";
+import koksalyuca from "../../Referanslar/Sağlık/koksalyuca.avif";
+import medicanaCopy from "../../Referanslar/Sağlık/medicana copy.avif";
+import vellorahair from "../../Referanslar/Sağlık/vellorahair.avif";
+import avcilarHospital from "../../Referanslar/Sağlık/avcilar-hospital.png";
 
 // Spor
-import dAcademy from "../../Referanslar/Spor/D.Academy.png";
-import defenceAthletics from "../../Referanslar/Spor/Defence & Athletics.png";
-import xoomTraining from "../../Referanslar/Spor/Xoom Training Club.png";
+import sporLogo from "../../Referanslar/Spor/Logo-Png-1.png";
+import sporDownload from "../../Referanslar/Spor/download.png";
+import xoom from "../../Referanslar/Spor/xoom.png";
+import spor589 from "../../Referanslar/Spor/589094747_17842096917640450_5424677768261620461_n.jpg";
 
 // Turizm
+import marcaLogo from "../../Referanslar/Turizm/logo.png";
 import marca from "../../Referanslar/Turizm/marca.avif";
+import urlaGezi from "../../Referanslar/Turizm/urla-gezi.png";
 
 export type FolderReference = {
   id: string;
@@ -78,9 +89,15 @@ export const FOLDER_REFERENCES: FolderReference[] = [
   { id: "bdtegitim", title: "BDT Eğitim", src: bdtEgitim, category: "Eğitim" },
   { id: "bubala", title: "Bubala", src: bubala, category: "Eğitim" },
   { id: "rehberimsensin", title: "Rehberim Sensin", src: rehberimsensin, category: "Eğitim" },
+  { id: "meltem-ayhan", title: "Meltem Ayhan", src: meltemAyhan, category: "Eğitim" },
 
   // Gayrimenkul
   { id: "proper", title: "Proper", src: proper, category: "Gayrimenkul" },
+
+  // Güzellik
+  { id: "buse-genc", title: "Buse Genç", src: buseGenc, category: "Güzellik" },
+  { id: "estetiwell", title: "Estetiwell", src: estetiwell, category: "Güzellik" },
+  { id: "heda", title: "Heda", src: heda, category: "Güzellik" },
 
   // Hizmet
   { id: "lextrum", title: "Lextrum", src: lextrumLogo, category: "Hizmet" },
@@ -91,6 +108,7 @@ export const FOLDER_REFERENCES: FolderReference[] = [
 
   // Psikoloji
   { id: "alisafasayim", title: "Ali Safa Sayım", src: alisafasayim, category: "Psikoloji" },
+  { id: "ppe", title: "PPE", src: ppe, category: "Psikoloji" },
   { id: "turna", title: "Turna", src: turna, category: "Psikoloji" },
   { id: "yugen", title: "Yugen", src: yugen, category: "Psikoloji" },
 
@@ -105,13 +123,16 @@ export const FOLDER_REFERENCES: FolderReference[] = [
   { id: "koksalyuca", title: "Köksal Yüca", src: koksalyuca, category: "Sağlık" },
   { id: "medicana-copy", title: "Medicana", src: medicanaCopy, category: "Sağlık" },
   { id: "vellorahair", title: "Vellora Hair", src: vellorahair, category: "Sağlık" },
+  { id: "avcilar-hospital", title: "Avcılar Hospital", src: avcilarHospital, category: "Sağlık" },
 
   // Spor
-  { id: "d-academy", title: "D.Academy", src: dAcademy, category: "Spor" },
-  { id: "defence-athletics", title: "Defence & Athletics", src: defenceAthletics, category: "Spor" },
-  { id: "xoom-training", title: "Xoom Training Club", src: xoomTraining, category: "Spor" },
+  { id: "spor-logo", title: "Spor", src: sporLogo, category: "Spor" },
+  { id: "spor-download", title: "Spor Kulübü", src: sporDownload, category: "Spor" },
+  { id: "xoom", title: "Xoom Training Club", src: xoom, category: "Spor" },
+  { id: "spor-589", title: "Spor", src: spor589, category: "Spor" },
 
   // Turizm
+  { id: "marca-logo", title: "Marca", src: marcaLogo, category: "Turizm" },
   { id: "marca", title: "Marca", src: marca, category: "Turizm" },
+  { id: "urla-gezi", title: "Urla Gezi", src: urlaGezi, category: "Turizm" },
 ];
-
