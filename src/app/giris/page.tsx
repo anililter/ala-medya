@@ -43,8 +43,8 @@ export default function LoginPage() {
       <div className="w-full max-w-sm">
         <div className="mb-8 text-center">
           <Image
-            src="/ala-medya-logo.png"
-            alt="Ala Medya"
+            src="/ferah-medya-logo.png"
+            alt="Ferah Medya"
             width={160}
             height={44}
             className="mx-auto h-10 w-auto"

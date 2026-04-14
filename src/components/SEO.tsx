@@ -4,7 +4,7 @@
  * Use in layout for Organization; in pages for Service and/or Review.
  */
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://alamedya.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ferahmedya.com";
 
 export interface OrganizationSchema {
   name: string;
@@ -34,15 +34,15 @@ export interface ReviewSchema {
 }
 
 const DEFAULT_ORGANIZATION: OrganizationSchema = {
-  name: "Ala Medya",
+  name: "Ferah Medya",
   url: SITE_URL,
-  logo: `${SITE_URL}/ala-medya-logo.png`,
+  logo: `${SITE_URL}/ferah-medya-logo.png`,
   telephone: "+90 531 944 38 85",
-  email: "info@alamedya.com",
+  email: "info@ferahmedya.com",
   description:
     "Yapay zeka destekli 360° dijital pazarlama ajansı. Google Premier Partner vizyonu, 8 yıllık sektörel tecrübe. Dijital reklam, SEO, sosyal medya, web tasarım ve dönüşüm optimizasyonu (CRO) alanlarında veri odaklı strateji ve uygulama.",
   sameAs: [
-    "https://www.instagram.com/alamedya/",
+    "https://www.instagram.com/ferahmedya/",
     "https://wa.me/905319443885",
   ],
 };
@@ -118,7 +118,7 @@ function buildReviewSchema(reviews: ReviewSchema[], itemName: string) {
 }
 
 interface SEOProps {
-  /** Kurumsal kimlik; verilmezse varsayılan Ala Medya şeması kullanılır. Sayfa layout'tan Organization alıyorsa skipOrganization kullanın. */
+  /** Kurumsal kimlik; verilmezse varsayılan Ferah Medya şeması kullanılır. Sayfa layout'tan Organization alıyorsa skipOrganization kullanın. */
   organization?: OrganizationSchema | null;
   /** true ise Organization şeması eklenmez (layout'ta zaten varsa kullanın) */
   skipOrganization?: boolean;
@@ -126,7 +126,7 @@ interface SEOProps {
   service?: ServiceSchema | null;
   /** Müşteri yorumları / referanslar için (Rich Snippets yıldız) */
   reviews?: ReviewSchema[] | null;
-  /** Review şemasında kullanılacak isim (örn. "Ala Medya" veya marka adı) */
+  /** Review şemasında kullanılacak isim (örn. "Ferah Medya" veya marka adı) */
   reviewItemName?: string;
 }
 
@@ -135,7 +135,7 @@ export function SEO({
   skipOrganization = false,
   service = null,
   reviews = null,
-  reviewItemName = "Ala Medya",
+  reviewItemName = "Ferah Medya",
 }: SEOProps) {
   const scripts: object[] = [];
 
@@ -144,7 +144,7 @@ export function SEO({
   }
   if (service) {
     scripts.push(
-      buildServiceSchema(service, organization?.name ?? "Ala Medya")
+      buildServiceSchema(service, organization?.name ?? "Ferah Medya")
     );
   }
   if (reviews && reviews.length > 0) {

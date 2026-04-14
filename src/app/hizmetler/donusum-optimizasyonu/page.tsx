@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { DonusumOptimizasyonuContent } from "./DonusumOptimizasyonuContent";
 
 export const metadata: Metadata = {
-  title: "Dönüşüm Optimizasyonu (CRO) | Ala Medya — Tıklamadan Satışa",
+  title: "Dönüşüm Optimizasyonu (CRO) | Ferah Medya — Tıklamadan Satışa",
   description:
     "Reklam bütçenizi ciroya dönüştürüyoruz. AI destekli A/B testleri, ısı haritaları ve sektörel CRO ile daha az bütçeyle daha çok randevu.",
 };

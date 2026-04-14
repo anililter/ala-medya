@@ -61,7 +61,7 @@ export const CASES_DETAIL: CaseDetail[] = [
     sectorMessage:
       "Bu başarı bir tesadüf değil; Google'ın en başarılı %3'lük diliminde olmanın getirdiği bir standarttır.",
     quote: {
-      text: "Ala Medya ile çalışmaya başladığımızda sadece reklam yönetimi beklemiyorduk; stratejik bir ortak bulduk. Veri şeffaflığı ve sonuç odaklılıkları, uluslararası hasta trafiğimizi dönüştürdü.",
+      text: "Ferah Medya ile çalışmaya başladığımızda sadece reklam yönetimi beklemiyorduk; stratejik bir ortak bulduk. Veri şeffaflığı ve sonuç odaklılıkları, uluslararası hasta trafiğimizi dönüştürdü.",
       author: "Lotus Diş Kliniği",
       role: "Pazarlama Direktörü",
     },
@@ -99,7 +99,7 @@ export const CASES_DETAIL: CaseDetail[] = [
     sectorMessage:
       "Bu başarı bir tesadüf değil; Google'ın en başarılı %3'lük diliminde olmanın getirdiği bir standarttır.",
     quote: {
-      text: "Ala Medya'nın veriye dayalı yaklaşımı ve kampanya yönetimindeki şeffaflığı, bütçemizi en verimli şekilde kullanmamızı sağladı. Ramazan ve 14 Şubat dönemlerinde gördüğümüz sonuçlar, gerçek bir strateji ortağının farkını gösterdi.",
+      text: "Ferah Medya'nın veriye dayalı yaklaşımı ve kampanya yönetimindeki şeffaflığı, bütçemizi en verimli şekilde kullanmamızı sağladı. Ramazan ve 14 Şubat dönemlerinde gördüğümüz sonuçlar, gerçek bir strateji ortağının farkını gösterdi.",
       author: "Xoom Training Club",
       role: "Dijital Pazarlama Yöneticisi",
     },
@@ -137,7 +137,7 @@ export const CASES_DETAIL: CaseDetail[] = [
     sectorMessage:
       "Bu başarı bir tesadüf değil; Google'ın en başarılı %3'lük diliminde olmanın getirdiği bir standarttır.",
     quote: {
-      text: "Ala Medya ile lokal aramada %100 görünürlüğe ulaştık. Veri raporları ve strateji sunumlarındaki netlik, bizi sadece bir ajans değil, gerçek bir büyüme ortağı olarak görmemizi sağladı.",
+      text: "Ferah Medya ile lokal aramada %100 görünürlüğe ulaştık. Veri raporları ve strateji sunumlarındaki netlik, bizi sadece bir ajans değil, gerçek bir büyüme ortağı olarak görmemizi sağladı.",
       author: "Sonax Maslak",
       role: "Marka Müdürü",
     },
@@ -175,7 +175,7 @@ export const CASES_DETAIL: CaseDetail[] = [
     sectorMessage:
       "Bu başarı bir tesadüf değil; Google'ın en başarılı %3'lük diliminde olmanın getirdiği bir standarttır.",
     quote: {
-      text: "Ala Medya, hassas bir alanda çalışırken bile veri şeffaflığını ve etik sınırları koruyor. Danışan odaklı stratejileri ve CAPI entegrasyonu ile güvenle büyüyoruz.",
+      text: "Ferah Medya, hassas bir alanda çalışırken bile veri şeffaflığını ve etik sınırları koruyor. Danışan odaklı stratejileri ve CAPI entegrasyonu ile güvenle büyüyoruz.",
       author: "Psikogenetik Merkezi",
       role: "Kurucu",
     },

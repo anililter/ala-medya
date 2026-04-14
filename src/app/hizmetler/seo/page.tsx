@@ -1,7 +1,7 @@
 import { SeoContent } from "./SeoContent";
 
 export const metadata = {
-  title: "SEO (Arama Motoru Optimizasyonu) | Ala Medya",
+  title: "SEO (Arama Motoru Optimizasyonu) | Ferah Medya",
   description:
     "Semantik SEO ve AI destekli içerik stratejisi. Google Premier Partner vizyonu. Teknik SEO ile içerik pazarlaması bir arada.",
 };

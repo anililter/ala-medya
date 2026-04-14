@@ -33,7 +33,7 @@ export default async function BlogPage() {
         {/* Hero */}
         <div className="relative">
           <p className="text-xs font-medium uppercase tracking-[0.25em] text-[var(--gold)]">
-            Ala Medya Blog
+            Ferah Medya Blog
           </p>
           <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
             Fikirler, Veriler ve
@@ -43,7 +43,7 @@ export default async function BlogPage() {
             </span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-[var(--muted)] sm:text-lg">
-            Ala Medya ekibi ve yapay zeka araçlarımızın (Gemini 3.1 Pro, Claude 4.6 Sonnet, GPT-5.4 Thinking)
+            Ferah Medya ekibi ve yapay zeka araçlarımızın (Gemini 3.1 Pro, Claude 4.6 Sonnet, GPT-5.4 Thinking)
             senteziyle hazırlanan güncel pazarlama içgörüleri.
           </p>
         </div>

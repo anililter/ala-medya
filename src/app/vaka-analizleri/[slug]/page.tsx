@@ -12,9 +12,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const caseData = getCaseBySlug(slug);
-  if (!caseData) return { title: "Vaka Analizi | Ala Medya" };
+  if (!caseData) return { title: "Vaka Analizi | Ferah Medya" };
   return {
-    title: `${caseData.title} — Vaka Analizi | Ala Medya`,
+    title: `${caseData.title} — Vaka Analizi | Ferah Medya`,
     description: caseData.description,
   };
 }

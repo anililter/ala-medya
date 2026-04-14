@@ -134,8 +134,8 @@ export function Navbar() {
       <div className="flex h-16 w-full items-center justify-between px-4">
         <Link href="/" className="flex shrink-0 items-center">
           <Image
-            src="/ala-medya-logo.png"
-            alt="Ala Medya"
+            src="/ferah-medya-logo.png"
+            alt="Ferah Medya"
             width={224}
             height={59}
             className="h-12 w-auto sm:h-14"

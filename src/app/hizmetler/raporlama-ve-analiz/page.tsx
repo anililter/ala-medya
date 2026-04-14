@@ -1,7 +1,7 @@
 import { RaporlamaVeAnalizContent } from "./RaporlamaVeAnalizContent";
 
 export const metadata = {
-  title: "Raporlama ve Analiz | Ala Medya – Detaylı Raporlama ve Şeffaf İletişim",
+  title: "Raporlama ve Analiz | Ferah Medya – Detaylı Raporlama ve Şeffaf İletişim",
   description:
     "Haftalık ve aylık performans raporları, sektör bazlı KPI takibi ve net aksiyon planı. Meta, Google, LinkedIn ve TikTok için tek formatta, anlaşılır raporlama ve düzenli iletişim.",
 };

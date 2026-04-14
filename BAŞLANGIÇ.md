@@ -1,4 +1,4 @@
-# Alamedya — Veritabanlı Ajans Sitesi Başlangıç Rehberi
+# Ferahmedya — Veritabanlı Ajans Sitesi Başlangıç Rehberi
 
 Bu proje **Next.js 16**, **React 19**, **Tailwind CSS 4** ve **Prisma 7 (SQLite)** ile kurulmuş bir ajans sitesidir. Veritabanı ile hizmetler, projeler ve iletişim mesajları yönetilir.
 

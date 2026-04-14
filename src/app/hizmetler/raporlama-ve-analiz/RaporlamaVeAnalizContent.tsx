@@ -105,7 +105,7 @@ export function RaporlamaVeAnalizContent() {
             RAPORLAMA VE ANALİZ 4.0
           </div>
           <h1 className="max-w-4xl text-5xl font-extrabold tracking-tighter text-[#1d1d1f] sm:text-7xl lg:text-8xl">
-            <span className="block italic text-[var(--muted)]">ALA MEDYA:</span>
+            <span className="block italic text-[var(--muted)]">FERAH MEDYA:</span>
             <span className="mt-2 block bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 bg-clip-text text-transparent">
               VERİYLE GÜÇLENEN GELECEK
             </span>
@@ -120,7 +120,7 @@ export function RaporlamaVeAnalizContent() {
             className="mt-12 max-w-xl mx-auto rounded-2xl border border-[var(--border)] bg-[#fafafa] p-6"
           >
             <p className="text-sm italic text-[var(--muted)]">
-              Veri, modern iş dünyasının yakıtıdır. Ala Medya, bu yakıtı işlemek ve işinizi zirveye taşımak için analiz eder.
+              Veri, modern iş dünyasının yakıtıdır. Ferah Medya, bu yakıtı işlemek ve işinizi zirveye taşımak için analiz eder.
             </p>
           </motion.div>
         </motion.div>
@@ -481,11 +481,11 @@ export function RaporlamaVeAnalizContent() {
               </div>
               <div className="flex flex-col items-center">
                 <div className="text-[var(--muted)] text-[10px] uppercase tracking-widest font-bold mb-2">E-POSTA</div>
-                <div className="text-[#1d1d1f] font-medium">hello@alamedya.com</div>
+                <div className="text-[#1d1d1f] font-medium">hello@ferahmedya.com</div>
               </div>
               <div className="flex flex-col items-center">
                 <div className="text-[var(--muted)] text-[10px] uppercase tracking-widest font-bold mb-2">WEB SİTESİ</div>
-                <div className="text-[#1d1d1f] font-medium">www.alamedya.com</div>
+                <div className="text-[#1d1d1f] font-medium">www.ferahmedya.com</div>
               </div>
             </div>
           </motion.div>

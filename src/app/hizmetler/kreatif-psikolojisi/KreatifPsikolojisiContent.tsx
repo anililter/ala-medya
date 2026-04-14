@@ -145,7 +145,7 @@ export function KreatifPsikolojisiContent() {
                   Güzel tasarım yetmez.
                 </h2>
                 <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-[var(--muted)]">
-                  Reklamlarda dönüşüm sağlayan şey görsellik değil, psikolojik doğruluktur. Ala Medya'da her kreatif, kullanıcının karar verme sürecindeki spesifik eşikleri hedef alacak şekilde kurgulanır.
+                  Reklamlarda dönüşüm sağlayan şey görsellik değil, psikolojik doğruluktur. Ferah Medya'da her kreatif, kullanıcının karar verme sürecindeki spesifik eşikleri hedef alacak şekilde kurgulanır.
                 </p>
                 <p className="mt-6 text-2xl font-semibold tracking-tight text-blue-600">
                   Doğru tetikleyici. Doğru anda. Doğru formatta.
@@ -199,12 +199,12 @@ export function KreatifPsikolojisiContent() {
           </section>
         </AnimatedSection>
 
-        {/* ─── NEDEN ALA MEDYA ──────────────────────────────── */}
+        {/* ─── NEDEN FERAH MEDYA ──────────────────────────────── */}
         <AnimatedSection>
           <section className="border-t border-[var(--border)] px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
             <div className="mx-auto max-w-[1100px]">
               <h2 className="text-center text-4xl font-bold tracking-tight text-[#1d1d1f] sm:text-5xl">
-                Neden Ala Medya?
+                Neden Ferah Medya?
               </h2>
               <div className="mt-16 grid gap-10 sm:grid-cols-2">
                 <div className="rounded-3xl border border-[var(--border)] bg-white p-10">

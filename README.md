@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 Proje PostgreSQL kullanır. Yerel geliştirme için `.env` dosyasında `DATABASE_URL` tanımlayın (ücretsiz [Neon](https://neon.tech) kullanabilirsiniz). Detay için [DEPLOY.md](./DEPLOY.md).
 
-1. **Terminal açın**, proje klasörüne gidin: `cd /Users/anililter/Desktop/alamedya`
+1. **Terminal açın**, proje klasörüne gidin: `cd /Users/anililter/Desktop/ferahmedya`
 2. `.env` oluşturun: `DATABASE_URL="postgresql://..."` (Neon’dan connection string)
 3. `npx prisma db push` ve `npm run db:seed` ve `npx tsx scripts/create-admin.ts` (ilk seferde)
 4. Sunucuyu başlatın: `npm run dev`

@@ -12,9 +12,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const sector = getSectorBySlug(slug);
-  if (!sector) return { title: "Sektör | Ala Medya" };
+  if (!sector) return { title: "Sektör | Ferah Medya" };
   return {
-    title: `${sector.title} | Ala Medya — Büyüme Mühendisi`,
+    title: `${sector.title} | Ferah Medya — Büyüme Mühendisi`,
     description: sector.navDescription + ". " + sector.content.slice(0, 140) + "...",
   };
 }

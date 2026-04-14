@@ -39,7 +39,7 @@ export function AdminShell({
       <header className="border-b border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link href="/admin" className="font-semibold text-zinc-900 dark:text-zinc-50">
-            Ala Medya Admin
+            Ferah Medya Admin
           </Link>
           <nav className="flex items-center gap-4 text-sm">
             {NAV_ITEMS.filter((item) => perms.includes(item.perm)).map((item) => (

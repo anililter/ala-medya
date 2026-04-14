@@ -94,7 +94,7 @@ export function DonusumOptimizasyonuContent() {
                 Trafik getirmek bir reklamcının görevidir; o trafiği ciroya dönüştürmek ise bir stratejistin işidir. Google Premier Partner vizyonumuzla, web sitenizi sadece &apos;güzel&apos; değil, &apos;ikna edici&apos; bir satış makinesine dönüştürüyoruz.
               </p>
               <p className="mt-10 text-2xl font-semibold tracking-tight text-blue-600">
-                Daha az bütçeyle, daha çok randevu. İşte Ala Medya farkı.
+                Daha az bütçeyle, daha çok randevu. İşte Ferah Medya farkı.
               </p>
             </div>
           </section>

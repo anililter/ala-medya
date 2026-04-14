@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getAllSectorSlugs, getSectorBySlug, type SectorConfig } from "./config";
 
 export const metadata: Metadata = {
-  title: "Sektörler | Ala Medya — Sağlık Turizmi, Psikoloji, Gayrimenkul",
+  title: "Sektörler | Ferah Medya — Sağlık Turizmi, Psikoloji, Gayrimenkul",
   description:
     "Sağlık turizmi, psikoloji, gayrimenkul, otomotiv ve fitness sektörlerinde dijital pazarlama ve reklam çözümleri.",
 };

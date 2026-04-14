@@ -1,11 +1,11 @@
 {
-  "name": "alamedya",
+  "name": "ferahmedya",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "ulimit -n 10240 2>/dev/null || true; npx next dev /Users/anililter/Desktop/alamedya --hostname 127.0.0.1 --port 3000",
-    "dev:webpack": "ulimit -n 10240 2>/dev/null || true; npx next dev /Users/anililter/Desktop/alamedya --hostname 127.0.0.1 --port 3000 --webpack",
-    "dev:no-db": "ulimit -n 10240 2>/dev/null || true; ALA_DB_DISABLED=1 DATABASE_URL= npx next dev /Users/anililter/Desktop/alamedya --hostname 127.0.0.1 --port 3000",
+    "dev": "ulimit -n 10240 2>/dev/null || true; npx next dev /Users/anililter/Desktop/ferahmedya --hostname 127.0.0.1 --port 3000",
+    "dev:webpack": "ulimit -n 10240 2>/dev/null || true; npx next dev /Users/anililter/Desktop/ferahmedya --hostname 127.0.0.1 --port 3000 --webpack",
+    "dev:no-db": "ulimit -n 10240 2>/dev/null || true; ALA_DB_DISABLED=1 DATABASE_URL= npx next dev /Users/anililter/Desktop/ferahmedya --hostname 127.0.0.1 --port 3000",
     "build": "npx prisma generate && next build",
     "start": "next start",
     "lint": "eslint",

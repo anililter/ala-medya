@@ -19,13 +19,13 @@ const FAQS: Array<{ q: string; a: string; category: FaqCategory }> = [
     category: "sectors",
   },
   {
-    q: "Ben de panelden reklam açabiliyorum, Ala Medya'ya neden ihtiyacım var?",
-    a: "Reklam açmak sadece bir başlangıçtır. Ala Medya'da biz veriyi ham haliyle bırakmıyoruz; Gemini 3.1 Pro ve GPT-5.4 Thinking ile 8 yıllık sektörel refleksimizi birleştiriyoruz. Sizin yapacağınız 1 reklam denemesine karşılık, biz yapay zeka ile binlerce varyasyonu milisaniyeler içinde simüle edip bütçenizi en karlı kanala yönlendiriyoruz.",
+    q: "Ben de panelden reklam açabiliyorum, Ferah Medya'ya neden ihtiyacım var?",
+    a: "Reklam açmak sadece bir başlangıçtır. Ferah Medya'da biz veriyi ham haliyle bırakmıyoruz; Gemini 3.1 Pro ve GPT-5.4 Thinking ile 8 yıllık sektörel refleksimizi birleştiriyoruz. Sizin yapacağınız 1 reklam denemesine karşılık, biz yapay zeka ile binlerce varyasyonu milisaniyeler içinde simüle edip bütçenizi en karlı kanala yönlendiriyoruz.",
     category: "ai",
   },
   {
     q: "Bu araçları ben de kullanabilirim, neden size hizmet bedeli ödemeliyim?",
-    a: "Enstrümana sahip olmak, virtüöz olmayı gerektirmez. Ala Medya'ya ödediğiniz bedel; doğru prompt mimarisi, araçlar arasındaki karmaşık entegrasyonlar ve markanıza özel kurguladığımız AI iş akışları içindir. Bireysel öğrenme sürecinde harcayacağınız zaman ve 'hatalı bütçe kullanımı' maliyetini ortadan kaldırır.",
+    a: "Enstrümana sahip olmak, virtüöz olmayı gerektirmez. Ferah Medya'ya ödediğiniz bedel; doğru prompt mimarisi, araçlar arasındaki karmaşık entegrasyonlar ve markanıza özel kurguladığımız AI iş akışları içindir. Bireysel öğrenme sürecinde harcayacağınız zaman ve 'hatalı bütçe kullanımı' maliyetini ortadan kaldırır.",
     category: "ai",
   },
   {

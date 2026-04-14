@@ -181,7 +181,7 @@ export function VakaAnalizleriContent() {
           <section className="border-t border-[var(--border)] bg-[var(--background)] px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
             <div className="mx-auto max-w-[900px] text-center">
               <blockquote className="text-3xl font-medium italic leading-relaxed tracking-tight text-[#1d1d1f] sm:text-4xl md:text-5xl">
-                &ldquo;Ala Medya ile çalışmaya başladığımızda sadece reklam yönetimi beklemiyorduk; stratejik bir ortak bulduk. Veri şeffaflığı ve sonuç odaklılıkları, dijital dönüşümümüzü gerçekten değiştirdi.&rdquo;
+                &ldquo;Ferah Medya ile çalışmaya başladığımızda sadece reklam yönetimi beklemiyorduk; stratejik bir ortak bulduk. Veri şeffaflığı ve sonuç odaklılıkları, dijital dönüşümümüzü gerçekten değiştirdi.&rdquo;
               </blockquote>
               <footer className="mt-10">
                 <cite className="not-italic">

@@ -18,12 +18,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ala Medya — Yapay Zeka Destekli 360 Dijital Pazarlama Ajansı",
+  title: "Ferah Medya — Yapay Zeka Destekli 360 Dijital Pazarlama Ajansı",
   description:
     "Yeni nesil yapay zeka destekli dijital reklam, SEO, sosyal medya ve kreatif çözümler. Sertifikalı uzmanlık, birebir iletişim.",
   icons: {
-    icon: "/ala-medya-logo.png",
-    apple: "/ala-medya-logo.png",
+    icon: "/ferah-medya-logo.png",
+    apple: "/ferah-medya-logo.png",
   },
 };
 

@@ -58,7 +58,7 @@ export function YapayZekaContent() {
                 </span>
               </h1>
               <p className="mx-auto mt-8 max-w-2xl text-xl leading-relaxed text-blue-100/80">
-                Ala Medya olarak kreatif süreçlerimizin merkezine yapay zekayı yerleştiriyoruz. Biz sadece araçları listelemiyor; GPT-5.4 Thinking, Midjourney ve Sora 2 gibi dev modelleri marka stratejilerinizde harmanlıyor ve dijital büyümenizi katlıyoruz.
+                Ferah Medya olarak kreatif süreçlerimizin merkezine yapay zekayı yerleştiriyoruz. Biz sadece araçları listelemiyor; GPT-5.4 Thinking, Midjourney ve Sora 2 gibi dev modelleri marka stratejilerinizde harmanlıyor ve dijital büyümenizi katlıyoruz.
               </p>
             </motion.div>
           </div>
@@ -71,7 +71,7 @@ export function YapayZekaContent() {
               <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold tracking-tight text-[#1d1d1f] sm:text-5xl">Strateji & Analiz: LLM Gücümüz</h2>
                 <p className="mt-4 text-xl text-[var(--muted)] max-w-2xl mx-auto">
-                  Ala Medya veri ve kopyalama ekibi olarak, markanızın sesini kusursuzlaştırmak ve reklam analizlerimizi derinleştirmek için sektördeki en güçlü yapay zeka modelleriyle omuz omuza çalışıyoruz.
+                  Ferah Medya veri ve kopyalama ekibi olarak, markanızın sesini kusursuzlaştırmak ve reklam analizlerimizi derinleştirmek için sektördeki en güçlü yapay zeka modelleriyle omuz omuza çalışıyoruz.
                 </p>
               </div>
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -172,13 +172,13 @@ export function YapayZekaContent() {
               </div>
 
               <div className="text-center p-8 bg-indigo-50 border border-indigo-100 rounded-3xl mb-16">
-                <p className="text-sm font-bold text-indigo-500 uppercase tracking-wide mb-2">ALA MEDYA'NIN SİZE SUNDUĞU ÇÖZÜM UZAYI</p>
+                <p className="text-sm font-bold text-indigo-500 uppercase tracking-wide mb-2">FERAH MEDYA'NIN SİZE SUNDUĞU ÇÖZÜM UZAYI</p>
                 <div className="text-2xl font-extrabold text-indigo-900">{suggestedTool}</div>
               </div>
 
               <div className="border-t border-slate-200 pt-16">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-[#1d1d1f] mb-4">Dijital Dönüşümü Ala Medya İle Yakalayın</h3>
+                  <h3 className="text-2xl font-bold text-[#1d1d1f] mb-4">Dijital Dönüşümü Ferah Medya İle Yakalayın</h3>
                   <p className="text-[var(--muted)] mb-8">Markanız için geliştirdiğimiz AI destekli yeni stratejilerden ve sektördeki dijital devrimden haberdar olmak için bültenimize katılın.</p>
                   <form className="max-w-md mx-auto flex gap-4" onSubmit={(e) => { e.preventDefault(); alert("Abonelik başarılı!"); }}>
                     <input 

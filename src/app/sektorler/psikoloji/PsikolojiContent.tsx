@@ -187,7 +187,7 @@ export function PsikolojiContent() {
           <section className="border-t border-[var(--border)] px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
             <div className="mx-auto max-w-[1100px]">
               <h2 className="text-center text-4xl font-bold tracking-tight text-[#1d1d1f] sm:text-5xl">
-                Ala Medya&apos;nın Fark Yaratan 4 Adımlı Hunisi
+                Ferah Medya&apos;nın Fark Yaratan 4 Adımlı Hunisi
               </h2>
               <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 {FUNNEL_STEPS.map((step, i) => (

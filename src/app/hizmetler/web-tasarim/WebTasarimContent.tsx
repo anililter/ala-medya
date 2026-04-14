@@ -68,7 +68,7 @@ export function WebTasarimContent() {
                   Design is How it Works
                 </h2>
                 <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-[var(--muted)]">
-                  Steve Jobs&apos;ın dediği gibi; tasarım sadece nasıl göründüğü değil, nasıl çalıştığıdır. Ala Medya olarak; Lotus Diş veya Xoom gibi markalarımızda, kullanıcı deneyimini (UX) reklam verilerinden gelen içgörülerle şekillendiriyoruz.
+                  Steve Jobs&apos;ın dediği gibi; tasarım sadece nasıl göründüğü değil, nasıl çalıştığıdır. Ferah Medya olarak; Lotus Diş veya Xoom gibi markalarımızda, kullanıcı deneyimini (UX) reklam verilerinden gelen içgörülerle şekillendiriyoruz.
                 </p>
                 <p className="mt-8 text-2xl font-semibold tracking-tight text-blue-600">
                   Hız, Mobil Öncelik ve Kusursuz Tipografi.
@@ -151,12 +151,12 @@ export function WebTasarimContent() {
           </section>
         </AnimatedSection>
 
-        {/* 5. Neden Ala Medya? */}
+        {/* 5. Neden Ferah Medya? */}
         <AnimatedSection>
           <section className="border-t border-[var(--border)] bg-[var(--background)] px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
             <div className="mx-auto max-w-[1100px]">
               <h2 className="text-center text-4xl font-bold tracking-tight text-[#1d1d1f] sm:text-5xl">
-                Neden Ala Medya?
+                Neden Ferah Medya?
               </h2>
               <div className="mt-16 grid gap-10 sm:grid-cols-2">
                 <div className="rounded-3xl border border-[var(--border)] bg-white p-10">

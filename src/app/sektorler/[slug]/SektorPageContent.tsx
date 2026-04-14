@@ -48,7 +48,7 @@ export function SektorPageContent({ sector }: { sector: SectorConfig }) {
                 <div className="relative aspect-[16/10] w-full">
                   <Image
                     src={sector.imagePlaceholder}
-                    alt={sector.title + " — Ala Medya uzmanlığı"}
+                    alt={sector.title + " — Ferah Medya uzmanlığı"}
                     fill
                     className="object-cover"
                     sizes="(max-width: 1200px) 100vw, 1200px"
@@ -68,7 +68,7 @@ export function SektorPageContent({ sector }: { sector: SectorConfig }) {
                 8 yıllık pazarlama verisiyle sektörünüzde büyüme mühendisi olarak yanınızdayız.
               </p>
               <p className="mt-6 text-xl text-[var(--muted)]">
-                Ala Medya, sıradan bir reklam ajansı değil; her sektöre özel strateji ve veri odaklı kampanya yönetimi sunan bir ortağınızdır.
+                Ferah Medya, sıradan bir reklam ajansı değil; her sektöre özel strateji ve veri odaklı kampanya yönetimi sunan bir ortağınızdır.
               </p>
             </div>
           </section>

@@ -1,7 +1,7 @@
 import { IcerikPazarlamaContent } from "./IcerikPazarlamaContent";
 
 export const metadata = {
-  title: "İçerik Pazarlama | Ala Medya",
+  title: "İçerik Pazarlama | Ferah Medya",
   description:
     "Veriyle beslenen, yapay zekayla zenginleşen içerikler. Blog, video prodüksiyon ve marka otoritesi. Dijital dergi kalitesinde strateji.",
 };

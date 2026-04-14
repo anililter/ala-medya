@@ -147,7 +147,7 @@ export function SeoContent() {
               Bütünsel Büyüme: Ads ve SEO Sinerjisi
             </h2>
             <p className="mt-8 text-base font-light leading-relaxed text-[var(--muted)] sm:text-lg">
-              Ads ile anlık sonuç, SEO ile kalıcı otorite. Ala Medya&apos;nın <strong className="text-[var(--foreground)]">360°</strong> yaklaşımıyla reklam verilerinden gelen içgörüleri SEO stratejimize entegre ederek, dijital pazarlama bütçenizi en verimli şekilde kullanıyoruz.
+              Ads ile anlık sonuç, SEO ile kalıcı otorite. Ferah Medya&apos;nın <strong className="text-[var(--foreground)]">360°</strong> yaklaşımıyla reklam verilerinden gelen içgörüleri SEO stratejimize entegre ederek, dijital pazarlama bütçenizi en verimli şekilde kullanıyoruz.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link href="/hizmetler/dijital-reklam/google-ads" className="inline-flex rounded-full border border-[var(--border)] bg-white px-6 py-3 text-sm font-medium text-[var(--foreground)] transition hover:bg-[var(--muted)]/10 dark:bg-[var(--card)]">

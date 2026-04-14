@@ -49,8 +49,8 @@ export function Header({ active }: { active?: "referanslar" | "blog" }) {
         {/* Sol: Logo */}
         <Link href="/" className="flex shrink-0 items-center">
           <Image
-            src="/ala-medya-logo.png"
-            alt="Ala Medya"
+            src="/ferah-medya-logo.png"
+            alt="Ferah Medya"
             width={120}
             height={32}
             className="h-7 w-auto"

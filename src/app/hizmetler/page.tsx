@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Hizmetler | Ala Medya — Dijital Reklam, SEO, Sosyal Medya",
+  title: "Hizmetler | Ferah Medya — Dijital Reklam, SEO, Sosyal Medya",
   description:
     "Dijital reklam yönetimi, SEO, sosyal medya, içerik pazarlama, web tasarım ve dönüşüm optimizasyonu. 360° reklam ajansı hizmetleri.",
 };

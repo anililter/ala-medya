@@ -1,7 +1,7 @@
 import { SosyalMedyaContent } from "./SosyalMedyaContent";
 
 export const metadata = {
-  title: "Sosyal Medya Yönetimi | Ala Medya",
+  title: "Sosyal Medya Yönetimi | Ferah Medya",
   description:
     "Marka hikayenizi dijitalde yeniden yazıyoruz. Trend takibi, topluluk yönetimi, etkileşim odaklı tasarım. AI ile sosyal medya içerik planlaması.",
 };

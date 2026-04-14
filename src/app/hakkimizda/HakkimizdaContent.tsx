@@ -106,7 +106,7 @@ export function HakkimizdaContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           >
-            2018 yılında &quot;Freelance Reklam Hizmeti&quot; ile temelleri atılan yolculuğumuz, bugün Ala Medya çatısı altında Google Premier Partner kimliğiyle global bir boyuta ulaştı. Biz sadece reklam yönetmiyoruz; dijitalin karmaşasını veriyle berraklaştırıyoruz.
+            2018 yılında &quot;Freelance Reklam Hizmeti&quot; ile temelleri atılan yolculuğumuz, bugün Ferah Medya çatısı altında Google Premier Partner kimliğiyle global bir boyuta ulaştı. Biz sadece reklam yönetmiyoruz; dijitalin karmaşasını veriyle berraklaştırıyoruz.
           </motion.p>
         </div>
       </section>
@@ -196,7 +196,7 @@ export function HakkimizdaContent() {
               Sektörel Dikey Uzmanlık
             </h2>
             <p className="mt-4 max-w-xl text-lg text-[var(--muted)]">
-              Ala Medya&apos;nın uzmanlaştığı ana sektörler.
+              Ferah Medya&apos;nın uzmanlaştığı ana sektörler.
             </p>
             <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {VERTICALS.map((v, i) => {

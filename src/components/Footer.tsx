@@ -45,7 +45,7 @@ const FOOTER_COLUMNS = [
     links: [
       { label: "WhatsApp Hattı", href: "https://wa.me/905319443885" },
       { label: "+90 531 944 38 85", href: "tel:+905319443885" },
-      { label: "info@alamedya.com", href: "mailto:info@alamedya.com" },
+      { label: "info@ferahmedya.com", href: "mailto:info@ferahmedya.com" },
       { label: "Strateji Analiz Formu", href: "/#iletisim" },
       { label: "Teknik Destek", href: "/#iletisim" },
     ],
@@ -172,7 +172,7 @@ export function Footer() {
         >
           <div className="flex w-full flex-col items-center justify-between gap-4 py-6 px-4 lg:flex-row">
             <p className={`text-xs font-light ${APPLE_FOOTER_GRAY}`}>
-              Telif Hakkı © 2026 Ala Medya. Tüm hakları saklıdır.
+              Telif Hakkı © 2026 Ferah Medya. Tüm hakları saklıdır.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
               {LEGAL_LINKS.map((link) => (

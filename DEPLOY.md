@@ -15,7 +15,7 @@ Bu proje PostgreSQL kullanır. Vercel'de canlıya almak için aşağıdaki adım
 ## 2. Projeyi GitHub’a push edin
 
 ```bash
-cd /Users/anililter/Desktop/alamedya
+cd /Users/anililter/Desktop/ferahmedya
 
 # Henüz git repo değilse:
 git init
@@ -23,7 +23,7 @@ git add .
 git commit -m "Vercel deploy için hazır"
 
 # GitHub’da yeni repo oluşturun (github.com/new), sonra:
-git remote add origin https://github.com/KULLANICI_ADINIZ/alamedya.git
+git remote add origin https://github.com/KULLANICI_ADINIZ/ferahmedya.git
 git branch -M main
 git push -u origin main
 ```
@@ -32,7 +32,7 @@ git push -u origin main
 
 1. [vercel.com](https://vercel.com) → **Login** (GitHub ile).
 2. **Add New…** → **Project**.
-3. **Import** ile GitHub’daki `alamedya` reposunu seçin.
+3. **Import** ile GitHub’daki `ferahmedya` reposunu seçin.
 4. **Environment Variables** bölümüne gidin (mutlaka deploy’dan önce ekleyin):
    - **Name:** `DATABASE_URL`
    - **Value:** Neon’dan kopyaladığınız PostgreSQL connection string (veya Vercel Postgres kullandıysanız otomatik gelir).

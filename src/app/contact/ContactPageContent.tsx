@@ -8,7 +8,7 @@ const TESTIMONIALS = [
   {
     name: "Lotus Health",
     role: "Sağlık Turizmi",
-    quote: "Dijital reklam yatırımlarımızı Ala Medya ile yönettik. ROI'de belirgin artış gördük.",
+    quote: "Dijital reklam yatırımlarımızı Ferah Medya ile yönettik. ROI'de belirgin artış gördük.",
   },
   {
     name: "Sonax Maslak",
@@ -186,8 +186,8 @@ export function ContactPageContent() {
               <p className="text-sm text-[var(--muted)]">
                 Cumhuriyet Mah. E-5 Karayolu Firuze Sokak İstanbul Outlet Park Outlet Park 2. Katında Merkez, K:2 D:64, 34500 Büyükçekmece/İstanbul
               </p>
-              <a href="mailto:info@alamedya.com" className="font-medium text-[var(--gold)] hover:underline">
-                info@alamedya.com
+              <a href="mailto:info@ferahmedya.com" className="font-medium text-[var(--gold)] hover:underline">
+                info@ferahmedya.com
               </a>
             </div>
           </motion.div>
