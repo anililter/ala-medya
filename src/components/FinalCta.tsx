@@ -29,10 +29,10 @@ export function FinalCta() {
 
       <div className="relative w-full px-4 text-center sm:px-4">
         <h2 className="text-4xl font-bold leading-[1.1] tracking-tighter text-white sm:text-5xl md:text-6xl lg:text-7xl">
-          Markanızı Bir Sonraki Seviyeye Taşımaya Hazır mısınız?
+          Profesyonel Ajans Desteğiyle Markanızı Büyütün
         </h2>
-        <p className="mt-6 w-full text-xl text-white/90">
-          Yapay zeka destekli 360° dijital pazarlama çözümleriyle markanızı büyütün
+        <p className="mt-8 w-full text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+          Yapay zeka destekli stratejik dijital pazarlama çözümleriyle markanızı bir sonraki seviyeye taşımaya hazır mısınız?
         </p>
         <div className="mt-12">
           <Link

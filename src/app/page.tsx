@@ -49,8 +49,8 @@ export default async function Home() {
         <section className="hero-bg relative flex min-h-[82vh] w-full flex-col overflow-hidden px-0 pt-10 pb-24 sm:min-h-[85vh] sm:pt-16 sm:pb-32 lg:pt-20 lg:pb-40">
           <div className="relative z-10 flex flex-1 w-full flex-col items-center justify-center min-h-0">
             <div className="flex w-full flex-col items-center justify-center text-center overflow-visible">
-              <p className="hero-anim-1 w-full text-xl font-medium tracking-wide text-slate-400 sm:mb-6 sm:text-xl md:text-2xl dark:text-slate-500">
-                Yapay Zeka Destekli
+              <p className="hero-anim-1 w-full text-xl font-medium tracking-wide text-blue-600/80 sm:mb-6 sm:text-xl md:text-2xl">
+                Yapay Zeka Gücüyle Markanızı Büyüten
               </p>
               <div className="hero-anim-2 w-full min-w-0 overflow-visible" style={{ paddingBottom: "0.35em" }}>
                 <h1
@@ -61,22 +61,20 @@ export default async function Home() {
                     wordBreak: "keep-all",
                   }}
                 >
-                  <span className="block bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-400 bg-clip-text text-transparent dark:from-blue-500 dark:via-blue-400 dark:to-cyan-300">
-                    <span className="block">360°</span>
+                  <span className="block bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                    <span className="block italic opacity-90">360°</span>
                     <span className="block">Reklam Ajansı</span>
-                  </span>
+                   </span>
                 </h1>
               </div>
-              <div className="hero-anim-3 mt-6 flex w-full flex-wrap items-center justify-center gap-x-2.5 gap-y-2 sm:mt-10 sm:gap-x-4 md:mt-12 md:gap-x-5 md:text-xl">
-                <span className="text-[15px] font-semibold uppercase tracking-wide text-[var(--foreground)] sm:text-lg md:text-xl">Dijital Reklam</span>
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" aria-hidden />
-                <span className="text-[15px] font-semibold uppercase tracking-wide text-[var(--foreground)] sm:text-lg md:text-xl">SEO</span>
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" aria-hidden />
-                <span className="text-[15px] font-semibold uppercase tracking-wide text-[var(--foreground)] sm:text-lg md:text-xl">Sosyal Medya</span>
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" aria-hidden />
-                <span className="text-[15px] font-semibold uppercase tracking-wide text-[var(--foreground)] sm:text-lg md:text-xl">Tasarım</span>
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" aria-hidden />
-                <span className="text-[15px] font-semibold uppercase tracking-wide text-[var(--foreground)] sm:text-lg md:text-xl">Yazılım</span>
+              <div className="hero-anim-3 mt-6 flex w-full flex-wrap items-center justify-center gap-x-3 gap-y-2 sm:mt-10 sm:gap-x-5 md:mt-12 md:gap-x-6 md:text-xl">
+                <span className="text-[14px] font-bold uppercase tracking-widest text-slate-500 sm:text-lg">Strateji</span>
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500/30" aria-hidden />
+                <span className="text-[14px] font-bold uppercase tracking-widest text-slate-500 sm:text-lg">Performans</span>
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500/30" aria-hidden />
+                <span className="text-[14px] font-bold uppercase tracking-widest text-slate-500 sm:text-lg">Kreatif</span>
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500/30" aria-hidden />
+                <span className="text-[14px] font-bold uppercase tracking-widest text-slate-500 sm:text-lg">Teknoloji</span>
               </div>
               <div className="hero-anim-4 mt-10 flex w-full flex-col items-center justify-center gap-3 sm:mt-16 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-5 md:mt-20 md:gap-6">
                 <Link
@@ -101,33 +99,39 @@ export default async function Home() {
         {/* ─── Resmi Partnerlikler ─── */}
         {partners.length > 0 && (
         <AnimatedSection>
-          <section className="w-full bg-white py-16 sm:py-20">
-            <div className="flex w-full flex-col items-center gap-10 px-4 sm:flex-row sm:items-center sm:gap-12">
+          <section className="w-full bg-slate-50 py-16 sm:py-24 border-y border-slate-100">
+            <div className="flex w-full flex-col items-center gap-12 px-4 lg:flex-row lg:items-center lg:gap-20 max-w-[1400px] mx-auto">
               {/* Sol: Yazılar */}
-              <div className="shrink-0 text-center sm:w-[260px] sm:text-left">
-                <h2 className="text-3xl font-bold tracking-tighter text-[var(--foreground)] sm:text-4xl">
+              <div className="shrink-0 text-center lg:w-[320px] lg:text-left">
+                <h2 className="text-2xl font-bold tracking-tight text-[var(--foreground)] sm:text-3xl lg:text-4xl">
                   Resmi Partnerliklerimiz
                 </h2>
-                <p className="mt-3 text-base text-slate-400 dark:text-slate-500">
-                  Yapay Zeka Gücüyle, Sektörün En İyileriyle
-                </p>
+                <div className="mt-4 flex flex-col gap-1">
+                  <p className="text-base font-medium text-blue-600">
+                    Sektörün En İyileriyle
+                  </p>
+                  <p className="text-sm text-slate-400">
+                    Sertifikalı ve Doğrulanmış Uzmanlık
+                  </p>
+                </div>
               </div>
 
               {/* Sağ: Sonsuz kayan logolar */}
               <div className="relative min-w-0 flex-1 overflow-hidden">
-                <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent sm:w-24" />
+                <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-slate-50 to-transparent" />
+                <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-slate-50 to-transparent" />
 
                 <div className="marquee-track">
                   {[0, 1].map((copy) => (
-                    <div key={copy} className="flex shrink-0 items-center gap-12 px-6 sm:gap-14 sm:px-7">
+                    <div key={copy} className="flex shrink-0 items-center gap-16 px-8 sm:gap-20 sm:px-10">
                       {partners.map((p) => (
-                        <div key={`${p.id}-${copy}`} className="relative h-10 w-24 shrink-0">
+                        <div key={`${p.id}-${copy}`} className="relative h-12 w-32 shrink-0">
                           <Image
                             src={p.imageUrl}
                             alt={p.name}
                             fill
-                            className="object-contain"
-                            sizes="96px"
+                            className="object-contain logo-grayscale"
+                            sizes="128px"
                           />
                         </div>
                       ))}

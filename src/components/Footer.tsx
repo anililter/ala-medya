@@ -104,10 +104,14 @@ export function Footer() {
 
   return (
     <>
-      <footer className="w-full border-t border-[var(--border)] bg-white">
-        <div className="w-full px-4 py-14 lg:py-16">
+      <footer className="w-full border-t border-[var(--border)] bg-[#fafafa]">
+        <div className="w-full px-4 py-14 lg:py-20 relative overflow-hidden">
+          {/* Subtle background glow */}
+          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
+          <div className="pointer-events-none absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-purple-500/5 blur-3xl" />
+
           {/* 5 sütun – desktop grid, mobil accordion */}
-          <div className="grid grid-cols-1 gap-0 md:grid-cols-2 lg:grid-cols-5 lg:gap-12">
+          <div className="relative z-10 grid grid-cols-1 gap-0 md:grid-cols-2 lg:grid-cols-5 lg:gap-12">
             {FOOTER_COLUMNS.map((col, index) => (
               <div
                 key={col.title}
@@ -121,7 +125,7 @@ export function Footer() {
                   }
                   aria-expanded={openColumn === index}
                 >
-                  <h4 className="text-xs font-semibold text-[var(--foreground)]">
+                  <h4 className="text-[13px] font-bold uppercase tracking-wider text-[var(--foreground)]">
                     {col.title}
                   </h4>
                   <svg
@@ -139,7 +143,7 @@ export function Footer() {
                   </svg>
                 </button>
                 <ul
-                  className={`overflow-hidden transition-all duration-200 md:block ${
+                  className={`overflow-hidden transition-all duration-300 md:block ${
                     openColumn === index ? "max-h-[500px]" : "max-h-0 md:max-h-none"
                   }`}
                 >
@@ -147,11 +151,10 @@ export function Footer() {
                     <li
                       key={i}
                       className="py-2 first:pt-4 md:first:pt-5 md:py-2.5"
-                      style={{ paddingTop: i === 0 ? undefined : undefined }}
                     >
                       <Link
                         href={link.href}
-                        className={`text-xs font-light transition-colors hover:text-[var(--foreground)] ${APPLE_FOOTER_GRAY}`}
+                        className={`text-[13px] font-normal transition-colors hover:text-blue-600 ${APPLE_FOOTER_GRAY}`}
                         target={link.href.startsWith("http") ? "_blank" : undefined}
                         rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                       >
@@ -167,31 +170,30 @@ export function Footer() {
 
         {/* En alt bant: Legal & Social */}
         <div
-          className="border-t border-[var(--border)]"
-          style={{ borderColor: "var(--border)" }}
+          className="border-t border-[var(--border)] bg-slate-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]"
         >
-          <div className="flex w-full flex-col items-center justify-between gap-4 py-6 px-4 lg:flex-row">
-            <p className={`text-xs font-light ${APPLE_FOOTER_GRAY}`}>
+          <div className="flex w-full flex-col items-center justify-between gap-6 py-8 px-4 lg:flex-row">
+            <p className={`text-xs font-medium tracking-tight ${APPLE_FOOTER_GRAY}`}>
               Telif Hakkı © 2026 Ferah Medya. Tüm hakları saklıdır.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
               {LEGAL_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-xs font-light transition-colors hover:text-[var(--foreground)] ${APPLE_FOOTER_GRAY}`}
+                  className={`text-[11px] font-medium uppercase tracking-wide transition-colors hover:text-blue-600 ${APPLE_FOOTER_GRAY}`}
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
-            <div className={`flex items-center gap-5 ${APPLE_FOOTER_GRAY}`}>
+            <div className={`flex items-center gap-6 ${APPLE_FOOTER_GRAY}`}>
               {SOCIAL_LINKS.map((item) => (
                 <a
                   key={item.icon}
                   href={item.href}
                   aria-label={item.label}
-                  className="transition-opacity hover:opacity-70"
+                  className="transition-all duration-300 hover:text-blue-600 hover:scale-110"
                 >
                   <SocialIcon name={item.icon} />
                 </a>
@@ -203,3 +205,4 @@ export function Footer() {
     </>
   );
 }
+

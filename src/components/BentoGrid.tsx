@@ -12,39 +12,39 @@ const SERVICES: Array<{
   iconType: "ads" | "seo" | "social" | "content" | "web" | "conversion";
 }> = [
   {
-    title: "Dijital Reklam",
+    title: "Dijital Reklam Yönetimi",
     href: "/hizmetler/dijital-reklam/google-ads",
-    description: "Google Ads, Yandex, Meta, Retargeting ile kaliteli kullanıcıları sitenize getiriyoruz.",
+    description: "Google Ads ve Meta reklamlarını veri odaklı yönetiyor, bütçenizi en yüksek satış/randevu hacmine dönüştürüyoruz.",
     iconType: "ads",
   },
   {
-    title: "SEO",
+    title: "SEO Mühendisliği",
     href: "/hizmetler/seo",
-    description: "Organik trafik, dönüşüm oranları ve marka görünürlüğünüzü artırıyoruz.",
+    description: "Sadece trafik değil, pazar otoritesi kazanmanız için teknik ve içerik odaklı arama motoru optimizasyonu sağlıyoruz.",
     iconType: "seo",
   },
   {
-    title: "Sosyal Medya",
+    title: "Sosyal Medya Yönetimi",
     href: "/hizmetler/sosyal-medya",
-    description: "Gerçek insanlarla gerçek zamanlı bağlantı, marka bilinirliği.",
+    description: "Marka dilinizi profesyonel içeriklerle inşa ediyor, topluluğunuzu sadık müşterilere dönüştürüyoruz.",
     iconType: "social",
   },
   {
-    title: "İçerik Pazarlama",
-    href: "/hizmetler/icerik-pazarlama",
-    description: "Özgün, kaliteli ve kullanıcı odaklı içerik ile marka otoritesi.",
+    title: "Kreatif Psikolojisi",
+    href: "/hizmetler/kreatif-psikolojisi",
+    description: "Davranış bilimini tasarım ile birleştirerek, kullanıcının karar verme sürecini etkileyen görsel stratejiler üretiyoruz.",
     iconType: "content",
   },
   {
-    title: "Web Tasarım",
+    title: "Stratejik Web Tasarım",
     href: "/hizmetler/web-tasarim",
-    description: "Modern tasarımlı siteler, markanızın dijital deneyimi.",
+    description: "Markanızın dijital vitrinini modern, hızlı ve satış odaklı bir kullanıcı deneyimi (UX) ile yeniden tanımlıyoruz.",
     iconType: "web",
   },
   {
     title: "Dönüşüm Optimizasyonu",
     href: "/hizmetler/donusum-optimizasyonu",
-    description: "Performans ve gelir artışı için sürekli iyileştirme.",
+    description: "Mevcut trafiğinizi analiz ediyor, reklam maliyetlerinizi düşürürken dönüşüm oranlarınızı maksimize ediyoruz.",
     iconType: "conversion",
   },
 ];

@@ -128,11 +128,11 @@ export function Navbar() {
 
   return (
     <header
-      className="sticky top-0 z-50 border-b border-[var(--border)] bg-white/80 backdrop-blur-md supports-[backdrop-filter]:bg-white/70"
+      className="sticky top-0 z-50 border-b border-[var(--border)] bg-white/80 backdrop-blur-md supports-[backdrop-filter]:bg-white/70 animate-in fade-in slide-in-from-top-4 duration-1000 ease-out"
       style={{ minHeight: "64px" }}
     >
       <div className="flex h-16 w-full items-center justify-between px-4">
-        <Link href="/" className="flex shrink-0 items-center">
+        <Link href="/" className="flex shrink-0 items-center transition-transform duration-300 hover:scale-[1.02] active:scale-95">
           <Image
             src="/ferah-medya-logo.png"
             alt="Ferah Medya"

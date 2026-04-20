@@ -129,11 +129,11 @@ main h3,
 .hero-bg {
   background-color: var(--background);
   background-image:
-    radial-gradient(ellipse 120% 70% at 50% 40%, rgb(147 197 253 / 0.35), transparent 55%),
-    radial-gradient(ellipse 90% 60% at 50% 60%, rgb(103 232 249 / 0.25), transparent 50%),
-    radial-gradient(ellipse 70% 50% at 50% 30%, rgb(196 181 253 / 0.15), transparent 45%),
-    radial-gradient(ellipse 100% 60% at 50% -10%, rgb(59 130 246 / 0.2), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 50% 50%, rgb(59 130 246 / 0.08), transparent 45%);
+    radial-gradient(ellipse 120% 70% at 50% 40%, hsla(215, 94%, 90%, 0.4), transparent 55%),
+    radial-gradient(ellipse 90% 60% at 50% 60%, hsla(188, 91%, 95%, 0.3), transparent 50%),
+    radial-gradient(ellipse 70% 50% at 50% 30%, hsla(258, 83%, 95%, 0.2), transparent 45%),
+    radial-gradient(ellipse 100% 60% at 50% -10%, hsla(217, 91%, 60%, 0.15), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 50% 50%, hsla(217, 91%, 60%, 0.05), transparent 45%);
   background-size: 100% 100%;
   animation: hero-bg-shift 18s ease-in-out infinite alternate;
 }
@@ -142,7 +142,7 @@ main h3,
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 60% 50% at 50% 45%, rgb(147 197 253 / 0.25), transparent 55%);
+  background: radial-gradient(ellipse 60% 50% at 50% 45%, hsla(215, 94%, 90%, 0.25), transparent 55%);
   animation: hero-glow 14s ease-in-out infinite alternate;
   pointer-events: none;
 }
@@ -153,19 +153,19 @@ main h3,
 }
 
 @keyframes hero-glow {
-  0%   { opacity: 0.7; transform: scale(1); }
-  100% { opacity: 1; transform: scale(1.1); }
+  0%   { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 0.9; transform: scale(1.08); }
 }
 
 @keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(16px); }
+  from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.hero-anim-1 { animation: fade-in-up 0.7s ease-out forwards; opacity: 0; }
-.hero-anim-2 { animation: fade-in-up 0.7s ease-out 0.12s forwards; opacity: 0; }
-.hero-anim-3 { animation: fade-in-up 0.8s ease-out 0.24s forwards; opacity: 0; }
-.hero-anim-4 { animation: fade-in-up 0.6s ease-out 0.36s forwards; opacity: 0; }
+.hero-anim-1 { animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+.hero-anim-2 { animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards; opacity: 0; }
+.hero-anim-3 { animation: fade-in-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards; opacity: 0; }
+.hero-anim-4 { animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards; opacity: 0; }
 
 /* ─── Shimmer button ─── */
 @keyframes shimmer {
@@ -180,9 +180,9 @@ main h3,
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(255 255 255 / 0.18) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(255 255 255 / 0.2) 50%, transparent 100%);
   background-size: 200% 100%;
-  animation: shimmer 2.5s ease-in-out infinite;
+  animation: shimmer 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   pointer-events: none;
 }
 
@@ -193,22 +193,23 @@ main h3,
   border-bottom: 2px solid var(--border);
   border-radius: 0;
   color: var(--foreground);
-  padding: 0.5rem 0;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  padding: 0.75rem 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .input-apple::placeholder {
-  color: var(--muted);
+  color: var(--muted-foreground);
+  opacity: 0.7;
 }
 .input-apple:hover {
   border-bottom-color: var(--muted);
 }
 .input-apple:focus {
-  border-bottom-color: #3b82f6;
-  box-shadow: 0 2px 0 0 #3b82f6;
+  border-bottom-color: var(--ring);
+  box-shadow: 0 1px 0 0 var(--ring);
   outline: none;
 }
 .input-apple:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
@@ -221,9 +222,9 @@ main h3,
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(255 255 255 / 0.12) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(255 255 255 / 0.15) 50%, transparent 100%);
   background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
+  animation: shimmer 3.5s linear infinite;
   pointer-events: none;
 }
 
@@ -231,28 +232,39 @@ main h3,
 .night-mesh {
   background-color: var(--night);
   background-image:
-    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(201 168 76 / 0.06), transparent 50%),
-    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(59 130 246 / 0.06), transparent 40%);
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(201 168 76 / 0.08), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(59, 130, 246, 0.08), transparent 45%);
 }
 
 /* ─── Glassmorphism card on night bg ─── */
 .glass-card {
-  background: rgba(255 255 255 / 0.04);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255 255 255 / 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255 255 255 / 0.08);
-  border-radius: 1.25rem;
+  border-radius: 1.5rem;
+  transition: all 0.3s ease;
+}
+.glass-card:hover {
+  background: rgba(255 255 255 / 0.05);
+  border-color: rgba(255 255 255 / 0.12);
+}
+
+.glass-surface {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
 }
 
 /* ─── Grayscale → color hover for partner logos ─── */
 .logo-grayscale {
-  filter: grayscale(100%) brightness(1.5);
-  opacity: 0.5;
-  transition: all 0.4s ease;
+  filter: grayscale(100%) brightness(0.8) contrast(0.8) opacity(0.4);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .logo-grayscale:hover {
-  filter: grayscale(0%) brightness(1);
-  opacity: 1;
+  filter: grayscale(0%) brightness(1) contrast(1) opacity(1);
 }
 
 /* ─── Strategy form gradient (gold / night blue) ─── */
@@ -261,7 +273,7 @@ main h3,
   50%      { background-position: 100% 50%; }
 }
 .animate-strategy-gradient {
-  animation: strategy-gradient 12s ease-in-out infinite;
+  animation: strategy-gradient 15s ease-in-out infinite;
 }
 
 @keyframes aurora-shift {
@@ -274,15 +286,15 @@ main h3,
 .cta-pulse::before {
   content: "";
   position: absolute;
-  inset: -4px;
+  inset: -6px;
   border-radius: 9999px;
-  background: rgba(255 255 255 / 0.3);
-  animation: cta-pulse-ring 2s ease-out infinite;
+  background: rgba(59, 130, 246, 0.3);
+  animation: cta-pulse-ring 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   pointer-events: none;
 }
 @keyframes cta-pulse-ring {
-  0%   { transform: scale(0.95); opacity: 0.6; }
-  100% { transform: scale(1.15); opacity: 0; }
+  0%   { transform: scale(0.9); opacity: 0.7; }
+  100% { transform: scale(1.2); opacity: 0; }
 }
 
 @keyframes marquee {
@@ -292,7 +304,7 @@ main h3,
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee 30s linear infinite;
+  animation: marquee 35s linear infinite;
 }
 .marquee-track:hover {
   animation-play-state: paused;
@@ -300,7 +312,7 @@ main h3,
 
 /* Trust section infinite marquee (yavaş döngü) */
 .animate-trust-marquee {
-  animation: marquee 45s linear infinite;
+  animation: marquee 50s linear infinite;
 }
 .animate-trust-marquee:hover {
   animation-play-state: paused;
@@ -329,3 +341,4 @@ main h3,
     opacity: 1;
   }
 }
+

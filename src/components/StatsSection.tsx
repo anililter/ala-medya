@@ -72,14 +72,13 @@ export function StatsSection() {
           className="w-full text-center"
         >
           <h2 className="text-4xl font-bold leading-[1.1] tracking-tighter text-white sm:text-5xl lg:text-6xl">
-            Premier Strateji, Yapay Zeka Gücü:{" "}
+            Veriyle Kanıtlanmış Büyüme:{" "}
             <span className="bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-400 bg-clip-text text-transparent">
-              Dijitalde Ala Dönemi Başlıyor
+              Dijital Pazarlamada Ferah Dönemi
             </span>
           </h2>
-          <p className="mt-6 text-xl leading-relaxed text-slate-400">
-            8 yıllık sektörel reflekslerimizi, Google&apos;ın en başarılı %3&apos;lük diliminde yer alan
-            bir Premier Partner vizyonuyla birleştiriyoruz.
+          <p className="mt-6 text-xl leading-relaxed text-slate-400 max-w-3xl mx-auto">
+            Tam hizmet dijital reklam ajansı olarak, 8 yıllık sektörel reflekslerimizi Google Premier Partner uzmanlığıyla birleştiriyoruz. Sadece reklam değil, sürdürülebilir büyüme inşa ediyoruz.
           </p>
           <div className="mt-10">
             <Link
