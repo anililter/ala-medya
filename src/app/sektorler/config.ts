@@ -36,16 +36,16 @@ export const SEKTORLER: SectorConfig[] = [
   {
     slug: "psikoloji",
     title: "Psikoloji",
-    navDescription: "Etik ve Güven Odaklı",
-    heroTitle: "Etik ve Güven Odaklı Dijital Büyüme.",
+    navDescription: "Akademik ve Etik Büyüme",
+    heroTitle: "Psikologlar İçin Profesyonel Pazarlama Kiti.",
     content:
-      "Psikogenetik ve Longevity Merkezi gibi hassas alanlardaki tecrübemizle, psikologlar için danışan ve uzman arasındaki güven köprüsünü kuruyoruz. Claude 4.6 Sonnet destekli içeriklerle, 'reklam' değil 'çözüm' sunan bir duruş sergiliyoruz.",
+      "Alanında uzman Prof. Dr. akademik danışmanlığında, psikologlar ve klinikler için etik değerleri koruyan dijital büyüme modelleri kurguluyoruz. Claude 4.6 Sonnet ile rafine edilmiş, otorite inşa eden içerik stratejileriyle fark yaratıyoruz.",
     emphasis:
-      "Danışan mahremiyeti ve veri güvenliği için Server-Side CAPI entegrasyonu.",
+      "Prof. Dr. eşliğinde reklam dili denetimi ve %100 KVKK uyumlu veri mimarisi.",
     stats: [
-      { value: "Güven", label: "Öncelikli İçerik Stratejisi" },
-      { value: "CAPI", label: "Server-Side Veri Güvenliği" },
-      { value: "Etik", label: "Reklam Politikası Uyumu" },
+      { value: "Prof. Dr.", label: "Akademik Denetim" },
+      { value: "Etik", label: "İletişim Standartı" },
+      { value: "%100", label: "KVKK Uyumluluk" },
     ],
     imagePlaceholder: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80",
   },
